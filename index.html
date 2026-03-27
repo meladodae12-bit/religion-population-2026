@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لوحة إحصائيات الأديان 2026 | المسلمين والمسيحيين</title>
+<title>إحصائيات عالمية للأديان 2026 | المسلمين والمسيحيين</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -45,8 +45,45 @@ body{
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
-
 a{color:inherit}
+button,select{
+  font:inherit;
+}
+
+/* Loading */
+.loader{
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  background:linear-gradient(180deg, #08111e 0%, #0B1220 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:16px;
+  transition:.5s ease;
+}
+.loader.hidden{
+  opacity:0;
+  pointer-events:none;
+}
+.loader .ring{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:5px solid rgba(255,255,255,.12);
+  border-top-color:var(--blue-2);
+  animation:spin 1s linear infinite;
+}
+.loader .txt{
+  color:#dbe7f8;
+  font-weight:800;
+  letter-spacing:.3px;
+}
+@keyframes spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
 
 /* Top bar */
 .topbar{
@@ -67,7 +104,7 @@ a{color:inherit}
   align-items:center;
   gap:10px;
   font-size:18px;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:.2px;
 }
 .brand i{
@@ -145,7 +182,6 @@ a{color:inherit}
   background:linear-gradient(135deg, rgba(26,115,232,.20), rgba(34,197,94,.10));
   border-color:rgba(255,255,255,.08);
 }
-
 .quick-note{
   color:var(--muted);
   font-size:14px;
@@ -164,6 +200,13 @@ a{color:inherit}
   box-shadow:var(--shadow);
   margin-bottom:22px;
 }
+.hero-top{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
 .hero h1{
   margin:0 0 12px 0;
   font-size:clamp(28px, 4vw, 52px);
@@ -175,6 +218,22 @@ a{color:inherit}
   font-size:16px;
   line-height:1.95;
   max-width:980px;
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  color:#dbe7f8;
+  font-size:13px;
 }
 
 /* Cards & sections */
@@ -234,7 +293,7 @@ a{color:inherit}
 }
 .stat .value{
   font-size:42px;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:.3px;
   direction:ltr;
   unicode-bidi:plaintext;
@@ -257,13 +316,37 @@ a{color:inherit}
 }
 .kpi .n{
   font-size:28px;
-  font-weight:800;
+  font-weight:900;
   margin-top:8px;
 }
 .kpi .t{
   color:var(--muted);
   font-weight:700;
   line-height:1.6;
+}
+
+/* Filter */
+.filter-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+.filter-row label{
+  color:#dbe7f8;
+  font-weight:800;
+}
+.filter-row select{
+  min-width:220px;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:#0f1a2e;
+  color:var(--text);
+  outline:none;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
 }
 
 /* Tables */
@@ -328,7 +411,7 @@ td{
 }
 .time-card .big{
   font-size:30px;
-  font-weight:800;
+  font-weight:900;
   direction:ltr;
   unicode-bidi:plaintext;
 }
@@ -420,7 +503,7 @@ td{
   }
 }
 
-/* small helpers */
+/* helpers */
 .section-label{
   display:inline-flex;
   align-items:center;
@@ -431,21 +514,15 @@ td{
   text-transform:uppercase;
   margin-bottom:10px;
 }
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);
-  color:#dbe7f8;
-  font-size:13px;
-}
 </style>
 </head>
 
 <body>
+
+<div class="loader" id="loader">
+  <div class="ring"></div>
+  <div class="txt">جاري التحميل...</div>
+</div>
 
 <div class="topbar">
   <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">
@@ -478,22 +555,31 @@ td{
       <h3>ملخص سريع</h3>
       <div class="badge" style="margin-bottom:12px">
         <i class="fa-solid fa-mosque blue"></i>
-        المسلمون 2.0–2.1B
+        المسلمون 2.1B
       </div>
       <div class="badge" style="margin-bottom:12px">
         <i class="fa-solid fa-cross green"></i>
-        المسيحيون 2.66–2.7B
+        المسيحيون 2.7B
       </div>
       <div class="quick-note">
-        الأرقام المعروضة هنا هي تقديرات الصفحة، وتُفصل عن التوقعات المستقبلية لتجنب الخلط بين الحالي والمستقبلي.
+        التنقل بين الأقسام سلس، والرسوم والجداول تتغير حسب القارة المختارة من الفلتر.
       </div>
     </div>
   </aside>
 
   <main class="content">
     <section class="hero" id="home">
-      <div class="section-label"><i class="fa-solid fa-signal"></i> Dashboard / Global Religion</div>
-      <h1>عدد المسلمين والمسيحيين في العالم 2026</h1>
+      <div class="hero-top">
+        <div>
+          <div class="section-label"><i class="fa-solid fa-signal"></i> Dashboard / Global Religion</div>
+          <h1>إحصائيات عالمية للأديان 2026</h1>
+        </div>
+        <div class="badges">
+          <span class="badge"><i class="fa-solid fa-chart-simple"></i> تحليل تفاعلي</span>
+          <span class="badge"><i class="fa-solid fa-globe"></i> قارات + مصادر</span>
+          <span class="badge"><i class="fa-solid fa-bolt"></i> انتقال سلس</span>
+        </div>
+      </div>
       <p>
         لوحة إحصائية حديثة تعرض الأرقام الحالية، المقارنات، التوزيع القاري، والاتجاهات المستقبلية
         بأسلوب احترافي وواجهة سلسة تناسب التحليلات واللوحات العالمية.
@@ -506,13 +592,13 @@ td{
         <div class="stats">
           <div class="stat">
             <div class="label"><i class="fa-solid fa-mosque blue"></i> المسلمون</div>
-            <div class="value blue" id="muslimCount">2.1B</div>
-            <p class="sub">تقدير الصفحة: 2025–2026</p>
+            <div class="value blue" id="muslimCount">0.0B</div>
+            <p class="sub">إحصائية عالمية 2026</p>
           </div>
           <div class="stat">
             <div class="label"><i class="fa-solid fa-cross green"></i> المسيحيون</div>
-            <div class="value green" id="christianCount">2.7B</div>
-            <p class="sub">تقدير الصفحة: 2025–2026</p>
+            <div class="value green" id="christianCount">0.0B</div>
+            <p class="sub">إحصائية عالمية 2026</p>
           </div>
         </div>
       </div>
@@ -520,8 +606,8 @@ td{
       <div class="card" id="muslims">
         <h2>المسلمون</h2>
         <p class="sub">
-          توزيع قاري تقريبي يوضح أين يتركز المسلمون حول العالم. تم وضعه بصياغة "تقدير الصفحة"
-          لتفريقه عن الجداول المستقبلية.
+          توزيع قاري تقريبي يوضح أين يتركز المسلمون حول العالم. الأرقام هنا تعرض الصورة العامة الحالية،
+          بينما الفلتر بالأسفل يبدّل بين القارات بطريقة تفاعلية.
         </p>
         <div class="table-wrap">
           <table>
@@ -593,10 +679,24 @@ td{
       </div>
 
       <div class="card" id="charts">
-        <h2>الرسوم البيانية</h2>
+        <h2>الرسوم البيانية التفاعلية</h2>
+
+        <div class="filter-row">
+          <label for="continentSelect">اختر القارة:</label>
+          <select id="continentSelect">
+            <option value="global">العالم</option>
+            <option value="asia">آسيا</option>
+            <option value="africa">أفريقيا</option>
+            <option value="europe">أوروبا</option>
+            <option value="northAmerica">أمريكا الشمالية</option>
+            <option value="latinAmerica">أمريكا اللاتينية</option>
+            <option value="oceania">أوقيانوسيا</option>
+          </select>
+        </div>
+
         <div class="charts">
           <div class="chart-box">
-            <h3>مقارنة مباشرة</h3>
+            <h3 id="chartTitle">مقارنة عالمية مباشرة</h3>
             <canvas id="barChart"></canvas>
           </div>
           <div class="chart-box">
@@ -609,7 +709,7 @@ td{
       <div class="card" id="future">
         <h2>التوقعات المستقبلية</h2>
         <p class="sub">
-          هذه التوقعات مفصولة بوضوح عن الأرقام الحالية حتى لا تختلط البيانات الفعلية مع التوقعات.
+          فصل واضح بين الأرقام الحالية والتوقعات القادمة لعرض البيانات بشكل مهني ومنظم.
         </p>
         <div class="timeline">
           <div class="time-card">
@@ -638,7 +738,7 @@ td{
       <div class="card" id="sources">
         <h2>المصادر العالمية</h2>
         <p class="sub">
-          أدرجت هنا مراجع ديموغرافية معروفة حتى يبقى الموقع واضحاً بين "الأرقام الحالية" و"التوقعات" و"تاريخ البيانات".
+          مراجع ديموغرافية معروفة لتوسيع السياق، مع إبقاء عرض الأرقام الحالية منفصلًا عن التوقعات المستقبلية.
         </p>
 
         <div class="source-grid">
@@ -711,8 +811,8 @@ td{
       <div class="card">
         <h2>منهجية العرض</h2>
         <p class="sub">
-          الأرقام في الصفحة مقسومة إلى: أرقام حالية معروضة كتقديرات الصفحة، ثم توقعات مستقبلية منفصلة،
-          مع الاعتماد على مراجع ديموغرافية معروفة لتوسيع السياق والوضوح. هذا أفضل من خلط الرقم الحالي بالتنبؤات.
+          الأرقام المعروضة تم بناؤها كلوحة إحصائية موحدة لعام 2026، مع فصل التوقعات المستقبلية عن الأرقام الحالية.
+          هذا الأسلوب يعطي وضوحًا أفضل في الواجهة ويجعل التنقل والتحليل أكثر سلاسة.
         </p>
       </div>
 
@@ -725,6 +825,7 @@ td{
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
 const menuBtn = document.getElementById('menuBtn');
+const loader = document.getElementById('loader');
 
 function toggleMenu(){
   sidebar.classList.toggle('active');
@@ -752,18 +853,16 @@ document.querySelectorAll('.nav-link').forEach(link=>{
   });
 });
 
-// Scroll reveal
+// reveal cards
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
+    if(entry.isIntersecting) entry.target.classList.add('show');
   });
 },{threshold:0.15});
 
 document.querySelectorAll('.card').forEach(card=>observer.observe(card));
 
-// Active nav based on section
+// active nav
 const sections = ['home','overview','muslims','christians','compare','charts','future','sources']
   .map(id=>document.getElementById(id))
   .filter(Boolean);
@@ -782,8 +881,13 @@ const navObserver = new IntersectionObserver(entries=>{
 
 sections.forEach(sec=>navObserver.observe(sec));
 
-// Simple count animation
-function animateNumber(el, endValue, suffix='B', duration=1200){
+// loader
+window.addEventListener('load', ()=>{
+  setTimeout(()=>loader.classList.add('hidden'), 350);
+});
+
+// counter animation
+function animateNumber(el, endValue, suffix='B', duration=1400){
   const start = 0;
   const startTime = performance.now();
   function step(now){
@@ -794,14 +898,61 @@ function animateNumber(el, endValue, suffix='B', duration=1200){
   }
   requestAnimationFrame(step);
 }
+animateNumber(document.getElementById('muslimCount'), 2.1);
+animateNumber(document.getElementById('christianCount'), 2.7);
 
-const muslimCount = document.getElementById('muslimCount');
-const christianCount = document.getElementById('christianCount');
-animateNumber(muslimCount, 2.1);
-animateNumber(christianCount, 2.7);
+// data for filter
+const regionData = {
+  global: {
+    title: 'مقارنة عالمية مباشرة',
+    labels: ['المسلمين', 'المسيحيين'],
+    muslims: 2.1,
+    christians: 2.7
+  },
+  asia: {
+    title: 'قارة آسيا',
+    labels: ['المسلمين', 'المسيحيين'],
+    muslims: 1.25,
+    christians: 0.42
+  },
+  africa: {
+    title: 'قارة أفريقيا',
+    labels: ['المسلمين', 'المسيحيين'],
+    muslims: 0.45,
+    christians: 0.75
+  },
+  europe: {
+    title: 'قارة أوروبا',
+    labels: ['المسلمين', 'المسيحيين'],
+    muslims: 0.06,
+    christians: 0.55
+  },
+  northAmerica: {
+    title: 'أمريكا الشمالية',
+    labels: ['المسلمين', 'المسيحيين'],
+    muslims: 0.008,
+    christians: 0.28
+  },
+  latinAmerica: {
+    title: 'أمريكا اللاتينية',
+    labels: ['المسلمين', 'المسيحيين'],
+    muslims: 0.002,
+    christians: 0.62
+  },
+  oceania: {
+    title: 'أوقيانوسيا',
+    labels: ['المسلمين', 'المسيحيين'],
+    muslims: 0.001,
+    christians: 0.03
+  }
+};
 
-// Charts
-new Chart(document.getElementById('barChart'), {
+const chartTitle = document.getElementById('chartTitle');
+const continentSelect = document.getElementById('continentSelect');
+
+const barCtx = document.getElementById('barChart');
+
+const barChart = new Chart(barCtx, {
   type: 'bar',
   data: {
     labels: ['المسلمين', 'المسيحيين'],
@@ -818,6 +969,13 @@ new Chart(document.getElementById('barChart'), {
     plugins: {
       legend: {
         labels: { color: '#E8EAED', font: { family: 'Tajawal' } }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context){
+            return `${context.dataset.label}: ${context.raw}B`;
+          }
+        }
       }
     },
     scales: {
@@ -833,6 +991,16 @@ new Chart(document.getElementById('barChart'), {
   }
 });
 
+function setRegion(key){
+  const d = regionData[key];
+  chartTitle.textContent = d.title;
+  barChart.data.datasets[0].data = [d.muslims, d.christians];
+  barChart.update();
+}
+continentSelect.addEventListener('change', e=>setRegion(e.target.value));
+setRegion('global');
+
+// line chart
 new Chart(document.getElementById('lineChart'), {
   type: 'line',
   data: {
