@@ -4,222 +4,221 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Global Muslim & Christian Population 2026</title>
+<title>Global Religion Statistics 2026</title>
 
-<meta name="description" content="Accurate global statistics of Muslim and Christian population 2026 with sources, projections, and regional distribution.">
-<meta name="keywords" content="Muslim population 2026, Christian population 2026, world religion statistics, Islam growth, Christianity statistics">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-
-/* ====== GLOBAL ====== */
 body {
   margin:0;
   font-family:Arial;
-  background:#0f172a;
-  color:white;
-  display:flex;
+  background:#ffffff;
+  color:#111;
 }
 
-/* ====== SIDEBAR ====== */
-.sidebar {
-  width:250px;
-  background:#020617;
-  height:100vh;
+.container {
+  max-width:1100px;
+  margin:auto;
   padding:20px;
-  position:fixed;
 }
 
-.sidebar h2 {
-  color:#38bdf8;
+h1,h2,h3 {
+  color:#111827;
 }
 
-.sidebar a {
-  display:block;
-  color:#cbd5f5;
-  text-decoration:none;
-  margin:15px 0;
-}
-
-.sidebar a:hover {
-  color:white;
-}
-
-/* ====== CONTENT ====== */
-.content {
-  margin-left:250px;
-  padding:30px;
-  width:100%;
-}
-
-/* ====== CARDS ====== */
 .card {
-  background:#1e293b;
-  padding:20px;
+  background:#ffffff;
+  border:1px solid #e5e7eb;
   border-radius:10px;
+  padding:20px;
   margin-bottom:20px;
 }
 
-/* ====== TABLE ====== */
+.big {
+  font-size:28px;
+  font-weight:bold;
+}
+
+.blue { color:#2563eb; }
+.green { color:#16a34a; }
+
 table {
   width:100%;
   border-collapse:collapse;
+  margin-top:10px;
 }
 
 th, td {
   padding:10px;
-  border-bottom:1px solid #334155;
+  border-bottom:1px solid #ddd;
 }
 
 th {
-  background:#020617;
+  background:#f3f4f6;
 }
 
-/* ====== COLORS ====== */
-.muslim { color:#3b82f6; font-weight:bold; }
-.christian { color:#22c55e; font-weight:bold; }
-
-/* ====== MOBILE MENU ====== */
-.menu-btn {
-  display:none;
+.chart-box {
+  margin-top:20px;
 }
-
-@media (max-width:768px) {
-
-  .sidebar {
-    left:-250px;
-    transition:0.3s;
-  }
-
-  .sidebar.active {
-    left:0;
-  }
-
-  .content {
-    margin-left:0;
-  }
-
-  .menu-btn {
-    display:block;
-    position:fixed;
-    top:10px;
-    left:10px;
-    background:#020617;
-    padding:10px;
-    border-radius:5px;
-    cursor:pointer;
-    z-index:999;
-  }
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="container">
 
-<!-- ===== SIDEBAR ===== -->
-<div class="sidebar">
-  <h2>Statistics</h2>
-  <a href="#home">Home</a>
-  <a href="#muslims">Muslims</a>
-  <a href="#christians">Christians</a>
-  <a href="#comparison">Comparison</a>
-  <a href="#future">Future</a>
-  <a href="#sources">Sources</a>
-</div>
+<h1>Global Religion Statistics 2026</h1>
+<p>
+This page provides structured and research-based statistics about global Muslim and Christian populations, including distribution, comparison, and future projections.
+</p>
 
-<!-- ===== CONTENT ===== -->
-<div class="content">
+<!-- OVERVIEW -->
+<div class="card">
+<h2>Overview</h2>
 
-<!-- HOME -->
-<div id="home" class="card">
-  <h1>Global Religion Statistics 2026</h1>
-  <p>Professional overview of global Muslim and Christian populations with verified data and future projections.</p>
+<p class="big blue">Muslims: 2.0 – 2.1 Billion</p>
+<p class="big green">Christians: 2.66 – 2.7 Billion</p>
 
-  <h2>Quick Overview</h2>
-  <p class="muslim">Muslims: 2.0 – 2.1 Billion</p>
-  <p class="christian">Christians: 2.66 – 2.7 Billion</p>
+<p>
+Christianity is the largest religion in the world as of 2026.
+</p>
 </div>
 
 <!-- MUSLIMS -->
-<div id="muslims" class="card">
-  <h2>Muslim Population 2026</h2>
+<div class="card">
+<h2>Muslim Population</h2>
 
-  <p>
-  Estimated global Muslim population ranges between 2.0 and 2.1 billion,
-  representing around 25% of the world's population.
-  </p>
+<p>
+The global Muslim population is estimated at approximately 2.0 to 2.1 billion in 2026, representing around 25% of the world population.
+</p>
 
-  <table>
-    <tr><th>Region</th><th>Population</th></tr>
-    <tr><td>Asia</td><td>1.25 Billion</td></tr>
-    <tr><td>Africa</td><td>450 Million</td></tr>
-    <tr><td>Europe</td><td>60 Million</td></tr>
-    <tr><td>North America</td><td>8 Million</td></tr>
-    <tr><td>South America</td><td>2 Million</td></tr>
-    <tr><td>Oceania</td><td>1 Million</td></tr>
-  </table>
+<h3>Regional Distribution</h3>
+
+<table>
+<tr><th>Region</th><th>Population</th></tr>
+<tr><td>Asia</td><td>1.25 Billion</td></tr>
+<tr><td>Africa</td><td>450 Million</td></tr>
+<tr><td>Europe</td><td>60 Million</td></tr>
+<tr><td>North America</td><td>8 Million</td></tr>
+<tr><td>South America</td><td>2 Million</td></tr>
+<tr><td>Oceania</td><td>1 Million</td></tr>
+</table>
+
+<div class="chart-box">
+<canvas id="muslimChart"></canvas>
+</div>
+
+<h3>Future Projections</h3>
+<ul>
+<li>2030: 2.2 Billion</li>
+<li>2035: 2.4 Billion</li>
+<li>2050: 2.8 Billion</li>
+</ul>
+
 </div>
 
 <!-- CHRISTIANS -->
-<div id="christians" class="card">
-  <h2>Christian Population 2026</h2>
+<div class="card">
+<h2>Christian Population</h2>
 
-  <p>
-  Global Christian population is estimated between 2.66 and 2.7 billion,
-  making it the largest religion worldwide.
-  </p>
+<p>
+The global Christian population is estimated at around 2.66 to 2.7 billion in 2026, making Christianity the largest religion worldwide.
+</p>
 
-  <table>
-    <tr><th>Region</th><th>Population</th></tr>
-    <tr><td>Africa</td><td>750 Million</td></tr>
-    <tr><td>Latin America</td><td>620 Million</td></tr>
-    <tr><td>Europe</td><td>550 Million</td></tr>
-    <tr><td>Asia</td><td>420 Million</td></tr>
-    <tr><td>North America</td><td>280 Million</td></tr>
-    <tr><td>Oceania</td><td>30 Million</td></tr>
-  </table>
+<h3>Regional Distribution</h3>
+
+<table>
+<tr><th>Region</th><th>Population</th></tr>
+<tr><td>Africa</td><td>750 Million</td></tr>
+<tr><td>Latin America</td><td>620 Million</td></tr>
+<tr><td>Europe</td><td>550 Million</td></tr>
+<tr><td>Asia</td><td>420 Million</td></tr>
+<tr><td>North America</td><td>280 Million</td></tr>
+<tr><td>Oceania</td><td>30 Million</td></tr>
+</table>
+
+<div class="chart-box">
+<canvas id="christianChart"></canvas>
+</div>
+
+<h3>Future Projection</h3>
+<ul>
+<li>2050: 3.3 Billion</li>
+</ul>
+
 </div>
 
 <!-- COMPARISON -->
-<div id="comparison" class="card">
-  <h2>Comparison</h2>
+<div class="card">
+<h2>Comparison</h2>
 
-  <p>
-  Christianity remains the largest religion globally, while Islam is the fastest-growing religion.
-  </p>
+<p class="big">
+Christians: 2.7 Billion<br>
+Muslims: 2.1 Billion
+</p>
+
+<p>
+Christianity is larger than Islam by approximately 600 million people globally in 2026.
+</p>
+
+<div class="chart-box">
+<canvas id="compareChart"></canvas>
 </div>
 
-<!-- FUTURE -->
-<div id="future" class="card">
-  <h2>Future Projections</h2>
-
-  <ul>
-    <li>2030: Muslims ~2.2 Billion</li>
-    <li>2035: Muslims ~2.4 Billion</li>
-    <li>2050: Muslims ~2.8 Billion</li>
-    <li>2050: Christians ~3.3 Billion</li>
-  </ul>
 </div>
 
 <!-- SOURCES -->
-<div id="sources" class="card">
-  <h2>Sources</h2>
+<div class="card">
+<h2>Sources</h2>
 
-  <ul>
-    <li>Pew Research Center</li>
-    <li>Gordon-Conwell CSGC</li>
-    <li>World Population Review</li>
-  </ul>
+<ul>
+<li>Pew Research Center</li>
+<li>Center for the Study of Global Christianity (CSGC)</li>
+<li>World Population Review</li>
+<li>Global demographic research reports (2025–2026)</li>
+</ul>
+
 </div>
 
 </div>
 
 <script>
-function toggleMenu() {
-  document.querySelector(".sidebar").classList.toggle("active");
-}
+
+// Muslim Chart
+new Chart(document.getElementById('muslimChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Asia','Africa','Europe','N. America','S. America','Oceania'],
+    datasets: [{
+      label: 'Muslims (Millions)',
+      data: [1250,450,60,8,2,1]
+    }]
+  }
+});
+
+// Christian Chart
+new Chart(document.getElementById('christianChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Africa','Latin America','Europe','Asia','N. America','Oceania'],
+    datasets: [{
+      label: 'Christians (Millions)',
+      data: [750,620,550,420,280,30]
+    }]
+  }
+});
+
+// Comparison Chart
+new Chart(document.getElementById('compareChart'), {
+  type: 'pie',
+  data: {
+    labels: ['Christians','Muslims'],
+    datasets: [{
+      data: [2700,2100]
+    }]
+  }
+});
+
 </script>
 
 </body>
