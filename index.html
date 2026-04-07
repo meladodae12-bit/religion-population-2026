@@ -16,23 +16,22 @@
           crossorigin="anonymous"></script>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0f1a2e">
-  <meta name="description" content="Muslim & Christian Numbers — منصة إحصائية تفاعلية لعرض عدد المسلمين والمسيحيين حول العالم مع مقارنة، توزيع قاري، رسوم بيانية، ومصادر موثوقة.">
-  <meta name="keywords" content="Muslim & Christian Numbers, المسلمين, المسيحيين, إحصائيات المسلمين, إحصائيات المسيحيين, التوزيع القاري, الرسوم البيانية, السكان, نمو السكان">
+  <meta name="description" content="Muslim & Christian Numbers — منصة إحصائية تفاعلية لعرض عدد المسلمين 2026 وعدد المسيحيين 2026 مع مقارنة، توزيع قاري، رسوم بيانية، ومصادر موثوقة.">
+  <meta name="keywords" content="عدد المسلمين 2026, عدد المسيحيين 2026, عدد مسيحيين 2026, عدد مسلمين 2026, كم عدد المسلمين في العالم, كم عدد المسيحيين في العالم, عدد المسلمين حاليا, عدد المسيحيين حاليا, إحصائيات المسلمين, إحصائيات المسيحيين, التوزيع القاري, الرسوم البيانية, السكان, نمو السكان">
   <meta name="author" content="Muslim & Christian Numbers">
   <link rel="canonical" href="https://muslimchristiannumbers.github.io/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Muslim & Christian Numbers">
-  <meta property="og:description" content="إحصائيات تفاعلية لعدد المسلمين والمسيحيين حول العالم">
+  <meta property="og:description" content="عدد المسلمين 2026 وعدد المسيحيين 2026 في صفحة واحدة مع مقارنة وتوزيع قاري ومصادر موثوقة.">
   <meta property="og:url" content="https://muslimchristiannumbers.github.io/">
   <meta property="og:site_name" content="Muslim & Christian Numbers">
-  <meta property="og:locale" content="ar_AR">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Muslim & Christian Numbers">
-  <meta name="twitter:description" content="إحصائيات تفاعلية لعدد المسلمين والمسيحيين حول العالم">
+  <meta name="twitter:description" content="عدد المسلمين 2026 وعدد المسيحيين 2026 في صفحة واحدة مع مقارنة وتوزيع قاري ومصادر موثوقة.">
 
   <title>Muslim & Christian Numbers | إحصائيات المسلمين والمسيحيين 2026</title>
 
@@ -64,10 +63,7 @@
     }
 
     *{box-sizing:border-box}
-    html{
-      scroll-behavior:smooth;
-      scroll-padding-top:92px;
-    }
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:"Tajawal",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
@@ -86,21 +82,20 @@
     button,select,input{font:inherit}
     ::selection{background:rgba(56,189,248,.35)}
     :focus-visible{outline:none; box-shadow:var(--focus)}
-    img,svg,canvas{max-width:100%; display:block}
 
     .skip-link{
       position:absolute;
-      top:-60px;
-      right:18px;
+      top:-100px;
+      right:12px;
       z-index:4000;
       background:#fff;
       color:#000;
       padding:10px 14px;
       border-radius:10px;
-      font-weight:800;
       text-decoration:none;
+      font-weight:800;
     }
-    .skip-link:focus{top:16px}
+    .skip-link:focus{top:12px}
 
     .loader{
       position:fixed;
@@ -123,11 +118,7 @@
       border-top-color:var(--blue-2);
       animation:spin 1s linear infinite;
     }
-    .loader .txt{
-      color:#dbe7f8;
-      font-weight:800;
-      letter-spacing:.3px;
-    }
+    .loader .txt{color:#dbe7f8; font-weight:800; letter-spacing:.3px}
     @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
     .topbar{
@@ -142,7 +133,6 @@
       background:rgba(15,23,42,.84);
       backdrop-filter:blur(16px);
       border-bottom:1px solid rgba(255,255,255,.06);
-      padding-top:calc(16px + env(safe-area-inset-top));
     }
 
     .brand{
@@ -153,7 +143,6 @@
       font-weight:900;
       letter-spacing:.2px;
       white-space:nowrap;
-      min-width:0;
     }
     .brand .logo{
       width:42px;
@@ -167,12 +156,12 @@
       color:var(--blue-2);
       flex:0 0 auto;
     }
-    .brand span{
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-    }
 
+    .topbar-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
     .topbar-meta{
       display:flex;
       align-items:center;
@@ -193,8 +182,7 @@
       font-weight:700;
       white-space:nowrap;
     }
-
-    .menu-btn{
+    .menu-btn, .lang-btn{
       border:0;
       background:linear-gradient(135deg, #17243c, #101a2b);
       color:var(--text);
@@ -207,25 +195,14 @@
       transition:.25s ease;
       flex:0 0 auto;
     }
-    .menu-btn:hover{transform:translateY(-1px)}
-
     .lang-btn{
-      border:0;
-      background:linear-gradient(135deg, rgba(56,189,248,.18), rgba(34,197,94,.18));
-      color:#fff;
       width:auto;
-      min-width:88px;
-      height:46px;
       padding:0 14px;
-      border-radius:14px;
-      font-size:14px;
-      font-weight:800;
-      cursor:pointer;
-      box-shadow:var(--shadow);
-      transition:.25s ease;
-      flex:0 0 auto;
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.4px;
     }
-    .lang-btn:hover{transform:translateY(-1px)}
+    .menu-btn:hover, .lang-btn:hover{transform:translateY(-1px)}
 
     .page{
       display:grid;
@@ -242,7 +219,6 @@
       border-left:1px solid rgba(255,255,255,.06);
       box-shadow:var(--shadow);
       overflow:auto;
-      -webkit-overflow-scrolling:touch;
     }
     .sidebar .box{
       background:rgba(255,255,255,.03);
@@ -251,10 +227,7 @@
       padding:16px;
       margin-bottom:16px;
     }
-    .sidebar h3{
-      margin:0 0 12px 0;
-      font-size:18px;
-    }
+    .sidebar h3{margin:0 0 12px 0; font-size:18px}
     .nav-link{
       display:flex;
       align-items:center;
@@ -272,7 +245,6 @@
       width:18px;
       text-align:center;
       color:var(--blue-2);
-      flex:0 0 auto;
     }
     .nav-link:hover{
       background:rgba(56,189,248,.10);
@@ -403,7 +375,6 @@
       flex-wrap:wrap;
       gap:10px;
       justify-content:flex-start;
-      align-content:flex-start;
     }
     .badge{
       display:inline-flex;
@@ -569,7 +540,6 @@
       border-radius:18px;
       border:1px solid rgba(255,255,255,.06);
       background:rgba(255,255,255,.02);
-      -webkit-overflow-scrolling:touch;
     }
     table{
       width:100%;
@@ -591,7 +561,7 @@
 
     .charts{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:18px;
     }
     .chart-box{
@@ -599,77 +569,17 @@
       border:1px solid rgba(255,255,255,.06);
       border-radius:18px;
       padding:14px;
-      position:relative;
       min-height:380px;
-      overflow:hidden;
+      position:relative;
     }
     .chart-box h3{
       margin:8px 8px 18px;
       color:#F8FAFC;
+      line-height:1.3;
     }
-    .chart-frame{
-      position:relative;
-      width:100%;
-      height:clamp(260px, 38vh, 420px);
-      max-height:480px;
-    }
-    .chart-frame canvas{
-      position:absolute !important;
-      inset:0;
+    .chart-box canvas{
       width:100% !important;
-      height:100% !important;
-    }
-
-    .map-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:14px;
-    }
-    .continent-card{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:18px;
-      padding:16px;
-      overflow:hidden;
-      position:relative;
-    }
-    .continent-card .head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:10px;
-    }
-    .continent-card .head b{
-      font-size:16px;
-      color:#F8FAFC;
-    }
-    .continent-card .percent{
-      font-size:20px;
-      font-weight:900;
-      color:var(--blue-2);
-      direction:ltr;
-      unicode-bidi:plaintext;
-      white-space:nowrap;
-    }
-    .bar{
-      width:100%;
-      height:12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.06);
-      overflow:hidden;
-      margin:8px 0 12px;
-    }
-    .bar > span{
-      display:block;
-      height:100%;
-      border-radius:999px;
-      background:linear-gradient(135deg, #38BDF8, #22C55E);
-    }
-    .continent-card small{
-      color:var(--muted);
-      line-height:1.8;
-      display:block;
+      height:300px !important;
     }
 
     .timeline{
@@ -865,16 +775,44 @@
     }
     .back-to-top.show{opacity:1}
 
-    .sr-only{
-      position:absolute;
-      width:1px;
-      height:1px;
-      padding:0;
-      margin:-1px;
-      overflow:hidden;
-      clip:rect(0,0,0,0);
-      white-space:nowrap;
-      border:0;
+    .panel-links{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .mini-panel{
+      background:rgba(255,255,255,.035);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px;
+      padding:16px;
+    }
+    .mini-panel h3{
+      margin:0 0 8px 0;
+      font-size:18px;
+    }
+    .mini-panel p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:14px;
+    }
+    .mini-panel .icons{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .mini-panel .icons span{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+      color:#dbe7f8;
+      font-weight:700;
     }
 
     @media (max-width: 1080px){
@@ -883,30 +821,24 @@
         position:fixed;
         top:78px;
         right:-330px;
-        width:min(320px, 88vw);
+        width:300px;
         z-index:1001;
         transition:.25s ease;
       }
       .sidebar.active{right:0}
       .content{padding:18px}
       .two-cols{grid-template-columns:1fr}
+      .panel-links{grid-template-columns:1fr}
+      .charts{grid-template-columns:1fr}
     }
-
     @media (max-width: 920px){
-      .stats,.charts,.kpis,.timeline,.source-grid,.map-grid{grid-template-columns:1fr}
+      .stats,.kpis,.timeline,.source-grid{grid-template-columns:1fr}
       .stat .value{font-size:34px}
       .hero{padding:24px}
       .hero h1{font-size:clamp(28px, 8vw, 44px)}
       .hero .subtitle{font-size:16px}
       .topbar-meta{display:none}
-      .chart-box{
-        min-height:320px;
-      }
-      .chart-frame{
-        height:280px;
-      }
     }
-
     @media (max-width: 640px){
       .content{padding:14px}
       .card{padding:18px}
@@ -914,82 +846,89 @@
       .brand{font-size:16px}
       .brand .logo{width:38px;height:38px}
       .menu-btn{width:42px;height:42px}
-      .lang-btn{height:42px; min-width:76px}
+      .lang-btn{height:42px}
       .filter-row select{min-width:100%; width:100%}
       .hero-actions .btn{width:100%; justify-content:center}
       .back-to-top{left:14px; bottom:14px}
-      .chart-frame{height:240px}
-      .chart-box{min-height:290px}
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      *,*::before,*::after{
-        animation-duration:0.01ms !important;
-        animation-iteration-count:1 !important;
-        transition-duration:0.01ms !important;
-        scroll-behavior:auto !important;
-      }
+      .chart-box{min-height:340px}
+      .chart-box canvas{height:260px !important}
     }
   </style>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Muslim & Christian Numbers",
-    "url": "https://muslimchristiannumbers.github.io/",
-    "description": "إحصائيات تفاعلية لعدد المسلمين والمسيحيين حول العالم"
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Muslim & Christian Numbers",
+    "url":"https://muslimchristiannumbers.github.io/",
+    "description":"إحصائيات تفاعلية لعدد المسلمين 2026 وعدد المسيحيين 2026 مع مقارنة وتوزيع قاري ومصادر موثوقة."
   }
   </script>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "Global Religion Statistics 2026",
-    "description": "Dataset and dashboard for global Muslim and Christian population statistics.",
-    "creator": {
-      "@type": "Organization",
-      "name": "Muslim & Christian Numbers"
+    "@context":"https://schema.org",
+    "@type":"Dataset",
+    "name":"Global Religion Statistics 2026",
+    "description":"Dataset and dashboard for global Muslim and Christian population statistics.",
+    "creator":{
+      "@type":"Organization",
+      "name":"Muslim & Christian Numbers"
     },
-    "keywords": "المسلمين, المسيحيين, إحصائيات دينية, سكان العالم"
+    "keywords":"عدد المسلمين 2026, عدد المسيحيين 2026, كم عدد المسلمين في العالم, كم عدد المسيحيين في العالم"
   }
   </script>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Muslim & Christian Numbers",
-    "url": "https://muslimchristiannumbers.github.io/",
-    "logo": "https://muslimchristiannumbers.github.io/logo.png"
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"كم عدد المسلمين في العالم 2026؟",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"عدد المسلمين في العالم 2026 يقدَّر بحوالي 2 إلى 2.1 مليار."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"كم عدد المسيحيين في العالم 2026؟",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"عدد المسيحيين في العالم 2026 يقدَّر بحوالي 2.7 مليار."
+        }
+      }
+    ]
   }
   </script>
 </head>
 
 <body>
-  <a class="skip-link" href="#mainContent">تجاوز إلى المحتوى الرئيسي</a>
+  <a class="skip-link" href="#home">تخطي إلى المحتوى</a>
 
-  <div class="loader" id="loader" aria-hidden="true">
+  <div class="loader" id="loader">
     <div class="ring"></div>
-    <div class="txt">جاري التحميل...</div>
+    <div class="txt" id="loaderText">جاري التحميل...</div>
   </div>
 
   <header class="topbar">
-    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="sidebar">
+    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">
       <i class="fa-solid fa-bars"></i>
     </button>
 
-    <div class="brand" aria-label="Muslim & Christian Numbers">
+    <div class="brand">
       <div class="logo"><i class="fa-solid fa-chart-column"></i></div>
-      <span id="brandText">Muslim &amp; Christian Numbers</span>
+      <span class="i18n" id="brandText" data-ar="Muslim &amp; Christian Numbers" data-en="Muslim &amp; Christian Numbers">Muslim &amp; Christian Numbers</span>
     </div>
 
-    <div class="topbar-meta">
-      <span class="pill" id="topPill1"><i class="fa-regular fa-clock"></i> تحديث 2026</span>
-      <span class="pill" id="topPill2"><i class="fa-solid fa-shield-halved"></i> بيانات منظمة</span>
-      <button class="lang-btn" id="langBtn" type="button" aria-label="تبديل اللغة">AR / EN</button>
+    <div class="topbar-actions">
+      <button class="lang-btn" id="langBtn" aria-label="تبديل اللغة">EN</button>
+      <div class="topbar-meta">
+        <span class="pill i18n" id="chipUpdate" data-ar="<i class='fa-regular fa-clock'></i> تحديث 2026" data-en="<i class='fa-regular fa-clock'></i> Updated 2026"><i class="fa-regular fa-clock"></i> تحديث 2026</span>
+        <span class="pill i18n" id="chipData" data-ar="<i class='fa-solid fa-shield-halved'></i> بيانات موثوقة" data-en="<i class='fa-solid fa-shield-halved'></i> Trusted data"><i class="fa-solid fa-shield-halved"></i> بيانات موثوقة</span>
+      </div>
     </div>
   </header>
 
@@ -999,86 +938,87 @@
   <div class="page">
     <aside class="sidebar" id="sidebar" aria-label="القائمة الجانبية">
       <nav class="box" aria-label="التنقل">
-        <h3 id="navTitle">الأقسام</h3>
-        <a class="nav-link active" href="#home"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span></a>
-        <a class="nav-link" href="#overview"><i class="fa-solid fa-eye"></i> <span data-i18n="nav_overview">نظرة عامة</span></a>
-        <a class="nav-link" href="#compare"><i class="fa-solid fa-scale-balanced"></i> <span data-i18n="nav_compare">المقارنة</span></a>
-        <a class="nav-link" href="#muslims"><i class="fa-solid fa-mosque"></i> <span data-i18n="nav_muslims">المسلمون</span></a>
-        <a class="nav-link" href="#christians"><i class="fa-solid fa-cross"></i> <span data-i18n="nav_christians">المسيحيون</span></a>
-        <a class="nav-link" href="#charts"><i class="fa-solid fa-chart-line"></i> <span data-i18n="nav_charts">الرسوم البيانية</span></a>
-        <a class="nav-link" href="#map"><i class="fa-solid fa-globe"></i> <span data-i18n="nav_map">الخريطة القارية</span></a>
-        <a class="nav-link" href="#future"><i class="fa-solid fa-calendar-days"></i> <span data-i18n="nav_future">التوقعات</span></a>
-        <a class="nav-link" href="#articles"><i class="fa-solid fa-pen-nib"></i> <span data-i18n="nav_articles">مقالات SEO</span></a>
-        <a class="nav-link" href="#faq"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">الأسئلة الشائعة</span></a>
-        <a class="nav-link" href="#sources"><i class="fa-solid fa-book"></i> <span data-i18n="nav_sources">المصادر</span></a>
-        <a class="nav-link" href="#method"><i class="fa-solid fa-clipboard-check"></i> <span data-i18n="nav_method">المنهجية</span></a>
-        <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> <span data-i18n="nav_about">من نحن</span></a>
-        <a class="nav-link" href="privacy.html"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="nav_privacy">سياسة الخصوصية</span></a>
-        <a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">اتصل بنا</span></a>
+        <h3 class="i18n" data-ar="الأقسام" data-en="Sections">الأقسام</h3>
+        <a class="nav-link active" href="#home"><i class="fa-solid fa-house"></i> <span class="i18n" data-ar="الرئيسية" data-en="Home">الرئيسية</span></a>
+        <a class="nav-link" href="#overview"><i class="fa-solid fa-eye"></i> <span class="i18n" data-ar="نظرة عامة" data-en="Overview">نظرة عامة</span></a>
+        <a class="nav-link" href="#compare"><i class="fa-solid fa-scale-balanced"></i> <span class="i18n" data-ar="المقارنة" data-en="Comparison">المقارنة</span></a>
+        <a class="nav-link" href="#muslims"><i class="fa-solid fa-mosque"></i> <span class="i18n" data-ar="المسلمون" data-en="Muslims">المسلمون</span></a>
+        <a class="nav-link" href="#christians"><i class="fa-solid fa-cross"></i> <span class="i18n" data-ar="المسيحيون" data-en="Christians">المسيحيون</span></a>
+        <a class="nav-link" href="#charts"><i class="fa-solid fa-chart-line"></i> <span class="i18n" data-ar="الرسوم البيانية" data-en="Charts">الرسوم البيانية</span></a>
+        <a class="nav-link" href="#future"><i class="fa-solid fa-calendar-days"></i> <span class="i18n" data-ar="التوقعات" data-en="Forecasts">التوقعات</span></a>
+        <a class="nav-link" href="#faq"><i class="fa-solid fa-circle-question"></i> <span class="i18n" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</span></a>
+        <a class="nav-link" href="#articles"><i class="fa-solid fa-pen-nib"></i> <span class="i18n" data-ar="كلمات يبحث عنها الناس" data-en="Search phrases">كلمات يبحث عنها الناس</span></a>
+        <a class="nav-link" href="#sources"><i class="fa-solid fa-book"></i> <span class="i18n" data-ar="المصادر" data-en="Sources">المصادر</span></a>
+        <a class="nav-link" href="#about"><i class="fa-solid fa-circle-user"></i> <span class="i18n" data-ar="حول الموقع" data-en="About">حول الموقع</span></a>
+        <a class="nav-link" href="#privacy"><i class="fa-solid fa-shield-halved"></i> <span class="i18n" data-ar="الخصوصية" data-en="Privacy">الخصوصية</span></a>
+        <a class="nav-link" href="#contact"><i class="fa-solid fa-envelope"></i> <span class="i18n" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</span></a>
       </nav>
 
       <div class="box">
-        <h3 id="quickTitle">ملخص سريع</h3>
+        <h3 class="i18n" data-ar="ملخص سريع" data-en="Quick facts">ملخص سريع</h3>
         <div class="stat-chip">
           <div class="icon"><i class="fa-solid fa-mosque blue"></i></div>
           <div>
-            <span class="label" data-i18n="side_muslims">المسلمون</span>
-            <div class="value blue" id="sideMuslimValue">≈ 2.1B</div>
+            <span class="label i18n" data-ar="عدد المسلمين حاليا" data-en="Current Muslims">عدد المسلمين حاليا</span>
+            <div class="value blue">2.0–2.1B</div>
           </div>
         </div>
 
         <div class="stat-chip">
           <div class="icon"><i class="fa-solid fa-cross green"></i></div>
           <div>
-            <span class="label" data-i18n="side_christians">المسيحيون</span>
-            <div class="value green" id="sideChristianValue">≈ 2.7B</div>
+            <span class="label i18n" data-ar="عدد المسيحيين حاليا" data-en="Current Christians">عدد المسيحيين حاليا</span>
+            <div class="value green">2.7B</div>
           </div>
         </div>
 
-        <div class="quick-note" id="sideNote">
-          المنصة مخصصة لعرض البيانات بشكل واضح ومنظم، مع فلاتر وجداول ورسوم تفاعلية لقراءة أسرع.
+        <div class="quick-note i18n" data-ar="الصفحة تعرض عدد المسلمين 2026 وعدد المسيحيين 2026 مع مقارنة واضحة ومصادر موثوقة." data-en="This page shows Muslim and Christian numbers for 2026 with clear comparison and trusted sources.">
+          الصفحة تعرض عدد المسلمين 2026 وعدد المسيحيين 2026 مع مقارنة واضحة ومصادر موثوقة.
         </div>
       </div>
 
       <div class="box">
-        <h3 id="linksTitle">روابط سريعة</h3>
-        <div class="quick-note" id="linksNote">
-          <a href="about.html" style="text-decoration:none; display:block; margin-bottom:8px;"><i class="fa-solid fa-circle-info"></i> <span data-i18n="nav_about">من نحن</span></a>
-          <a href="privacy.html" style="text-decoration:none; display:block; margin-bottom:8px;"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="nav_privacy">سياسة الخصوصية</span></a>
-          <a href="contact.html" style="text-decoration:none; display:block;"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">اتصل بنا</span></a>
+        <h3 class="i18n" data-ar="معلومة" data-en="Note">معلومة</h3>
+        <div class="quick-note i18n" data-ar="يمكنك لاحقًا ربط هذه الصفحة بقاعدة بيانات أو API دون تغيير التصميم." data-en="You can later connect this page to a database or API without changing the design.">
+          يمكنك لاحقًا ربط هذه الصفحة بقاعدة بيانات أو API دون تغيير التصميم.
         </div>
       </div>
     </aside>
 
-    <main class="content" id="mainContent">
+    <main class="content" id="content">
       <section class="hero" id="home">
         <div class="hero-top">
           <div>
-            <div class="section-label"><i class="fa-solid fa-chart-simple"></i> <span data-i18n="hero_label">منصة إحصائية متخصصة</span></div>
-            <h1 id="heroTitle">Muslim &amp; Christian Numbers</h1>
-            <p class="subtitle" id="heroSubtitle">إحصائيات دقيقة وتفاعلية لعدد المسلمين والمسيحيين حول العالم</p>
-            <p class="desc" id="heroDesc">
-              واجهة مرتبة وهادئة تعرض الأرقام الأساسية، المقارنة المباشرة، التوزيع القاري، والاتجاهات الزمنية،
-              مع تصميم احترافي مناسب للنشر العالمي وسهل القراءة على الجوال والكمبيوتر.
+            <div class="section-label i18n" data-ar="إحصائيات المسلمين والمسيحيين 2026" data-en="Muslim & Christian statistics 2026">
+              <i class="fa-solid fa-chart-simple"></i> إحصائيات المسلمين والمسيحيين 2026
+            </div>
+            <h1 class="i18n" data-ar="عدد المسلمين 2026 وعدد المسيحيين 2026" data-en="Muslim number 2026 and Christian number 2026">
+              عدد المسلمين 2026 وعدد المسيحيين 2026
+            </h1>
+            <p class="subtitle i18n" data-ar="كم عدد المسلمين في العالم 2026؟ كم عدد المسيحيين في العالم 2026؟ هنا تجد الأرقام الأساسية، المقارنة، والتوزيع القاري بشكل مباشر." data-en="How many Muslims are there in the world in 2026? How many Christians are there in the world in 2026? Here you find the core numbers, comparison, and continental distribution.">
+              كم عدد المسلمين في العالم 2026؟ كم عدد المسيحيين في العالم 2026؟ هنا تجد الأرقام الأساسية، المقارنة، والتوزيع القاري بشكل مباشر.
+            </p>
+            <p class="desc i18n" data-ar="الصفحة تركّز على عدد المسلمين 2026 وعدد المسيحيين 2026، وتعرض عدد المسلمين حاليا وعدد المسيحيين حاليا، مع جداول ورسوم ومصادر موثوقة." data-en="The page focuses on Muslim and Christian numbers for 2026, showing current counts, tables, charts, and trusted sources.">
+              الصفحة تركّز على عدد المسلمين 2026 وعدد المسيحيين 2026، وتعرض عدد المسلمين حاليا وعدد المسيحيين حاليا، مع جداول ورسوم ومصادر موثوقة.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#overview" id="btnExplore"><i class="fa-solid fa-arrow-down"></i> استكشاف البيانات</a>
-              <a class="btn btn-secondary" href="#sources" id="btnSources"><i class="fa-solid fa-book-open"></i> عرض المصادر</a>
+              <a class="btn btn-primary" href="#overview"><i class="fa-solid fa-arrow-down"></i> <span class="i18n" data-ar="استكشاف الأرقام" data-en="Explore numbers">استكشاف الأرقام</span></a>
+              <a class="btn btn-secondary" href="#sources"><i class="fa-solid fa-book-open"></i> <span class="i18n" data-ar="عرض المصادر" data-en="View sources">عرض المصادر</span></a>
             </div>
           </div>
 
           <div class="hero-badges">
-            <span class="badge"><i class="fa-solid fa-bolt"></i> <span data-i18n="badge_fast">انتقال سلس</span></span>
-            <span class="badge"><i class="fa-solid fa-chart-column"></i> <span data-i18n="badge_charts">رسوم تفاعلية</span></span>
-            <span class="badge"><i class="fa-solid fa-globe"></i> <span data-i18n="badge_filter">فلتر قاري</span></span>
-            <span class="badge"><i class="fa-solid fa-shield"></i> <span data-i18n="badge_order">عرض منظم</span></span>
+            <span class="badge"><i class="fa-solid fa-bolt"></i> <span class="i18n" data-ar="انتقال سلس" data-en="Smooth nav">انتقال سلس</span></span>
+            <span class="badge"><i class="fa-solid fa-chart-column"></i> <span class="i18n" data-ar="رسوم تفاعلية" data-en="Interactive charts">رسوم تفاعلية</span></span>
+            <span class="badge"><i class="fa-solid fa-globe"></i> <span class="i18n" data-ar="توزيع قاري" data-en="Continental spread">توزيع قاري</span></span>
+            <span class="badge"><i class="fa-solid fa-shield"></i> <span class="i18n" data-ar="عرض منظم" data-en="Structured view">عرض منظم</span></span>
           </div>
         </div>
       </section>
 
       <div class="search-box" role="search" aria-label="البحث داخل الموقع">
-        <input type="text" id="searchInput" placeholder="ابحث داخل الأقسام أو العناوين...">
+        <input type="text" id="searchInput" placeholder="ابحث: عدد المسلمين 2026، عدد المسيحيين 2026، كم عدد المسلمين في العالم...">
         <div class="no-results" id="noResults">لا توجد نتائج مطابقة.</div>
       </div>
 
@@ -1086,119 +1026,122 @@
         <div class="card" style="opacity:1; transform:none;">
           <div class="ad-box">
             <div class="ad-label">مساحة إعلان</div>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-7325491248571551"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            <div class="quick-note">ضع كود AdSense هنا إذا أردت تفعيل الإعلان داخل هذه المساحة.</div>
           </div>
         </div>
 
         <article class="card" id="overview">
-          <h2 data-i18n="overview_title">نظرة عامة</h2>
-          <p class="sub" data-i18n="overview_desc">ملخص سريع وواضح للأرقام الأساسية، مع إبراز الفارق العام بين المسلمين والمسيحيين.</p>
+          <h2 class="i18n" data-ar="نظرة عامة" data-en="Overview">نظرة عامة</h2>
+          <p class="sub i18n" data-ar="هذه الصفحة تعرض عدد المسلمين 2026 وعدد المسيحيين 2026، مع النسبة العالمية لكل فئة بطريقة مباشرة وواضحة." data-en="This page shows the 2026 Muslim and Christian numbers, plus each group’s share of the world population.">
+            هذه الصفحة تعرض عدد المسلمين 2026 وعدد المسيحيين 2026، مع النسبة العالمية لكل فئة بطريقة مباشرة وواضحة.
+          </p>
 
           <div class="stats">
             <div class="stat">
-              <div class="label"><i class="fa-solid fa-mosque blue"></i> <span data-i18n="muslims_label">المسلمون</span></div>
-              <div class="value blue" id="muslimCount">2.1B</div>
-              <div class="mini" data-i18n="muslims_mini">إحصائية عالمية تقريبية لعام 2026</div>
+              <div class="label"><i class="fa-solid fa-mosque blue"></i> <span class="i18n" data-ar="عدد المسلمين 2026" data-en="Muslim number 2026">عدد المسلمين 2026</span></div>
+              <div class="value blue" id="muslimCount">2.0–2.1B</div>
+              <div class="mini i18n" data-ar="حوالي 2 إلى 2.1 مليار مسلم" data-en="About 2 to 2.1 billion Muslims">حوالي 2 إلى 2.1 مليار مسلم</div>
             </div>
 
             <div class="stat">
-              <div class="label"><i class="fa-solid fa-cross green"></i> <span data-i18n="christians_label">المسيحيون</span></div>
+              <div class="label"><i class="fa-solid fa-cross green"></i> <span class="i18n" data-ar="عدد المسيحيين 2026" data-en="Christian number 2026">عدد المسيحيين 2026</span></div>
               <div class="value green" id="christianCount">2.7B</div>
-              <div class="mini" data-i18n="christians_mini">إحصائية عالمية تقريبية لعام 2026</div>
+              <div class="mini i18n" data-ar="حوالي 2.7 مليار مسيحي" data-en="About 2.7 billion Christians">حوالي 2.7 مليار مسيحي</div>
             </div>
           </div>
         </article>
 
         <article class="card" id="compare">
-          <h2 data-i18n="compare_title">المقارنة السريعة</h2>
-          <p class="sub" data-i18n="compare_desc">هذه البطاقات تختصر القراءة وتمنح الزائر لمحة مباشرة قبل الدخول للتفاصيل.</p>
+          <h2 class="i18n" data-ar="المقارنة" data-en="Comparison">المقارنة</h2>
+          <p class="sub i18n" data-ar="المقارنة هنا مختصرة وواضحة: عدد المسلمين 2026 يقارب 2 إلى 2.1 مليار، وعدد المسيحيين 2026 يقارب 2.7 مليار." data-en="The comparison here is direct: the Muslim number for 2026 is about 2 to 2.1 billion, and the Christian number is about 2.7 billion.">
+            المقارنة هنا مختصرة وواضحة: عدد المسلمين 2026 يقارب 2 إلى 2.1 مليار، وعدد المسيحيين 2026 يقارب 2.7 مليار.
+          </p>
 
           <div class="kpis">
             <div class="kpi">
-              <div class="t" data-i18n="gap_label">الفارق التقريبي بين الفئتين</div>
-              <div class="n gold">≈ 600M</div>
-            </div>
-            <div class="kpi">
-              <div class="t" data-i18n="world_share_label">النسبة من سكان العالم</div>
+              <div class="t i18n" data-ar="النسبة من سكان العالم" data-en="Share of world population">النسبة من سكان العالم</div>
               <div class="n blue">25% / 33%</div>
             </div>
             <div class="kpi">
-              <div class="t" data-i18n="type_label">نوع العرض</div>
-              <div class="n green" data-i18n="interactive">تفاعلي</div>
+              <div class="t i18n" data-ar="عدد المسلمين حاليا" data-en="Current Muslim count">عدد المسلمين حاليا</div>
+              <div class="n gold">2.0–2.1B</div>
             </div>
             <div class="kpi">
-              <div class="t" data-i18n="update_label">تحديث المحتوى</div>
-              <div class="n gold">2026</div>
+              <div class="t i18n" data-ar="عدد المسيحيين حاليا" data-en="Current Christian count">عدد المسيحيين حاليا</div>
+              <div class="n green">2.7B</div>
+            </div>
+            <div class="kpi">
+              <div class="t i18n" data-ar="نوع المحتوى" data-en="Content type">نوع المحتوى</div>
+              <div class="n gold">SEO + Data</div>
             </div>
           </div>
         </article>
 
         <article class="card" id="muslims">
-          <h2 data-i18n="muslims_title">المسلمون</h2>
-          <p class="sub" data-i18n="muslims_desc">
-            توزيع قاري تقريبي يوضح أين يتركز المسلمون حول العالم. الأرقام هنا تعرض الصورة العامة الحالية،
-            بينما الفلتر بالأسفل يبدّل بين القارات بطريقة تفاعلية.
+          <h2 class="i18n" data-ar="عدد المسلمين 2026" data-en="Muslim number 2026">عدد المسلمين 2026</h2>
+          <p class="sub i18n" data-ar="عدد المسلمين في العالم 2026 يقترب من 2 إلى 2.1 مليار. المسلمون يتركزون أساسًا في آسيا، ثم أفريقيا، مع وجود مجتمعات أصغر في أوروبا والأمريكتين وأوقيانوسيا." data-en="The Muslim number in 2026 is about 2 to 2.1 billion. Muslims are concentrated mainly in Asia, then Africa, with smaller communities in Europe, the Americas, and Oceania.">
+            عدد المسلمين في العالم 2026 يقترب من 2 إلى 2.1 مليار. المسلمون يتركزون أساسًا في آسيا، ثم أفريقيا، مع وجود مجتمعات أصغر في أوروبا والأمريكتين وأوقيانوسيا.
           </p>
-          <div class="table-wrap" aria-label="جدول توزيع المسلمين">
+
+          <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th data-i18n="continent">القارة</th>
-                  <th data-i18n="count">العدد التقريبي</th>
-                  <th data-i18n="note">ملاحظة</th>
+                  <th class="i18n" data-ar="القارة" data-en="Continent">القارة</th>
+                  <th class="i18n" data-ar="العدد التقريبي" data-en="Approx. count">العدد التقريبي</th>
+                  <th class="i18n" data-ar="ملاحظة" data-en="Note">ملاحظة</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>آسيا</td><td>1.25 مليار</td><td data-i18n="largest_block">الكتلة الأكبر</td></tr>
-                <tr><td>أفريقيا</td><td>450 مليون</td><td data-i18n="high_growth">نمو مرتفع</td></tr>
-                <tr><td>أوروبا</td><td>60 مليون</td><td data-i18n="lower_share">نسبة أقل</td></tr>
-                <tr><td>أمريكا الشمالية</td><td>8 مليون</td><td data-i18n="urban_clusters">تجمعات حضرية</td></tr>
-                <tr><td>أمريكا الجنوبية</td><td>2 مليون</td><td data-i18n="less_spread">أقل انتشاراً</td></tr>
-                <tr><td>أوقيانوسيا</td><td>1 مليون</td><td data-i18n="small_cluster">تجمع صغير</td></tr>
+                <tr><td>آسيا</td><td>1.25 مليار</td><td class="i18n" data-ar="الكتلة الأكبر" data-en="Largest share">الكتلة الأكبر</td></tr>
+                <tr><td>أفريقيا</td><td>450 مليون</td><td class="i18n" data-ar="انتشار واسع" data-en="Wide presence">انتشار واسع</td></tr>
+                <tr><td>أوروبا</td><td>60 مليون</td><td class="i18n" data-ar="حضور محدود" data-en="Limited presence">حضور محدود</td></tr>
+                <tr><td>أمريكا الشمالية</td><td>8 مليون</td><td class="i18n" data-ar="مجتمعات حضرية" data-en="Urban communities">مجتمعات حضرية</td></tr>
+                <tr><td>أمريكا الجنوبية</td><td>2 مليون</td><td class="i18n" data-ar="حضور صغير" data-en="Small presence">حضور صغير</td></tr>
+                <tr><td>أوقيانوسيا</td><td>1 مليون</td><td class="i18n" data-ar="أقل عددًا" data-en="Smallest share">أقل عددًا</td></tr>
               </tbody>
             </table>
           </div>
         </article>
 
         <article class="card" id="christians">
-          <h2 data-i18n="christians_title">المسيحيون</h2>
-          <p class="sub" data-i18n="christians_desc">
-            توزيع قاري تقريبي للمسيحيين حول العالم، مع إبراز مناطق الثقل الرئيسية تاريخياً وحديثاً.
+          <h2 class="i18n" data-ar="عدد المسيحيين 2026" data-en="Christian number 2026">عدد المسيحيين 2026</h2>
+          <p class="sub i18n" data-ar="عدد المسيحيين في العالم 2026 يقدَّر بحوالي 2.7 مليار. وتظهر أفريقيا جنوب الصحراء كأبرز منطقة زيادة في عدد المسيحيين وفق Pew 2025، بينما تختلف تقديرات الصين ولا نضعها هنا كادعاء ثابت للنمو." data-en="The Christian number in 2026 is about 2.7 billion. Sub-Saharan Africa stands out as the largest area of increase according to Pew 2025, while estimates for China vary and are not treated here as a fixed growth claim.">
+            عدد المسيحيين في العالم 2026 يقدَّر بحوالي 2.7 مليار. وتظهر أفريقيا جنوب الصحراء كأبرز منطقة زيادة في عدد المسيحيين وفق Pew 2025، بينما تختلف تقديرات الصين ولا نضعها هنا كادعاء ثابت للنمو.
           </p>
-          <div class="table-wrap" aria-label="جدول توزيع المسيحيين">
-            <table>
-              <thead>
-                <tr>
-                  <th data-i18n="continent">القارة</th>
-                  <th data-i18n="count">العدد التقريبي</th>
-                  <th data-i18n="note">ملاحظة</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>أفريقيا</td><td>750 مليون</td><td data-i18n="growth_engine">محرك النمو</td></tr>
-                <tr><td>أمريكا اللاتينية</td><td>620 مليون</td><td data-i18n="large_base">قاعدة ضخمة</td></tr>
-                <tr><td>أوروبا</td><td>550 مليون</td><td data-i18n="relative_decline">تراجع نسبي</td></tr>
-                <tr><td>آسيا</td><td>420 مليون</td><td data-i18n="wide_spread">انتشار واسع</td></tr>
-                <tr><td>أمريكا الشمالية</td><td>280 مليون</td><td data-i18n="relatively_stable">ثابت نسبياً</td></tr>
-                <tr><td>أوقيانوسيا</td><td>30 مليون</td><td data-i18n="small_relative">صغيرة نسبياً</td></tr>
-              </tbody>
-            </table>
+
+          <div class="panel-links">
+            <div class="mini-panel">
+              <h3 class="i18n" data-ar="أبرز منطقة زيادة" data-en="Largest area of increase">أبرز منطقة زيادة</h3>
+              <p class="i18n" data-ar="أفريقيا جنوب الصحراء هي المنطقة الأوضح في زيادة عدد المسيحيين بحسب Pew 2025." data-en="Sub-Saharan Africa is the clearest area of increase according to Pew 2025.">
+                أفريقيا جنوب الصحراء هي المنطقة الأوضح في زيادة عدد المسيحيين بحسب Pew 2025.
+              </p>
+            </div>
+            <div class="mini-panel">
+              <h3 class="i18n" data-ar="ملاحظة عن الصين" data-en="Note on China">ملاحظة عن الصين</h3>
+              <p class="i18n" data-ar="تقديرات المسيحيين في الصين تختلف حسب المصدر، لذلك لا نعرضها هنا كرقم نمو ثابت." data-en="Christian estimates in China vary by source, so we do not present them here as a fixed growth claim.">
+                تقديرات المسيحيين في الصين تختلف حسب المصدر، لذلك لا نعرضها هنا كرقم نمو ثابت.
+              </p>
+            </div>
+            <div class="mini-panel">
+              <h3 class="i18n" data-ar="ماذا تعرض الصفحة؟" data-en="What does the page show?">ماذا تعرض الصفحة؟</h3>
+              <p class="i18n" data-ar="عدد المسيحيين حاليا، عدد المسيحيين 2026، والمصادر التي يمكن الرجوع إليها." data-en="Current Christian count, Christian number 2026, and sources to verify them.">
+                عدد المسيحيين حاليا، عدد المسيحيين 2026، والمصادر التي يمكن الرجوع إليها.
+              </p>
+            </div>
           </div>
         </article>
 
         <article class="card" id="charts">
-          <h2 data-i18n="charts_title">الرسوم البيانية التفاعلية</h2>
+          <h2 class="i18n" data-ar="الرسوم البيانية" data-en="Charts">الرسوم البيانية</h2>
+          <p class="sub i18n" data-ar="الرسوم هنا توضّح عدد المسلمين 2026 وعدد المسيحيين 2026 والنسبة العالمية لكل فئة." data-en="These charts show Muslim and Christian numbers for 2026 and each group’s world share.">
+            الرسوم هنا توضّح عدد المسلمين 2026 وعدد المسيحيين 2026 والنسبة العالمية لكل فئة.
+          </p>
 
           <div class="filter-row">
-            <label for="continentSelect" data-i18n="choose_continent">اختر القارة:</label>
-            <select id="continentSelect" aria-label="اختر القارة">
-              <option value="global" data-i18n="global">العالم</option>
+            <label for="continentSelect" class="i18n" data-ar="اختر القارة:" data-en="Choose continent:">اختر القارة:</label>
+            <select id="continentSelect">
+              <option value="global">العالم</option>
               <option value="asia">آسيا</option>
               <option value="africa">أفريقيا</option>
               <option value="europe">أوروبا</option>
@@ -1210,180 +1153,146 @@
 
           <div class="charts">
             <div class="chart-box">
-              <h3 id="chartTitle">مقارنة عالمية مباشرة</h3>
-              <div class="chart-frame">
-                <canvas id="barChart" aria-label="مخطط أعمدة مقارنة عدد المسلمين والمسيحيين" role="img"></canvas>
-              </div>
+              <h3 id="chartTitle" class="i18n" data-ar="مقارنة عالمية مباشرة" data-en="Global comparison">مقارنة عالمية مباشرة</h3>
+              <canvas id="barChart" aria-label="مخطط أعمدة مقارنة عدد المسلمين والمسيحيين" role="img"></canvas>
             </div>
             <div class="chart-box">
-              <h3 data-i18n="trend_title">الاتجاه بين 2020 و 2026</h3>
-              <div class="chart-frame">
-                <canvas id="lineChart" aria-label="مخطط خطي يوضح الاتجاه بين 2020 و 2026" role="img"></canvas>
-              </div>
+              <h3 class="i18n" data-ar="نسبة المسلمين والمسيحيين عالميًا" data-en="Global share of Muslims and Christians">نسبة المسلمين والمسيحيين عالميًا</h3>
+              <canvas id="doughnutChart" aria-label="مخطط دائري يوضح النسبة العالمية" role="img"></canvas>
             </div>
             <div class="chart-box">
-              <h3 data-i18n="pie_title">المخطط الدائري</h3>
-              <div class="chart-frame">
-                <canvas id="pieChart" aria-label="مخطط دائري يوضح النسب العالمية" role="img"></canvas>
-              </div>
+              <h3 class="i18n" data-ar="الاتجاه بين 2020 و 2026" data-en="Trend from 2020 to 2026">الاتجاه بين 2020 و 2026</h3>
+              <canvas id="lineChart" aria-label="مخطط خطي يوضح الاتجاه بين 2020 و 2026" role="img"></canvas>
             </div>
           </div>
-        </article>
-
-        <article class="card" id="map">
-          <h2 data-i18n="map_title">الخريطة القارية</h2>
-          <p class="sub" data-i18n="map_desc">
-            عرض قاري مبسّط وسريع يوضح التوزيع العام للمسلمين والمسيحيين في أهم مناطق العالم.
-          </p>
-
-          <div class="map-grid">
-            <div class="continent-card">
-              <div class="head"><b>آسيا</b><span class="percent">59%</span></div>
-              <div class="bar"><span style="width:59%"></span></div>
-              <small>أكبر كتلة للمسلمين، وحضور مهم للمسيحيين في عدة مناطق.</small>
-            </div>
-            <div class="continent-card">
-              <div class="head"><b>أفريقيا</b><span class="percent">18%</span></div>
-              <div class="bar"><span style="width:18%"></span></div>
-              <small>نمو واضح في الديانتين، مع حضور ديموغرافي متزايد.</small>
-            </div>
-            <div class="continent-card">
-              <div class="head"><b>أوروبا</b><span class="percent">12%</span></div>
-              <div class="bar"><span style="width:12%"></span></div>
-              <small>نسبة أقل للمسلمين، مع ثقل تاريخي للمسيحية.</small>
-            </div>
-            <div class="continent-card">
-              <div class="head"><b>أمريكا الشمالية</b><span class="percent">6%</span></div>
-              <div class="bar"><span style="width:6%"></span></div>
-              <small>تجمعات حضرية متنوعة ونمو تدريجي في الجاليات.</small>
-            </div>
-            <div class="continent-card">
-              <div class="head"><b>أمريكا اللاتينية</b><span class="percent">4%</span></div>
-              <div class="bar"><span style="width:4%"></span></div>
-              <small>ثقل مسيحي تاريخي كبير مع تنوع ديني متزايد.</small>
-            </div>
-            <div class="continent-card">
-              <div class="head"><b>أوقيانوسيا</b><span class="percent">1%</span></div>
-              <div class="bar"><span style="width:1%"></span></div>
-              <small>انتشار محدود نسبيًا، لكنه حاضر ومتنوع.</small>
-            </div>
-          </div>
-
-          <p class="note" data-i18n="map_note">
-            هذه الخريطة القارية مبسطة ومناسبة للعرض السريع. يمكنك لاحقًا استبدالها بخريطة تفاعلية كاملة عند ربط الموقع ببيانات حيّة.
-          </p>
         </article>
 
         <article class="card" id="future">
-          <h2 data-i18n="future_title">التوقعات المستقبلية</h2>
-          <p class="sub" data-i18n="future_desc">
-            فصل واضح بين الأرقام الحالية والتوقعات القادمة لعرض البيانات بشكل مهني ومنظم.
+          <h2 class="i18n" data-ar="التوقعات المستقبلية" data-en="Future projections">التوقعات المستقبلية</h2>
+          <p class="sub i18n" data-ar="هذه الأرقام تفصل بين الوضع الحالي والتوقعات القادمة." data-en="These figures separate the current situation from future projections.">
+            هذه الأرقام تفصل بين الوضع الحالي والتوقعات القادمة.
           </p>
           <div class="timeline">
             <div class="time-card">
               <div class="year">2030</div>
               <div class="big blue">2.2B</div>
-              <div class="quick-note" data-i18n="muslims_only">المسلمون</div>
+              <div class="quick-note i18n" data-ar="المسلمون" data-en="Muslims">المسلمون</div>
             </div>
             <div class="time-card">
               <div class="year">2035</div>
               <div class="big blue">2.4B</div>
-              <div class="quick-note" data-i18n="muslims_only">المسلمون</div>
+              <div class="quick-note i18n" data-ar="المسلمون" data-en="Muslims">المسلمون</div>
             </div>
             <div class="time-card">
               <div class="year">2050</div>
               <div class="big green">2.8B</div>
-              <div class="quick-note" data-i18n="muslims_only">المسلمون</div>
+              <div class="quick-note i18n" data-ar="المسلمون" data-en="Muslims">المسلمون</div>
             </div>
             <div class="time-card">
               <div class="year">2050</div>
               <div class="big green">3.3B</div>
-              <div class="quick-note" data-i18n="christians_only">المسيحيون</div>
+              <div class="quick-note i18n" data-ar="المسيحيون" data-en="Christians">المسيحيون</div>
             </div>
           </div>
         </article>
 
         <article class="card" id="articles">
-          <h2 data-i18n="articles_title">مقالات وتحليل SEO</h2>
-          <p class="sub" data-i18n="articles_desc">
-            هذه الفقرة تدعم الظهور في محركات البحث عبر محتوى نصي أصيل يشرح الأرقام بشكل مبسط وواضح.
+          <h2 class="i18n" data-ar="كلمات يبحث عنها الناس" data-en="Search phrases">كلمات يبحث عنها الناس</h2>
+          <p class="sub i18n" data-ar="هذا القسم يساعد على الظهور الطبيعي في البحث لأنه يضع الكلمات التي يكتبها الزائر داخل محتوى واضح ومفهوم." data-en="This section helps search visibility by placing the phrases people type into clear, readable content.">
+            هذا القسم يساعد على الظهور الطبيعي في البحث لأنه يضع الكلمات التي يكتبها الزائر داخل محتوى واضح ومفهوم.
           </p>
 
           <div class="two-cols">
             <div class="info-list">
               <div class="info-item">
-                <i class="fa-solid fa-pen-nib"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <div>
-                  <b data-i18n="article1_title">كم عدد المسلمين في العالم 2026؟</b>
-                  <span data-i18n="article1_body">
-                    يبلغ عدد المسلمين حوالي 2.1 مليار نسمة، ويتركزون بشكل رئيسي في آسيا وأفريقيا،
-                    مع انتشار ملحوظ في أوروبا والأمريكيتين.
-                  </span>
+                  <b>عدد المسلمين 2026</b>
+                  <span>عدد المسلمين 2026 يقترب من 2 إلى 2.1 مليار، وهو الرقم الذي يبحث عنه كثير من الزوار.</span>
                 </div>
               </div>
 
               <div class="info-item">
-                <i class="fa-solid fa-pen-nib"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <div>
-                  <b data-i18n="article2_title">عدد المسيحيين عالميًا</b>
-                  <span data-i18n="article2_body">
-                    تُعد المسيحية أكبر ديانة في العالم بحوالي 2.7 مليار شخص، مع ثقل تاريخي كبير
-                    في أوروبا والأمريكتين، ونمو واضح في أجزاء من أفريقيا.
-                  </span>
+                  <b>عدد المسيحيين 2026</b>
+                  <span>عدد المسيحيين 2026 يقدَّر بحوالي 2.7 مليار، مع شرح مباشر داخل الصفحة.</span>
                 </div>
               </div>
 
               <div class="info-item">
-                <i class="fa-solid fa-pen-nib"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <div>
-                  <b data-i18n="article3_title">أهمية المحتوى النصي للموقع</b>
-                  <span data-i18n="article3_body">
-                    إضافة المقالات والحقائق المختصرة يزيد من فرص ظهور الموقع في نتائج البحث
-                    ويعطي الزائر سياقًا أوضح حول الأرقام المعروضة.
-                  </span>
+                  <b>كم عدد المسلمين في العالم</b>
+                  <span>الصفحة تعطي إجابة مباشرة: حوالي 2 إلى 2.1 مليار مسلم.</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div>
+                  <b>كم عدد المسيحيين في العالم</b>
+                  <span>الصفحة تعطي إجابة مباشرة: حوالي 2.7 مليار مسيحي.</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <div>
+                  <b>عدد المسلمين حاليا / عدد المسيحيين حاليا</b>
+                  <span>تم وضع هذه العبارات داخل المحتوى بشكل طبيعي لتظهر بوضوح لمحركات البحث وللقارئ.</span>
                 </div>
               </div>
             </div>
 
             <div class="ad-box" style="align-self:start">
-              <div class="ad-label">مساحة محتوى إضافي</div>
-              <div class="quick-note" data-i18n="extra_note">
-                يمكنك لاحقًا تحويل هذا القسم إلى مدونة مصغرة أو أخبار إحصائية أسبوعية.
+              <div class="ad-label">محتوى إضافي</div>
+              <div class="quick-note">
+                إذا رغبت في نسخة ثانية، يمكن إضافة صفحة إنجليزية كاملة، وخريطة قارية، ونموذج بيانات مباشر.
               </div>
             </div>
           </div>
         </article>
 
         <article class="card" id="faq">
-          <h2 data-i18n="faq_title">الأسئلة الشائعة</h2>
-          <p class="sub" data-i18n="faq_desc">إجابات سريعة ومختصرة تساعد الزائر وتدعم الظهور الغني في محركات البحث.</p>
+          <h2 class="i18n" data-ar="الأسئلة الشائعة" data-en="Frequently asked questions">الأسئلة الشائعة</h2>
+          <p class="sub i18n" data-ar="إجابات قصيرة ومباشرة تساعد الزائر وتخدم الظهور في البحث." data-en="Short direct answers that help visitors and support search visibility.">
+            إجابات قصيرة ومباشرة تساعد الزائر وتخدم الظهور في البحث.
+          </p>
 
           <details class="faq">
-            <summary data-i18n="faq1_q">هل الأرقام ثابتة أم تقريبية؟</summary>
-            <div class="faq-body" data-i18n="faq1_a">
-              الأرقام المعروضة هنا تقريبية ومناسبة للعرض التفاعلي، ويمكن لاحقًا ربطها بمصدر بيانات مباشر أو API.
+            <summary class="i18n" data-ar="كم عدد المسلمين في العالم 2026؟" data-en="How many Muslims are there in the world in 2026?">كم عدد المسلمين في العالم 2026؟</summary>
+            <div class="faq-body i18n" data-ar="عدد المسلمين في العالم 2026 يقترب من 2 إلى 2.1 مليار." data-en="The Muslim number in the world for 2026 is about 2 to 2.1 billion.">
+              عدد المسلمين في العالم 2026 يقترب من 2 إلى 2.1 مليار.
             </div>
           </details>
 
           <details class="faq">
-            <summary data-i18n="faq2_q">هل يمكن إضافة صفحة عربية وإنجليزية؟</summary>
-            <div class="faq-body" data-i18n="faq2_a">
-              نعم، يمكن بسهولة تحويل الصفحة إلى نظام متعدد اللغات مع نفس البنية والتصميم.
+            <summary class="i18n" data-ar="كم عدد المسيحيين في العالم 2026؟" data-en="How many Christians are there in the world in 2026?">كم عدد المسيحيين في العالم 2026؟</summary>
+            <div class="faq-body i18n" data-ar="عدد المسيحيين في العالم 2026 يقدَّر بحوالي 2.7 مليار." data-en="The Christian number in the world for 2026 is about 2.7 billion.">
+              عدد المسيحيين في العالم 2026 يقدَّر بحوالي 2.7 مليار.
             </div>
           </details>
 
           <details class="faq">
-            <summary data-i18n="faq3_q">هل الرسوم البيانية تعمل على الجوال؟</summary>
-            <div class="faq-body" data-i18n="faq3_a">
-              نعم، التصميم متجاوب بالكامل، والرسوم والجداول والقائمة الجانبية تتكيف مع الشاشات الصغيرة.
+            <summary class="i18n" data-ar="عدد مسلمين 2026 أو عدد مسيحين 2026؟" data-en="Muslim number 2026 or Christian number 2026?">عدد مسلمين 2026 أو عدد مسيحين 2026؟</summary>
+            <div class="faq-body i18n" data-ar="العبارتان تظهران داخل الصفحة بشكل طبيعي: عدد المسلمين 2026 وعدد المسيحيين 2026." data-en="Both phrases are included naturally on the page: Muslim number 2026 and Christian number 2026.">
+              العبارتان تظهران داخل الصفحة بشكل طبيعي: عدد المسلمين 2026 وعدد المسيحيين 2026.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary class="i18n" data-ar="هل الرسوم البيانية مناسبة للجوال؟" data-en="Are the charts mobile-friendly?">هل الرسوم البيانية مناسبة للجوال؟</summary>
+            <div class="faq-body i18n" data-ar="نعم، التصميم متجاوب، والرسوم والقوائم والأزرار تتكيف مع الجوال والتابلت والكمبيوتر." data-en="Yes, the design is responsive, and charts, menus, and buttons adapt to mobile, tablet, and desktop.">
+              نعم، التصميم متجاوب، والرسوم والقوائم والأزرار تتكيف مع الجوال والتابلت والكمبيوتر.
             </div>
           </details>
         </article>
 
         <article class="card" id="sources">
-          <h2 data-i18n="sources_title">المصادر العالمية</h2>
-          <p class="sub" data-i18n="sources_desc">
-            مراجع ديموغرافية معروفة لتوسيع السياق، مع إبقاء عرض الأرقام الحالية منفصلًا عن التوقعات المستقبلية.
+          <h2 class="i18n" data-ar="المصادر" data-en="Sources">المصادر</h2>
+          <p class="sub i18n" data-ar="اعتمدت الصفحة على مصادر موثوقة لمتابعة عدد المسلمين 2026 وعدد المسيحيين 2026 والتغيرات العالمية." data-en="This page relies on trusted sources for the 2026 Muslim and Christian numbers and global changes.">
+            اعتمدت الصفحة على مصادر موثوقة لمتابعة عدد المسلمين 2026 وعدد المسيحيين 2026 والتغيرات العالمية.
           </p>
 
           <div class="source-grid">
@@ -1395,43 +1304,27 @@
               </div>
             </a>
 
-            <a class="source" href="https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/PR_2025.06.09_global-religious-change_report.pdf" target="_blank" rel="noopener">
+            <a class="source" href="https://www.pewresearch.org/religion/2025/06/09/christian-population-change/" target="_blank" rel="noopener">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
               <div>
-                <b>Pew Research Center PDF (2025)</b>
-                <small>التقرير الكامل مع المنهجية والنتائج العالمية</small>
+                <b>Pew Research Center (2025)</b>
+                <small>Countries with the most Christians &amp; global Christian population change, 2010-2020</small>
               </div>
             </a>
 
-            <a class="source" href="https://www.pewresearch.org/religion/2015/04/02/religious-projections-2010-2050/" target="_blank" rel="noopener">
+            <a class="source" href="https://www.pewresearch.org/religion/2023/08/30/christianity/" target="_blank" rel="noopener">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
               <div>
-                <b>Pew Research Center (2015)</b>
-                <small>The Future of World Religions: Population Growth Projections, 2010-2050</small>
+                <b>Pew Research Center (2023)</b>
+                <small>Christianity in China</small>
               </div>
             </a>
 
-            <a class="source" href="https://www.pewresearch.org/religion/2015/04/02/christians/" target="_blank" rel="noopener">
+            <a class="source" href="https://www.pewresearch.org/religion/2025/06/09/global-religious-change-methodology/" target="_blank" rel="noopener">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
               <div>
-                <b>Pew Research Center (2015)</b>
-                <small>Projected Changes in the Global Christian Population</small>
-              </div>
-            </a>
-
-            <a class="source" href="https://www.pewresearch.org/religion/2011/12/19/global-christianity-exec/" target="_blank" rel="noopener">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <div>
-                <b>Pew Research Center (2011)</b>
-                <small>The Size and Distribution of the World's Christian Population</small>
-              </div>
-            </a>
-
-            <a class="source" href="https://www.pewresearch.org/religion/feature/religious-composition-by-country-2010-2020/" target="_blank" rel="noopener">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <div>
-                <b>Pew Research Center Feature</b>
-                <small>Religious Composition by Country, 2010–2020</small>
+                <b>Pew Research Center (2025)</b>
+                <small>Methodology of the global religious change report</small>
               </div>
             </a>
 
@@ -1453,63 +1346,121 @@
           </div>
         </article>
 
-        <article class="card" id="method">
-          <h2 data-i18n="method_title">منهجية العرض</h2>
-          <p class="sub" data-i18n="method_desc">
-            الأرقام المعروضة تم بناؤها كلوحة إحصائية موحدة لعام 2026، مع فصل التوقعات المستقبلية عن الأرقام الحالية.
-            هذا الأسلوب يعطي وضوحًا أفضل في الواجهة ويجعل التنقل والتحليل أكثر سلاسة.
+        <article class="card" id="about">
+          <h2 class="i18n" data-ar="حول الموقع" data-en="About">حول الموقع</h2>
+          <p class="sub i18n" data-ar="هذا الموقع مخصص لعرض عدد المسلمين 2026 وعدد المسيحيين 2026 بطريقة واضحة ومباشرة، مع مقارنة وشرح ومصادر." data-en="This site is dedicated to presenting the 2026 Muslim and Christian numbers in a direct way, with comparison, explanation, and sources.">
+            هذا الموقع مخصص لعرض عدد المسلمين 2026 وعدد المسيحيين 2026 بطريقة واضحة ومباشرة، مع مقارنة وشرح ومصادر.
+          </p>
+          <div class="panel-links">
+            <div class="mini-panel">
+              <h3><i class="fa-solid fa-circle-user"></i> <span class="i18n" data-ar="من نحن" data-en="Who we are">من نحن</span></h3>
+              <p class="i18n" data-ar="منصة معلوماتية تعرض الأرقام الأساسية وتجمعها في مكان واحد." data-en="An information platform that gathers the core figures in one place.">
+                منصة معلوماتية تعرض الأرقام الأساسية وتجمعها في مكان واحد.
+              </p>
+            </div>
+            <div class="mini-panel">
+              <h3><i class="fa-solid fa-chart-simple"></i> <span class="i18n" data-ar="الهدف" data-en="Goal">الهدف</span></h3>
+              <p class="i18n" data-ar="تسهيل الوصول إلى عدد المسلمين وعدد المسيحيين بصياغة واضحة." data-en="Make the Muslim and Christian numbers easy to access in a clear format.">
+                تسهيل الوصول إلى عدد المسلمين وعدد المسيحيين بصياغة واضحة.
+              </p>
+            </div>
+            <div class="mini-panel">
+              <h3><i class="fa-solid fa-shield-halved"></i> <span class="i18n" data-ar="الموثوقية" data-en="Trust">الموثوقية</span></h3>
+              <p class="i18n" data-ar="الصفحة تعتمد على مصادر معروفة مثل Pew وGordon-Conwell." data-en="The page relies on known sources such as Pew and Gordon-Conwell.">
+                الصفحة تعتمد على مصادر معروفة مثل Pew وGordon-Conwell.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="privacy">
+          <h2 class="i18n" data-ar="الخصوصية" data-en="Privacy">الخصوصية</h2>
+          <p class="sub i18n" data-ar="هذه الصفحة توضح أن الموقع يعرض معلومات عامة وإحصائية، وقد يستخدم أدوات تحليل وأدوات إعلانات مثل Google Analytics وGoogle AdSense." data-en="This page explains that the site displays general statistical information and may use analytics and ads tools such as Google Analytics and Google AdSense.">
+            هذه الصفحة توضح أن الموقع يعرض معلومات عامة وإحصائية، وقد يستخدم أدوات تحليل وأدوات إعلانات مثل Google Analytics وGoogle AdSense.
           </p>
           <div class="info-list">
             <div class="info-item">
-              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-shield-halved"></i>
               <div>
-                <b data-i18n="method1_title">هيكلة دلالية</b>
-                <span data-i18n="method1_body">تم استخدام header وnav وmain وarticle وfooter لتحسين الأرشفة والوصول.</span>
+                <b class="i18n" data-ar="ماذا نجمع؟" data-en="What do we collect?">ماذا نجمع؟</b>
+                <span class="i18n" data-ar="لا نطلب بيانات حساسة داخل الصفحة نفسها، ويقتصر العرض على الأرقام والإحصائيات العامة." data-en="We do not request sensitive data on the page itself; the content is limited to public numbers and statistics.">
+                  لا نطلب بيانات حساسة داخل الصفحة نفسها، ويقتصر العرض على الأرقام والإحصائيات العامة.
+                </span>
               </div>
             </div>
             <div class="info-item">
-              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-cookie-bite"></i>
               <div>
-                <b data-i18n="method2_title">تحسين الأداء</b>
-                <span data-i18n="method2_body">تم تفعيل تحميل الرسوم عند الوصول إلى قسمها، مع ضبط ارتفاعات متجاوبة لكل الأجهزة.</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <i class="fa-solid fa-circle-check"></i>
-              <div>
-                <b data-i18n="method3_title">تحسين الظهور</b>
-                <span data-i18n="method3_body">تمت إضافة meta description و keywords و Open Graph و Schema لتعزيز SEO.</span>
+                <b class="i18n" data-ar="الملفات التتبعية" data-en="Tracking files">الملفات التتبعية</b>
+                <span class="i18n" data-ar="قد تعمل ملفات تعريف الارتباط الخاصة بالتحليلات أو الإعلانات حسب إعدادات المتصفح." data-en="Analytics or ad cookies may operate according to browser settings.">
+                  قد تعمل ملفات تعريف الارتباط الخاصة بالتحليلات أو الإعلانات حسب إعدادات المتصفح.
+                </span>
               </div>
             </div>
           </div>
         </article>
 
-        <div class="card">
-          <h2 id="contactPreviewTitle">من نحن / الخصوصية / اتصل بنا</h2>
-          <p class="sub" id="contactPreviewDesc">
-            تم إرجاع الروابط المهمة في القائمة الجانبية مع الأيقونات، لتبقى الصفحة كاملة واحترافية ومناسبة للتنقل السريع.
+        <article class="card" id="contact">
+          <h2 class="i18n" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</h2>
+          <p class="sub i18n" data-ar="للتواصل بخصوص عدد المسلمين 2026 وعدد المسيحيين 2026 أو أي ملاحظة على البيانات، استخدم هذه القنوات." data-en="For questions about the 2026 Muslim and Christian numbers or any data note, use these channels.">
+            للتواصل بخصوص عدد المسلمين 2026 وعدد المسيحيين 2026 أو أي ملاحظة على البيانات، استخدم هذه القنوات.
           </p>
-          <div class="kpis">
-            <div class="kpi">
-              <div class="t" data-i18n="nav_about">من نحن</div>
-              <div class="n gold"><a href="about.html" style="text-decoration:none;">i</a></div>
+
+          <div class="panel-links">
+            <div class="mini-panel">
+              <h3><i class="fa-solid fa-envelope"></i> Email</h3>
+              <p>info@muslimchristiannumbers.github.io</p>
             </div>
-            <div class="kpi">
-              <div class="t" data-i18n="nav_privacy">سياسة الخصوصية</div>
-              <div class="n blue"><a href="privacy.html" style="text-decoration:none;">🔒</a></div>
+            <div class="mini-panel">
+              <h3><i class="fa-solid fa-globe"></i> Website</h3>
+              <p>muslimchristiannumbers.github.io</p>
             </div>
-            <div class="kpi">
-              <div class="t" data-i18n="nav_contact">اتصل بنا</div>
-              <div class="n green"><a href="contact.html" style="text-decoration:none;">✉</a></div>
-            </div>
-            <div class="kpi">
-              <div class="t" data-i18n="world_share_label">النسبة من سكان العالم</div>
-              <div class="n gold">25% / 33%</div>
+            <div class="mini-panel">
+              <h3><i class="fa-solid fa-share-nodes"></i> Social</h3>
+              <p class="i18n" data-ar="يمكن إضافة روابط الشبكات الاجتماعية لاحقًا هنا." data-en="Social links can be added here later.">
+                يمكن إضافة روابط الشبكات الاجتماعية لاحقًا هنا.
+              </p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="footer">© 2026 | Dashboard إحصائيات عالمي</div>
+        <article class="card">
+          <h2 class="i18n" data-ar="منهجية العرض" data-en="Methodology">منهجية العرض</h2>
+          <p class="sub i18n" data-ar="الأرقام المعروضة هنا تعتمد على مراجع عامة موثوقة، وتُكتب داخل المحتوى نفسه حتى يفهمها الزائر ومحركات البحث معًا." data-en="The numbers shown here rely on trusted public references and are written directly in the content for both visitors and search engines.">
+            الأرقام المعروضة هنا تعتمد على مراجع عامة موثوقة، وتُكتب داخل المحتوى نفسه حتى يفهمها الزائر ومحركات البحث معًا.
+          </p>
+          <div class="info-list">
+            <div class="info-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <b class="i18n" data-ar="الكلمات المفتاحية" data-en="Keywords">الكلمات المفتاحية</b>
+                <span class="i18n" data-ar="تم إدراج: عدد المسلمين 2026، عدد المسيحيين 2026، كم عدد المسلمين في العالم، كم عدد المسيحيين في العالم، عدد المسلمين حاليا، عدد المسيحيين حاليا." data-en="Included phrases: Muslim number 2026, Christian number 2026, how many Muslims in the world, how many Christians in the world, current Muslim count, current Christian count.">
+                  تم إدراج: عدد المسلمين 2026، عدد المسيحيين 2026، كم عدد المسلمين في العالم، كم عدد المسيحيين في العالم، عدد المسلمين حاليا، عدد المسيحيين حاليا.
+                </span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <b class="i18n" data-ar="التجاوب" data-en="Responsive">التجاوب</b>
+                <span class="i18n" data-ar="التصميم يعمل على الهاتف والتابلت والكمبيوتر، مع قائمة جانبية قابلة للفتح والإغلاق." data-en="The design works on phone, tablet, and desktop with a collapsible sidebar.">
+                  التصميم يعمل على الهاتف والتابلت والكمبيوتر، مع قائمة جانبية قابلة للفتح والإغلاق.
+                </span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <b class="i18n" data-ar="الرسوم" data-en="Charts">الرسوم</b>
+                <span class="i18n" data-ar="تم إضافة مخطط أعمدة ومخطط دائري ومخطط خطي لقراءة سريعة وواضحة." data-en="A bar chart, doughnut chart, and line chart were added for fast, clear reading.">
+                  تم إضافة مخطط أعمدة ومخطط دائري ومخطط خطي لقراءة سريعة وواضحة.
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="footer i18n" data-ar="© 2026 | Dashboard إحصائيات عالمي" data-en="© 2026 | Global statistics dashboard">© 2026 | Dashboard إحصائيات عالمي</div>
       </section>
     </main>
   </div>
@@ -1519,317 +1470,84 @@
     const overlay = document.getElementById('overlay');
     const menuBtn = document.getElementById('menuBtn');
     const loader = document.getElementById('loader');
+    const loaderText = document.getElementById('loaderText');
     const topBtn = document.getElementById('topBtn');
     const searchInput = document.getElementById('searchInput');
     const noResults = document.getElementById('noResults');
     const langBtn = document.getElementById('langBtn');
-    const htmlEl = document.documentElement;
+    const continentSelect = document.getElementById('continentSelect');
+    const chartsSection = document.getElementById('charts');
+    const chartTitle = document.getElementById('chartTitle');
 
-    const isMobile = () => window.innerWidth <= 1080;
+    const i18nElements = [...document.querySelectorAll('.i18n')];
 
     const translations = {
       ar: {
-        brand: 'Muslim & Christian Numbers',
-        nav_home: 'الرئيسية',
-        nav_overview: 'نظرة عامة',
-        nav_compare: 'المقارنة',
-        nav_muslims: 'المسلمون',
-        nav_christians: 'المسيحيون',
-        nav_charts: 'الرسوم البيانية',
-        nav_map: 'الخريطة القارية',
-        nav_future: 'التوقعات',
-        nav_articles: 'مقالات SEO',
-        nav_faq: 'الأسئلة الشائعة',
-        nav_sources: 'المصادر',
-        nav_method: 'المنهجية',
-        nav_about: 'من نحن',
-        nav_privacy: 'سياسة الخصوصية',
-        nav_contact: 'اتصل بنا',
-        hero_label: 'منصة إحصائية متخصصة',
-        hero_title: 'Muslim & Christian Numbers',
-        hero_subtitle: 'إحصائيات دقيقة وتفاعلية لعدد المسلمين والمسيحيين حول العالم',
-        hero_desc: 'واجهة مرتبة وهادئة تعرض الأرقام الأساسية، المقارنة المباشرة، التوزيع القاري، والاتجاهات الزمنية، مع تصميم احترافي مناسب للنشر العالمي وسهل القراءة على الجوال والكمبيوتر.',
-        btn_explore: 'استكشاف البيانات',
-        btn_sources: 'عرض المصادر',
-        badge_fast: 'انتقال سلس',
-        badge_charts: 'رسوم تفاعلية',
-        badge_filter: 'فلتر قاري',
-        badge_order: 'عرض منظم',
-        overview_title: 'نظرة عامة',
-        overview_desc: 'ملخص سريع وواضح للأرقام الأساسية، مع إبراز الفارق العام بين المسلمين والمسيحيين.',
-        muslims_label: 'المسلمون',
-        christians_label: 'المسيحيون',
-        muslims_mini: 'إحصائية عالمية تقريبية لعام 2026',
-        christians_mini: 'إحصائية عالمية تقريبية لعام 2026',
-        compare_title: 'المقارنة السريعة',
-        compare_desc: 'هذه البطاقات تختصر القراءة وتمنح الزائر لمحة مباشرة قبل الدخول للتفاصيل.',
-        gap_label: 'الفارق التقريبي بين الفئتين',
-        world_share_label: 'النسبة من سكان العالم',
-        type_label: 'نوع العرض',
-        interactive: 'تفاعلي',
-        update_label: 'تحديث المحتوى',
-        muslims_title: 'المسلمون',
-        muslims_desc: 'توزيع قاري تقريبي يوضح أين يتركز المسلمون حول العالم. الأرقام هنا تعرض الصورة العامة الحالية، بينما الفلتر بالأسفل يبدّل بين القارات بطريقة تفاعلية.',
-        christians_title: 'المسيحيون',
-        christians_desc: 'توزيع قاري تقريبي للمسيحيين حول العالم، مع إبراز مناطق الثقل الرئيسية تاريخياً وحديثاً.',
-        continent: 'القارة',
-        count: 'العدد التقريبي',
-        note: 'ملاحظة',
-        largest_block: 'الكتلة الأكبر',
-        high_growth: 'نمو مرتفع',
-        lower_share: 'نسبة أقل',
-        urban_clusters: 'تجمعات حضرية',
-        less_spread: 'أقل انتشاراً',
-        small_cluster: 'تجمع صغير',
-        growth_engine: 'محرك النمو',
-        large_base: 'قاعدة ضخمة',
-        relative_decline: 'تراجع نسبي',
-        wide_spread: 'انتشار واسع',
-        relatively_stable: 'ثابت نسبياً',
-        small_relative: 'صغيرة نسبياً',
-        charts_title: 'الرسوم البيانية التفاعلية',
-        choose_continent: 'اختر القارة:',
-        global: 'العالم',
-        trend_title: 'الاتجاه بين 2020 و 2026',
-        pie_title: 'المخطط الدائري',
-        map_title: 'الخريطة القارية',
-        map_desc: 'عرض قاري مبسّط وسريع يوضح التوزيع العام للمسلمين والمسيحيين في أهم مناطق العالم.',
-        map_note: 'هذه الخريطة القارية مبسطة ومناسبة للعرض السريع. يمكنك لاحقًا استبدالها بخريطة تفاعلية كاملة عند ربط الموقع ببيانات حيّة.',
-        future_title: 'التوقعات المستقبلية',
-        future_desc: 'فصل واضح بين الأرقام الحالية والتوقعات القادمة لعرض البيانات بشكل مهني ومنظم.',
-        muslims_only: 'المسلمون',
-        christians_only: 'المسيحيون',
-        articles_title: 'مقالات وتحليل SEO',
-        articles_desc: 'هذه الفقرة تدعم الظهور في محركات البحث عبر محتوى نصي أصيل يشرح الأرقام بشكل مبسط وواضح.',
-        article1_title: 'كم عدد المسلمين في العالم 2026؟',
-        article1_body: 'يبلغ عدد المسلمين حوالي 2.1 مليار نسمة، ويتركزون بشكل رئيسي في آسيا وأفريقيا، مع انتشار ملحوظ في أوروبا والأمريكيتين.',
-        article2_title: 'عدد المسيحيين عالميًا',
-        article2_body: 'تُعد المسيحية أكبر ديانة في العالم بحوالي 2.7 مليار شخص، مع ثقل تاريخي كبير في أوروبا والأمريكتين، ونمو واضح في أجزاء من أفريقيا.',
-        article3_title: 'أهمية المحتوى النصي للموقع',
-        article3_body: 'إضافة المقالات والحقائق المختصرة يزيد من فرص ظهور الموقع في نتائج البحث ويعطي الزائر سياقًا أوضح حول الأرقام المعروضة.',
-        extra_note: 'يمكنك لاحقًا تحويل هذا القسم إلى مدونة مصغرة أو أخبار إحصائية أسبوعية.',
-        faq_title: 'الأسئلة الشائعة',
-        faq_desc: 'إجابات سريعة ومختصرة تساعد الزائر وتدعم الظهور الغني في محركات البحث.',
-        faq1_q: 'هل الأرقام ثابتة أم تقريبية؟',
-        faq1_a: 'الأرقام المعروضة هنا تقريبية ومناسبة للعرض التفاعلي، ويمكن لاحقًا ربطها بمصدر بيانات مباشر أو API.',
-        faq2_q: 'هل يمكن إضافة صفحة عربية وإنجليزية؟',
-        faq2_a: 'نعم، يمكن بسهولة تحويل الصفحة إلى نظام متعدد اللغات مع نفس البنية والتصميم.',
-        faq3_q: 'هل الرسوم البيانية تعمل على الجوال؟',
-        faq3_a: 'نعم، التصميم متجاوب بالكامل، والرسوم والجداول والقائمة الجانبية تتكيف مع الشاشات الصغيرة.',
-        sources_title: 'المصادر العالمية',
-        sources_desc: 'مراجع ديموغرافية معروفة لتوسيع السياق، مع إبقاء عرض الأرقام الحالية منفصلًا عن التوقعات المستقبلية.',
-        method_title: 'منهجية العرض',
-        method_desc: 'الأرقام المعروضة تم بناؤها كلوحة إحصائية موحدة لعام 2026، مع فصل التوقعات المستقبلية عن الأرقام الحالية. هذا الأسلوب يعطي وضوحًا أفضل في الواجهة ويجعل التنقل والتحليل أكثر سلاسة.',
-        method1_title: 'هيكلة دلالية',
-        method1_body: 'تم استخدام header وnav وmain وarticle وfooter لتحسين الأرشفة والوصول.',
-        method2_title: 'تحسين الأداء',
-        method2_body: 'تم تفعيل تحميل الرسوم عند الوصول إلى قسمها، مع ضبط ارتفاعات متجاوبة لكل الأجهزة.',
-        method3_title: 'تحسين الظهور',
-        method3_body: 'تمت إضافة meta description و keywords و Open Graph و Schema لتعزيز SEO.',
-        side_muslims: 'المسلمون',
-        side_christians: 'المسيحيون',
-        quickTitle: 'ملخص سريع',
-        linksTitle: 'روابط سريعة',
-        sideNote: 'المنصة مخصصة لعرض البيانات بشكل واضح ومنظم، مع فلاتر وجداول ورسوم تفاعلية لقراءة أسرع.',
-        heroBadge: 'منصة إحصائية متخصصة',
-        contactPreviewTitle: 'من نحن / الخصوصية / اتصل بنا',
-        contactPreviewDesc: 'تم إرجاع الروابط المهمة في القائمة الجانبية مع الأيقونات، لتبقى الصفحة كاملة واحترافية ومناسبة للتنقل السريع.'
+        dir: 'rtl',
+        langBtn: 'EN',
+        searchPlaceholder: 'ابحث: عدد المسلمين 2026، عدد المسيحيين 2026، كم عدد المسلمين في العالم...',
+        loader: 'جاري التحميل...',
+        titleSuffix: ' | إحصائيات المسلمين والمسيحيين 2026'
       },
       en: {
-        brand: 'Muslim & Christian Numbers',
-        nav_home: 'Home',
-        nav_overview: 'Overview',
-        nav_compare: 'Comparison',
-        nav_muslims: 'Muslims',
-        nav_christians: 'Christians',
-        nav_charts: 'Charts',
-        nav_map: 'Continent Map',
-        nav_future: 'Forecast',
-        nav_articles: 'SEO Articles',
-        nav_faq: 'FAQ',
-        nav_sources: 'Sources',
-        nav_method: 'Methodology',
-        nav_about: 'About',
-        nav_privacy: 'Privacy Policy',
-        nav_contact: 'Contact',
-        hero_label: 'Specialized Statistics Platform',
-        hero_title: 'Muslim & Christian Numbers',
-        hero_subtitle: 'Accurate and interactive statistics for Muslims and Christians worldwide',
-        hero_desc: 'A calm, organized interface showing core figures, direct comparison, continental distribution, and timeline trends, built for a polished global presentation and easy reading on phones and desktop.',
-        btn_explore: 'Explore data',
-        btn_sources: 'View sources',
-        badge_fast: 'Smooth transitions',
-        badge_charts: 'Interactive charts',
-        badge_filter: 'Continent filter',
-        badge_order: 'Organized view',
-        overview_title: 'Overview',
-        overview_desc: 'A clear summary of the core figures, highlighting the overall gap between Muslims and Christians.',
-        muslims_label: 'Muslims',
-        christians_label: 'Christians',
-        muslims_mini: 'Approximate global figure for 2026',
-        christians_mini: 'Approximate global figure for 2026',
-        compare_title: 'Quick comparison',
-        compare_desc: 'These cards make reading faster and give a quick snapshot before the deeper details.',
-        gap_label: 'Approximate gap between the two groups',
-        world_share_label: 'Share of world population',
-        type_label: 'View type',
-        interactive: 'Interactive',
-        update_label: 'Content update',
-        muslims_title: 'Muslims',
-        muslims_desc: 'Approximate continental distribution showing where Muslims are concentrated around the world. These figures show the current broad picture, while the filter below switches between continents interactively.',
-        christians_title: 'Christians',
-        christians_desc: 'Approximate continental distribution of Christians around the world, highlighting major historical and modern centers.',
-        continent: 'Continent',
-        count: 'Approximate count',
-        note: 'Note',
-        largest_block: 'Largest block',
-        high_growth: 'High growth',
-        lower_share: 'Lower share',
-        urban_clusters: 'Urban clusters',
-        less_spread: 'Less spread',
-        small_cluster: 'Small cluster',
-        growth_engine: 'Growth engine',
-        large_base: 'Large base',
-        relative_decline: 'Relative decline',
-        wide_spread: 'Wide spread',
-        relatively_stable: 'Relatively stable',
-        small_relative: 'Relatively small',
-        charts_title: 'Interactive charts',
-        choose_continent: 'Choose continent:',
-        global: 'Global',
-        trend_title: 'Trend between 2020 and 2026',
-        pie_title: 'Doughnut chart',
-        map_title: 'Continent map',
-        map_desc: 'A fast, simplified continental view showing the broad distribution of Muslims and Christians in the world’s major regions.',
-        map_note: 'This continent map is simplified for quick viewing. You can later replace it with a fully interactive map once you connect live data.',
-        future_title: 'Future forecasts',
-        future_desc: 'A clear separation between current figures and upcoming projections for a professional presentation.',
-        muslims_only: 'Muslims',
-        christians_only: 'Christians',
-        articles_title: 'SEO articles and analysis',
-        articles_desc: 'This section supports search visibility with original text that explains the numbers in a simple, clear way.',
-        article1_title: 'How many Muslims are there in 2026?',
-        article1_body: 'There are about 2.1 billion Muslims, concentrated mainly in Asia and Africa, with notable communities in Europe and the Americas.',
-        article2_title: 'Christians worldwide',
-        article2_body: 'Christianity is the world’s largest religion with about 2.7 billion people, with a historical center in Europe and the Americas, and clear growth in parts of Africa.',
-        article3_title: 'Why text content matters',
-        article3_body: 'Adding short articles and facts improves your chances of appearing in search results and gives visitors clearer context for the numbers shown.',
-        extra_note: 'You can later turn this into a mini blog or weekly statistics news section.',
-        faq_title: 'Frequently asked questions',
-        faq_desc: 'Quick answers that help visitors and support richer search visibility.',
-        faq1_q: 'Are the numbers exact or approximate?',
-        faq1_a: 'The figures shown here are approximate and suitable for interactive display, and can later be connected to a live data source or API.',
-        faq2_q: 'Can I add Arabic and English pages?',
-        faq2_a: 'Yes, this page can easily become a multilingual system with the same structure and design.',
-        faq3_q: 'Do the charts work on mobile?',
-        faq3_a: 'Yes, the layout is fully responsive, and the charts, tables, and sidebar adapt to small screens.',
-        sources_title: 'Global sources',
-        sources_desc: 'Well-known demographic references to provide context, while keeping current figures separate from future projections.',
-        method_title: 'Methodology',
-        method_desc: 'The shown figures are built as a unified 2026 dashboard, with future projections separated from current values. This creates clearer presentation and easier navigation.',
-        method1_title: 'Semantic structure',
-        method1_body: 'Header, nav, main, article, and footer were used to improve indexing and accessibility.',
-        method2_title: 'Performance',
-        method2_body: 'Charts are loaded when their section becomes visible, with responsive heights on all devices.',
-        method3_title: 'Visibility',
-        method3_body: 'Meta description, keywords, Open Graph, and Schema were added to strengthen SEO.',
-        side_muslims: 'Muslims',
-        side_christians: 'Christians',
-        quickTitle: 'Quick summary',
-        linksTitle: 'Quick links',
-        sideNote: 'The platform is built to present data clearly and neatly, with filters, tables, and interactive charts for faster reading.',
-        heroBadge: 'Specialized statistics platform',
-        contactPreviewTitle: 'About / Privacy / Contact',
-        contactPreviewDesc: 'Important links are restored in the sidebar with icons, keeping the page complete, professional, and fast to navigate.'
+        dir: 'rtl',
+        langBtn: 'AR',
+        searchPlaceholder: 'Search: Muslim number 2026, Christian number 2026, how many Muslims in the world...',
+        loader: 'Loading...',
+        titleSuffix: ' | Muslim & Christian statistics 2026'
       }
     };
 
     let currentLang = 'ar';
 
-    function setText(selector, value){
-      const el = document.querySelector(selector);
-      if(el) el.textContent = value;
-    }
-
     function applyLanguage(lang){
       currentLang = lang;
-      htmlEl.lang = lang;
-      htmlEl.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+      document.documentElement.dir = translations[lang].dir;
+      langBtn.textContent = translations[lang].langBtn;
+      searchInput.placeholder = translations[lang].searchPlaceholder;
+      loaderText.textContent = translations[lang].loader;
+      document.title = 'Muslim & Christian Numbers' + translations[lang].titleSuffix;
 
-      const t = translations[lang];
-      document.title = lang === 'ar'
-        ? 'Muslim & Christian Numbers | إحصائيات المسلمين والمسيحيين 2026'
-        : 'Muslim & Christian Numbers | Muslims and Christians Statistics 2026';
-
-      setText('#brandText', t.brand);
-      setText('#topPill1', lang === 'ar' ? 'تحديث 2026' : 'Updated 2026');
-      setText('#topPill2', lang === 'ar' ? 'بيانات منظمة' : 'Structured data');
-      setText('#navTitle', lang === 'ar' ? 'الأقسام' : 'Sections');
-      setText('#quickTitle', t.quickTitle);
-      setText('#linksTitle', t.linksTitle);
-      setText('#sideNote', t.sideNote);
-
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.getAttribute('data-i18n');
-        if(t[key]) el.textContent = t[key];
+      i18nElements.forEach(el => {
+        const value = el.getAttribute(lang === 'ar' ? 'data-ar' : 'data-en');
+        if(value !== null){
+          if(el.tagName === 'SPAN' && el.innerHTML.includes('<i')){
+            // leave icon spans unchanged if they are part of chip text wrappers
+          }
+          if(el.id === 'chipUpdate' || el.id === 'chipData'){
+            el.innerHTML = value;
+          }else{
+            el.innerHTML = value;
+          }
+        }
       });
 
-      setText('#heroTitle', t.hero_title);
-      setText('#heroSubtitle', t.hero_subtitle);
-      setText('#heroDesc', t.hero_desc);
-      setText('#btnExplore', (lang === 'ar' ? '<i class="fa-solid fa-arrow-down"></i> استكشاف البيانات' : '<i class="fa-solid fa-arrow-down"></i> Explore data'));
-      setText('#btnSources', (lang === 'ar' ? '<i class="fa-solid fa-book-open"></i> عرض المصادر' : '<i class="fa-solid fa-book-open"></i> View sources'));
-
-      document.getElementById('btnExplore').innerHTML = '<i class="fa-solid fa-arrow-down"></i> ' + t.btn_explore;
-      document.getElementById('btnSources').innerHTML = '<i class="fa-solid fa-book-open"></i> ' + t.btn_sources;
-
-      setText('#contactPreviewTitle', t.contactPreviewTitle);
-      setText('#contactPreviewDesc', t.contactPreviewDesc);
-
-      document.getElementById('searchInput').placeholder = lang === 'ar'
-        ? 'ابحث داخل الأقسام أو العناوين...'
-        : 'Search within sections or headings...';
-
-      langBtn.textContent = lang === 'ar' ? 'AR / EN' : 'EN / AR';
-
-      updateChartLabels(lang);
-      setRegion(continentSelect.value);
-      chartInstanceTitleSync(lang);
+      if(barChart){
+        barChart.options.plugins.legend.labels.color = '#E8EAED';
+        barChart.update();
+      }
+      if(doughnutChart){
+        doughnutChart.update();
+      }
+      if(lineChart){
+        lineChart.update();
+      }
     }
 
-    function chartInstanceTitleSync(lang){
-      const cont = continentSelect.value;
-      const map = {
-        global: lang === 'ar' ? 'مقارنة عالمية مباشرة' : 'Direct global comparison',
-        asia: lang === 'ar' ? 'قارة آسيا' : 'Asia',
-        africa: lang === 'ar' ? 'قارة أفريقيا' : 'Africa',
-        europe: lang === 'ar' ? 'قارة أوروبا' : 'Europe',
-        northAmerica: lang === 'ar' ? 'أمريكا الشمالية' : 'North America',
-        latinAmerica: lang === 'ar' ? 'أمريكا اللاتينية' : 'Latin America',
-        oceania: lang === 'ar' ? 'أوقيانوسيا' : 'Oceania'
-      };
-      chartTitle.textContent = map[cont] || map.global;
-    }
-
-    langBtn.addEventListener('click', ()=>{
+    langBtn.addEventListener('click', () => {
       applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
     });
 
-    function openMenu(){
-      sidebar.classList.add('active');
-      overlay.classList.add('active');
-      menuBtn.setAttribute('aria-expanded', 'true');
+    function toggleMenu(){
+      const isOpen = sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
     }
-
     function closeMenu(){
       sidebar.classList.remove('active');
       overlay.classList.remove('active');
       menuBtn.setAttribute('aria-expanded', 'false');
-    }
-
-    function toggleMenu(){
-      if(sidebar.classList.contains('active')) closeMenu();
-      else openMenu();
     }
 
     menuBtn.addEventListener('click', toggleMenu);
@@ -1838,14 +1556,14 @@
     document.addEventListener('click', function(e){
       const inSidebar = sidebar.contains(e.target);
       const onBtn = menuBtn.contains(e.target);
-      if(isMobile() && !inSidebar && !onBtn){
+      if(window.innerWidth <= 1080 && !inSidebar && !onBtn){
         closeMenu();
       }
     });
 
     document.querySelectorAll('.nav-link').forEach(link=>{
       link.addEventListener('click', ()=>{
-        if(isMobile()) closeMenu();
+        if(window.innerWidth <= 1080) closeMenu();
       });
     });
 
@@ -1855,12 +1573,9 @@
       });
     },{threshold:0.12});
 
-    document.querySelectorAll('.card').forEach(card=>{
-      if(card.style.opacity !== '1') observer.observe(card);
-      else card.classList.add('show');
-    });
+    document.querySelectorAll('.card').forEach(card=>observer.observe(card));
 
-    const sections = ['home','overview','compare','muslims','christians','charts','map','future','articles','faq','sources','method']
+    const sections = ['home','overview','compare','muslims','christians','charts','future','articles','faq','sources','about','privacy','contact']
       .map(id=>document.getElementById(id))
       .filter(Boolean);
 
@@ -1880,6 +1595,8 @@
 
     window.addEventListener('load', ()=>{
       setTimeout(()=>loader.classList.add('hidden'), 350);
+      initCharts();
+      applyLanguage('ar');
     });
 
     function animateNumber(el, endValue, suffix='B', duration=1400){
@@ -1893,55 +1610,59 @@
       }
       requestAnimationFrame(step);
     }
+
     animateNumber(document.getElementById('muslimCount'), 2.1);
     animateNumber(document.getElementById('christianCount'), 2.7);
 
-    document.getElementById('sideMuslimValue').textContent = '≈ 2.1B';
-    document.getElementById('sideChristianValue').textContent = '≈ 2.7B';
-
     const regionData = {
-      global: { title: { ar: 'مقارنة عالمية مباشرة', en: 'Direct global comparison' }, muslims: 2.1, christians: 2.7 },
-      asia: { title: { ar: 'قارة آسيا', en: 'Asia' }, muslims: 1.25, christians: 0.42 },
-      africa: { title: { ar: 'قارة أفريقيا', en: 'Africa' }, muslims: 0.45, christians: 0.75 },
-      europe: { title: { ar: 'قارة أوروبا', en: 'Europe' }, muslims: 0.06, christians: 0.55 },
-      northAmerica: { title: { ar: 'أمريكا الشمالية', en: 'North America' }, muslims: 0.008, christians: 0.28 },
-      latinAmerica: { title: { ar: 'أمريكا اللاتينية', en: 'Latin America' }, muslims: 0.002, christians: 0.62 },
-      oceania: { title: { ar: 'أوقيانوسيا', en: 'Oceania' }, muslims: 0.001, christians: 0.03 }
+      global: {
+        titleAr: 'مقارنة عالمية مباشرة',
+        titleEn: 'Global comparison',
+        muslims: 2.1,
+        christians: 2.7
+      },
+      asia: {
+        titleAr: 'قارة آسيا',
+        titleEn: 'Asia',
+        muslims: 1.25,
+        christians: 0.42
+      },
+      africa: {
+        titleAr: 'قارة أفريقيا',
+        titleEn: 'Africa',
+        muslims: 0.45,
+        christians: 0.75
+      },
+      europe: {
+        titleAr: 'قارة أوروبا',
+        titleEn: 'Europe',
+        muslims: 0.06,
+        christians: 0.55
+      },
+      northAmerica: {
+        titleAr: 'أمريكا الشمالية',
+        titleEn: 'North America',
+        muslims: 0.008,
+        christians: 0.28
+      },
+      latinAmerica: {
+        titleAr: 'أمريكا اللاتينية',
+        titleEn: 'Latin America',
+        muslims: 0.002,
+        christians: 0.62
+      },
+      oceania: {
+        titleAr: 'أوقيانوسيا',
+        titleEn: 'Oceania',
+        muslims: 0.001,
+        christians: 0.03
+      }
     };
 
-    const chartTitle = document.getElementById('chartTitle');
-    const continentSelect = document.getElementById('continentSelect');
-    const chartsSection = document.getElementById('charts');
-
     let barChart = null;
+    let doughnutChart = null;
     let lineChart = null;
-    let pieChart = null;
     let chartsInitialized = false;
-
-    function chartBaseOptions(isLine = false){
-      return {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 850 },
-        interaction: isLine ? { mode: 'index', intersect: false } : undefined,
-        plugins: {
-          legend: {
-            labels: {
-              color: '#E8EAED',
-              font: { family: 'Tajawal' }
-            }
-          },
-          tooltip: {
-            backgroundColor: 'rgba(10,17,32,.95)',
-            titleColor: '#fff',
-            bodyColor: '#E8EAED',
-            borderColor: 'rgba(255,255,255,.08)',
-            borderWidth: 1,
-            padding: 12
-          }
-        }
-      };
-    }
 
     function buildBarChart(){
       const barCtx = document.getElementById('barChart');
@@ -1954,33 +1675,60 @@
             data: [2.1, 2.7],
             backgroundColor: ['#38BDF8', '#4ADE80'],
             borderWidth: 0,
-            borderRadius: 12,
-            barThickness: 'flex',
-            maxBarThickness: 86
+            borderRadius: 12
           }]
         },
         options: {
-          ...chartBaseOptions(false),
-          scales: {
-            x: {
-              ticks: { color: '#C8D1E2', font: { family: 'Tajawal' } },
-              grid: { display: false }
-            },
-            y: {
-              beginAtZero: true,
-              suggestedMax: 3.1,
-              ticks: { color: '#C8D1E2', font: { family: 'Tajawal' } },
-              grid: { color: 'rgba(255,255,255,.06)' }
-            }
-          },
+          responsive: true,
+          maintainAspectRatio: false,
           plugins: {
-            ...chartBaseOptions(false).plugins,
+            legend: {
+              labels: { color: '#E8EAED', font: { family: 'Tajawal' } }
+            },
             tooltip: {
               callbacks: {
                 label: function(context){
-                  return `${context.dataset.label}: ${context.raw} مليار`;
+                  return `${context.dataset.label}: ${context.raw}B`;
                 }
               }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: '#C8D1E2', font: { family: 'Tajawal' } },
+              grid: { color: 'rgba(255,255,255,.06)' }
+            },
+            y: {
+              ticks: { color: '#C8D1E2', font: { family: 'Tajawal' } },
+              grid: { color: 'rgba(255,255,255,.06)' }
+            }
+          }
+        }
+      });
+    }
+
+    function buildDoughnutChart(){
+      const doughnutCtx = document.getElementById('doughnutChart');
+      doughnutChart = new Chart(doughnutCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['المسلمون 25%', 'المسيحيون 33%', 'فئات أخرى 42%'],
+          datasets: [{
+            data: [25, 33, 42],
+            backgroundColor: ['#38BDF8', '#4ADE80', '#FBBF24'],
+            borderColor: 'rgba(255,255,255,.12)',
+            borderWidth: 1,
+            hoverOffset: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '62%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#E8EAED', font: { family: 'Tajawal', size: 12 } }
             }
           }
         }
@@ -2002,8 +1750,7 @@
               tension: 0.35,
               fill: true,
               borderWidth: 3,
-              pointRadius: 4,
-              pointHoverRadius: 6
+              pointRadius: 4
             },
             {
               label: 'المسيحيين',
@@ -2013,22 +1760,24 @@
               tension: 0.35,
               fill: true,
               borderWidth: 3,
-              pointRadius: 4,
-              pointHoverRadius: 6
+              pointRadius: 4
             }
           ]
         },
         options: {
-          ...chartBaseOptions(true),
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: '#E8EAED', font: { family: 'Tajawal' } }
+            }
+          },
           scales: {
             x: {
               ticks: { color: '#C8D1E2', font: { family: 'Tajawal' } },
-              grid: { display: false }
+              grid: { color: 'rgba(255,255,255,.06)' }
             },
             y: {
-              beginAtZero: false,
-              suggestedMin: 1.6,
-              suggestedMax: 2.9,
               ticks: { color: '#C8D1E2', font: { family: 'Tajawal' } },
               grid: { color: 'rgba(255,255,255,.06)' }
             }
@@ -2037,66 +1786,35 @@
       });
     }
 
-    function buildPieChart(){
-      const pieCtx = document.getElementById('pieChart');
-      pieChart = new Chart(pieCtx, {
-        type: 'doughnut',
-        data: {
-          labels: ['المسلمون', 'المسيحيون', 'أديان/غير ذلك'],
-          datasets: [{
-            data: [25, 33, 42],
-            backgroundColor: ['#38BDF8', '#4ADE80', '#FBBF24'],
-            borderWidth: 0,
-            hoverOffset: 8
-          }]
-        },
-        options: {
-          ...chartBaseOptions(false),
-          cutout: '68%',
-          plugins: {
-            ...chartBaseOptions(false).plugins,
-            tooltip: {
-              callbacks: {
-                label: function(context){
-                  return `${context.label}: ${context.raw}%`;
-                }
-              }
-            }
-          }
-        }
-      });
-    }
-
     function setRegion(key){
       const d = regionData[key];
-      chartTitle.textContent = d.title[currentLang];
+      chartTitle.textContent = currentLang === 'ar' ? d.titleAr : d.titleEn;
       if(barChart){
         barChart.data.datasets[0].data = [d.muslims, d.christians];
         barChart.update();
       }
     }
 
-    continentSelect.addEventListener('change', e => setRegion(e.target.value));
+    continentSelect.addEventListener('change', e=>setRegion(e.target.value));
+
+    function initCharts(){
+      if(chartsInitialized) return;
+      chartsInitialized = true;
+      buildBarChart();
+      buildDoughnutChart();
+      buildLineChart();
+      setRegion('global');
+    }
 
     const chartsObserver = new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
-        if(entry.isIntersecting && !chartsInitialized){
-          chartsInitialized = true;
-          buildBarChart();
-          buildLineChart();
-          buildPieChart();
-          setRegion('global');
+        if(entry.isIntersecting){
+          initCharts();
         }
       });
     },{threshold:0.15});
 
     chartsObserver.observe(chartsSection);
-
-    window.addEventListener('resize', ()=>{
-      if(barChart) barChart.resize();
-      if(lineChart) lineChart.resize();
-      if(pieChart) pieChart.resize();
-    });
 
     window.addEventListener('scroll', ()=>{
       if(window.scrollY > 400){
@@ -2123,19 +1841,11 @@
       });
 
       noResults.style.display = matched === 0 ? 'block' : 'none';
-
       if(query === ''){
         cards.forEach(card=>card.style.display = '');
         noResults.style.display = 'none';
       }
     });
-
-    window.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape') closeMenu();
-    });
-
-    applyLanguage('ar');
-    chartTitle.textContent = 'مقارنة عالمية مباشرة';
   </script>
 </body>
 </html>
