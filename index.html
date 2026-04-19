@@ -17,54 +17,47 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="theme-color" content="#0b1020">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="description" content="Muslim & Christian Numbers — صفحة تقريرية رسمية لعرض الأرقام المرجعية للمسلمين والمسيحيين حول العالم، بصيغة مختصرة، موثوقة، ومتجاوبة.">
-  <meta name="keywords" content="Muslim & Christian Numbers, المسلمين, المسيحيين, تقرير إحصائي, مصادر موثوقة, صفحة رسمية, 2026">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="description" content="Official Report — Muslim & Christian Numbers. تقرير رسمي يعرض الأرقام الأساسية، المقارنة، التوزيع، والمراجع بشكل أنيق ومباشر.">
+  <meta name="keywords" content="Muslim & Christian Numbers, Official Report, المسلمين, المسيحيين, statistics, report">
   <meta name="author" content="Muslim & Christian Numbers">
   <link rel="canonical" href="https://muslimchristiannumbers.github.io/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Muslim & Christian Numbers">
-  <meta property="og:description" content="صفحة تقريرية رسمية لعرض الأرقام المرجعية للمسلمين والمسيحيين حول العالم">
+  <meta property="og:title" content="Official Report | Muslim & Christian Numbers">
+  <meta property="og:description" content="تقرير رسمي يعرض الأرقام الأساسية والمقارنة والمراجع بشكل نظيف ومباشر.">
   <meta property="og:url" content="https://muslimchristiannumbers.github.io/">
   <meta property="og:site_name" content="Muslim & Christian Numbers">
   <meta property="og:locale" content="ar_AR">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Muslim & Christian Numbers">
-  <meta name="twitter:description" content="صفحة تقريرية رسمية لعرض الأرقام المرجعية للمسلمين والمسيحيين حول العالم">
+  <meta name="twitter:title" content="Official Report | Muslim & Christian Numbers">
+  <meta name="twitter:description" content="تقرير رسمي يعرض الأرقام الأساسية والمقارنة والمراجع بشكل نظيف ومباشر.">
 
-  <title>Muslim & Christian Numbers | تقرير 2026</title>
+  <title>Official Report | Muslim & Christian Numbers 2026</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
     :root{
-      --page-bg:#f4f1ea;
-      --surface:#ffffff;
-      --surface-2:#fbfaf7;
-      --surface-3:#f7f4ef;
-      --text:#111827;
-      --muted:#5f6877;
-      --line:#e7e0d7;
-      --line-2:#d7d0c6;
-      --dark:#0c111f;
-      --dark-2:#131a2b;
-      --accent:#1a4d7a;
-      --accent-2:#3f6b91;
-      --green:#1f7a4d;
-      --gold:#916b10;
-      --red:#b42318;
-      --shadow:0 18px 48px rgba(14,22,37,.10);
-      --shadow-soft:0 10px 28px rgba(14,22,37,.07);
+      --bg:#0b0b0c;
+      --bg-2:#101113;
+      --panel:#111214;
+      --panel-2:#151618;
+      --panel-3:#1b1c1f;
+      --line:#2a2b30;
+      --text:#f4f4f5;
+      --muted:#a1a1aa;
+      --soft:#d4d4d8;
+      --soft-2:#e4e4e7;
+      --shadow:0 20px 60px rgba(0,0,0,.42);
       --radius:22px;
-      --radius-lg:28px;
-      --focus:0 0 0 4px rgba(26,77,122,.18);
+      --radius-lg:30px;
+      --focus:0 0 0 3px rgba(255,255,255,.18);
     }
 
     *{box-sizing:border-box}
@@ -75,75 +68,114 @@
     body{
       margin:0;
       font-family:"Tajawal",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--text);
       background:
-        radial-gradient(1100px 560px at 85% -10%, rgba(26,77,122,.09), transparent 52%),
-        radial-gradient(900px 520px at 0% 20%, rgba(31,122,77,.08), transparent 45%),
-        linear-gradient(180deg, #f8f6f2 0%, var(--page-bg) 100%);
+        radial-gradient(1000px 600px at 85% 0%, rgba(255,255,255,.08), transparent 55%),
+        radial-gradient(900px 500px at 0% 10%, rgba(255,255,255,.05), transparent 45%),
+        linear-gradient(180deg, #09090a 0%, #0b0b0c 100%);
+      color:var(--text);
       overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
 
     a{color:inherit}
-    button,input{font:inherit}
-    ::selection{background:rgba(26,77,122,.18)}
+    button,select,input{font:inherit}
+    ::selection{background:rgba(255,255,255,.22)}
     :focus-visible{outline:none; box-shadow:var(--focus)}
     img,svg,canvas{max-width:100%; display:block}
 
     .skip-link{
       position:absolute;
       top:-60px;
-      right:16px;
-      z-index:5000;
-      padding:10px 14px;
-      border-radius:12px;
+      right:18px;
+      z-index:4000;
       background:#fff;
       color:#000;
+      padding:10px 14px;
+      border-radius:10px;
       font-weight:800;
       text-decoration:none;
-      box-shadow:var(--shadow-soft);
     }
     .skip-link:focus{top:16px}
+
+    .loader{
+      position:fixed;
+      inset:0;
+      z-index:3000;
+      background:linear-gradient(180deg, #09090a 0%, #0b0b0c 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:16px;
+      transition:.45s ease;
+    }
+    .loader.hidden{opacity:0; pointer-events:none}
+    .loader .ring{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      border:5px solid rgba(255,255,255,.12);
+      border-top-color:#fff;
+      animation:spin 1s linear infinite;
+    }
+    .loader .txt{
+      color:#f4f4f5;
+      font-weight:800;
+      letter-spacing:.3px;
+    }
+    @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
     .topbar{
       position:sticky;
       top:0;
-      z-index:2000;
+      z-index:1200;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
-      padding:14px 18px;
-      background:rgba(12,17,31,.96);
-      color:#fff;
+      gap:14px;
+      padding:16px 18px;
+      background:rgba(11,11,12,.84);
+      backdrop-filter:blur(16px);
       border-bottom:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(14px);
-      padding-top:calc(14px + env(safe-area-inset-top));
+      padding-top:calc(16px + env(safe-area-inset-top));
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      min-width:0;
       white-space:nowrap;
-      font-weight:900;
-      letter-spacing:.2px;
-      font-size:18px;
+      min-width:0;
     }
     .brand .logo{
-      width:42px;
-      height:42px;
+      width:44px;
+      height:44px;
       border-radius:14px;
       display:grid;
       place-items:center;
-      background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:var(--shadow);
       color:#fff;
       flex:0 0 auto;
     }
-    .brand span{
+    .brand .text{
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+    }
+    .brand .text strong{
+      font-size:17px;
+      font-weight:900;
+      letter-spacing:.2px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .brand .text span{
+      color:var(--muted);
+      font-size:13px;
       overflow:hidden;
       text-overflow:ellipsis;
       white-space:nowrap;
@@ -162,225 +194,104 @@
       gap:8px;
       padding:10px 12px;
       border-radius:999px;
-      background:rgba(255,255,255,.06);
+      background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.08);
-      color:#edf2f7;
+      color:#f4f4f5;
       font-size:13px;
       font-weight:700;
       white-space:nowrap;
     }
 
-    .menu-btn,
     .lang-btn{
       border:0;
-      cursor:pointer;
-      box-shadow:var(--shadow-soft);
-      transition:.25s ease;
-      flex:0 0 auto;
-    }
-    .menu-btn{
-      width:46px;
-      height:46px;
-      border-radius:14px;
-      background:linear-gradient(135deg, #19233a, #10182a);
+      background:linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.06));
       color:#fff;
-      font-size:18px;
-    }
-    .lang-btn{
-      min-width:90px;
+      min-width:88px;
       height:46px;
       padding:0 14px;
       border-radius:14px;
-      background:linear-gradient(135deg, rgba(26,77,122,.96), rgba(63,107,145,.96));
-      color:#fff;
-      font-weight:800;
       font-size:14px;
+      font-weight:800;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      transition:.25s ease;
+      flex:0 0 auto;
     }
-    .menu-btn:hover,.lang-btn:hover{transform:translateY(-1px)}
-
-    .overlay{
-      position:fixed;
-      inset:0;
-      z-index:1500;
-      background:rgba(9,13,22,.42);
-      backdrop-filter:blur(3px);
-      opacity:0;
-      pointer-events:none;
-      transition:.2s ease;
-    }
-    .overlay.active{opacity:1; pointer-events:auto}
+    .lang-btn:hover{transform:translateY(-1px)}
 
     .page{
-      display:grid;
-      grid-template-columns:300px minmax(0,1fr);
-      min-height:calc(100vh - 78px);
-    }
-
-    .sidebar{
-      position:sticky;
-      top:78px;
-      height:calc(100vh - 78px);
-      overflow:auto;
-      -webkit-overflow-scrolling:touch;
-      padding:18px;
-      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(250,247,242,.96));
-      border-inline-end:1px solid var(--line);
-      box-shadow:var(--shadow-soft);
-    }
-    .sidebar .box{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-      margin-bottom:16px;
-      box-shadow:0 8px 20px rgba(14,22,37,.04);
-    }
-    .sidebar h3{
-      margin:0 0 12px 0;
-      font-size:18px;
-      color:var(--text);
-    }
-    .nav-link{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:12px 14px;
-      margin-bottom:8px;
-      border-radius:14px;
-      text-decoration:none;
-      color:var(--text);
-      transition:.22s ease;
-      border:1px solid transparent;
-      background:transparent;
-      font-weight:700;
-    }
-    .nav-link i{
-      width:18px;
-      text-align:center;
-      color:var(--accent);
-      flex:0 0 auto;
-    }
-    .nav-link:hover{
-      background:rgba(26,77,122,.07);
-      border-color:rgba(26,77,122,.12);
-      transform:translateX(-4px);
-    }
-    .nav-link.active{
-      background:linear-gradient(135deg, rgba(26,77,122,.12), rgba(31,122,77,.08));
-      border-color:rgba(26,77,122,.10);
-    }
-
-    .quick-note{
-      color:var(--muted);
-      line-height:1.9;
-      font-size:14px;
-    }
-
-    .stat-chip{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      padding:12px 14px;
-      border-radius:16px;
-      background:var(--surface-2);
-      border:1px solid var(--line);
-      margin-bottom:10px;
-    }
-    .stat-chip .icon{
-      width:34px;
-      height:34px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      background:#fff;
-      border:1px solid var(--line);
-      flex:0 0 auto;
-    }
-    .stat-chip .label{
-      display:block;
-      color:var(--muted);
-      font-size:13px;
-      margin-bottom:2px;
-      font-weight:700;
-    }
-    .stat-chip .value{
-      font-weight:900;
-      font-size:16px;
-      color:var(--text);
-      direction:ltr;
-      unicode-bidi:plaintext;
-    }
-
-    .content{
-      padding:24px;
-      min-width:0;
+      width:min(1280px, calc(100% - 36px));
+      margin:0 auto;
+      padding:20px 0 28px;
     }
 
     .hero{
-      display:grid;
-      grid-template-columns:minmax(0,1.45fr) minmax(300px,.85fr);
-      gap:18px;
-      background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(250,247,242,.98));
-      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)),
+        linear-gradient(135deg, rgba(20,20,22,.96), rgba(14,14,16,.96));
+      border:1px solid rgba(255,255,255,.08);
       border-radius:28px;
-      padding:28px;
+      padding:30px;
       box-shadow:var(--shadow);
-      margin-bottom:18px;
       position:relative;
       overflow:hidden;
+      margin-bottom:18px;
     }
     .hero::before{
       content:"";
       position:absolute;
       inset:auto -90px -90px auto;
-      width:240px;
-      height:240px;
+      width:260px;
+      height:260px;
       border-radius:50%;
-      background:radial-gradient(circle, rgba(26,77,122,.10) 0%, rgba(26,77,122,0) 72%);
+      background:radial-gradient(circle, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 70%);
       pointer-events:none;
     }
-
-    .report-meta{
+    .hero-top{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .section-label{
       display:inline-flex;
       align-items:center;
-      gap:10px;
-      padding:8px 12px;
-      border-radius:999px;
-      background:#f3f7fb;
-      border:1px solid #dde6ef;
-      color:var(--accent);
+      gap:8px;
+      color:var(--muted);
       font-size:13px;
-      font-weight:800;
-      margin-bottom:14px;
+      letter-spacing:.28px;
+      text-transform:uppercase;
+      margin-bottom:12px;
+      font-weight:700;
     }
     .hero h1{
       margin:0 0 12px 0;
-      font-size:clamp(32px, 4.5vw, 58px);
-      line-height:1.08;
+      font-size:clamp(34px, 5vw, 64px);
+      line-height:1.04;
       letter-spacing:.2px;
       font-weight:900;
     }
     .hero .subtitle{
       margin:0 0 14px 0;
-      color:var(--text);
+      color:var(--soft-2);
       font-size:18px;
-      line-height:1.9;
-      font-weight:800;
-      max-width:920px;
+      line-height:1.95;
+      max-width:980px;
+      font-weight:700;
     }
     .hero .desc{
       margin:0;
       color:var(--muted);
       font-size:16px;
-      line-height:2;
-      max-width:920px;
+      line-height:2.05;
+      max-width:980px;
     }
-
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-top:18px;
+      margin-top:22px;
     }
     .btn{
       display:inline-flex;
@@ -390,190 +301,239 @@
       border-radius:14px;
       text-decoration:none;
       font-weight:900;
-      border:1px solid rgba(255,255,255,.08);
-      transition:.22s ease;
+      border:1px solid rgba(255,255,255,.09);
+      transition:.25s ease;
+      cursor:pointer;
       user-select:none;
     }
     .btn-primary{
-      background:linear-gradient(135deg, #1a4d7a, #3f6b91);
-      color:#fff;
+      background:#f4f4f5;
+      color:#000;
+      box-shadow:0 12px 28px rgba(255,255,255,.06);
     }
     .btn-secondary{
-      background:#fff;
+      background:rgba(255,255,255,.03);
       color:var(--text);
-      border-color:var(--line);
     }
     .btn:hover{transform:translateY(-2px)}
 
-    .hero-panel{
-      display:grid;
-      gap:12px;
-      align-content:start;
-      padding:4px 0 0;
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-start;
+      align-content:flex-start;
     }
-    .hero-mini{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-      box-shadow:0 10px 24px rgba(14,22,37,.05);
-    }
-    .hero-mini .k{
-      display:block;
-      color:var(--muted);
-      font-weight:800;
-      margin-bottom:8px;
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#f4f4f5;
       font-size:13px;
-    }
-    .hero-mini .v{
-      font-size:28px;
-      font-weight:900;
-      line-height:1;
-      color:var(--text);
-      direction:ltr;
-      unicode-bidi:plaintext;
-    }
-    .hero-mini .s{
-      display:block;
-      margin-top:8px;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
     }
 
-    .section{
-      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,247,242,.98));
-      border:1px solid var(--line);
-      border-radius:26px;
+    .search-box{
+      margin:0 0 18px 0;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .search-box input{
+      width:100%;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:#09090a;
+      color:var(--text);
+      outline:none;
+      box-shadow:0 8px 22px rgba(0,0,0,.20);
+    }
+    .search-box input::placeholder{color:#8f8f95}
+    .no-results{
+      display:none;
+      margin-top:12px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:18px;
+    }
+    .card{
+      grid-column:span 12;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
       padding:22px;
-      box-shadow:var(--shadow-soft);
-      margin-bottom:18px;
+      box-shadow:var(--shadow);
       opacity:0;
-      transform:translateY(14px);
+      transform:translateY(18px);
       transition:.55s ease;
     }
-    .section.show{opacity:1; transform:translateY(0)}
-
-    .section-head{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:16px;
-      flex-wrap:wrap;
-    }
-    .section-head h2{
-      margin:0;
-      font-size:24px;
-      line-height:1.2;
-      color:var(--text);
-    }
-    .section-head p{
-      margin:6px 0 0 0;
+    .card.show{opacity:1; transform:translateY(0)}
+    .card h2{margin:0 0 16px 0; font-size:26px; line-height:1.18}
+    .card h3{margin:0 0 14px 0; font-size:20px; line-height:1.18}
+    .sub{
       color:var(--muted);
-      line-height:1.9;
-      max-width:860px;
+      line-height:1.95;
+      margin:0 0 16px 0;
       font-size:15px;
     }
 
-    .report-strip{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:14px;
-    }
-    .report-card{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-    }
-    .report-card .t{
-      color:var(--muted);
-      font-size:13px;
-      font-weight:800;
-      margin-bottom:10px;
-    }
-    .report-card .n{
-      color:var(--text);
-      font-size:28px;
-      font-weight:900;
-      line-height:1.05;
-      direction:ltr;
-      unicode-bidi:plaintext;
-    }
-    .report-card .b{
-      margin-top:8px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.7;
-    }
-
-    .ad-box{
-      background:#fff;
-      border:1px dashed var(--line-2);
-      border-radius:20px;
-      padding:14px;
-      text-align:center;
-      overflow:hidden;
-    }
-    .ad-label{
-      color:var(--muted);
-      font-size:12px;
-      margin-bottom:10px;
-      letter-spacing:.3px;
-      font-weight:800;
-      text-transform:uppercase;
-    }
-
-    .figure-grid{
+    .stats{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:16px;
     }
-    .figure-card{
-      background:linear-gradient(180deg, #fff, #fbf8f2);
-      border:1px solid var(--line);
-      border-radius:22px;
+    .stat{
       padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
       position:relative;
       overflow:hidden;
     }
-    .figure-card::after{
+    .stat::after{
       content:"";
       position:absolute;
-      inset:auto -30px -30px auto;
-      width:140px;
-      height:140px;
+      inset:auto -40px -40px auto;
+      width:160px;
+      height:160px;
       border-radius:50%;
-      background:radial-gradient(circle, rgba(26,77,122,.08) 0%, rgba(26,77,122,0) 70%);
+      background:radial-gradient(circle, rgba(255,255,255,.09) 0%, rgba(255,255,255,0) 70%);
       pointer-events:none;
     }
-    .figure-card .label{
+    .stat .label{
       display:flex;
       align-items:center;
       gap:10px;
       color:var(--muted);
       margin-bottom:12px;
-      font-weight:800;
-      font-size:14px;
+      font-weight:700;
     }
-    .figure-card .value{
-      font-size:44px;
+    .stat .value{
+      font-size:42px;
       font-weight:900;
-      line-height:1;
+      letter-spacing:.3px;
       direction:ltr;
       unicode-bidi:plaintext;
+      line-height:1;
     }
-    .figure-card .note{
-      margin-top:10px;
+    .mini{margin-top:8px; color:var(--muted); font-size:14px; line-height:1.8}
+
+    .kpis{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+    }
+    .kpi{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:16px;
+      min-height:128px;
+    }
+    .kpi .n{
+      font-size:28px;
+      font-weight:900;
+      margin-top:8px;
+      line-height:1.15;
+    }
+    .kpi .t{
       color:var(--muted);
-      line-height:1.8;
+      font-weight:700;
+      line-height:1.7;
       font-size:14px;
     }
-    .figure-card.primary .value{color:var(--accent)}
-    .figure-card.secondary .value{color:var(--green)}
-    .figure-card.tertiary .value{color:var(--gold)}
-    .figure-card.quaternary .value{color:var(--red)}
+
+    .filter-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+    .filter-row label{
+      color:#f4f4f5;
+      font-weight:900;
+    }
+    .filter-row select{
+      min-width:240px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:#09090a;
+      color:var(--text);
+      outline:none;
+      box-shadow:0 8px 22px rgba(0,0,0,.20);
+    }
+
+    .table-wrap{
+      overflow:auto;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
+      -webkit-overflow-scrolling:touch;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:720px;
+      background:rgba(255,255,255,.02);
+    }
+    th,td{
+      padding:14px 12px;
+      text-align:center;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    th{
+      background:rgba(255,255,255,.05);
+      font-size:15px;
+      color:#fff;
+    }
+    td{color:#dedee2}
+
+    .charts{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+    .chart-box{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:14px;
+      position:relative;
+      min-height:380px;
+      overflow:hidden;
+    }
+    .chart-box h3{
+      margin:8px 8px 18px;
+      color:#fff;
+    }
+    .chart-frame{
+      position:relative;
+      width:100%;
+      height:clamp(260px, 38vh, 420px);
+      max-height:480px;
+    }
+    .chart-frame canvas{
+      position:absolute !important;
+      inset:0;
+      width:100% !important;
+      height:100% !important;
+    }
 
     .distribution-grid{
       display:grid;
@@ -581,10 +541,12 @@
       gap:14px;
     }
     .region-card{
-      background:var(--surface);
-      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:18px;
       padding:16px;
+      overflow:hidden;
+      position:relative;
     }
     .region-card .head{
       display:flex;
@@ -595,12 +557,12 @@
     }
     .region-card .head b{
       font-size:16px;
-      color:var(--text);
+      color:#fff;
     }
     .region-card .percent{
       font-size:20px;
       font-weight:900;
-      color:var(--accent);
+      color:#fff;
       direction:ltr;
       unicode-bidi:plaintext;
       white-space:nowrap;
@@ -609,20 +571,19 @@
       width:100%;
       height:12px;
       border-radius:999px;
-      background:#eef2f6;
+      background:rgba(255,255,255,.08);
       overflow:hidden;
       margin:8px 0 12px;
-      border:1px solid #e6eaef;
     }
     .bar > span{
       display:block;
       height:100%;
       border-radius:999px;
-      background:linear-gradient(135deg, #1a4d7a, #3f6b91);
+      background:linear-gradient(90deg, #fff, #bdbdbd);
     }
     .region-card small{
       color:var(--muted);
-      line-height:1.7;
+      line-height:1.8;
       display:block;
     }
 
@@ -637,18 +598,18 @@
       align-items:flex-start;
       text-decoration:none;
       padding:14px;
-      border-radius:18px;
-      background:var(--surface);
-      border:1px solid var(--line);
-      transition:.22s ease;
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      transition:.25s ease;
     }
     .source:hover{
       transform:translateY(-3px);
-      border-color:rgba(26,77,122,.22);
-      box-shadow:0 12px 30px rgba(14,22,37,.07);
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
     }
     .source i{
-      color:var(--accent);
+      color:#fff;
       margin-top:2px;
       flex:0 0 auto;
     }
@@ -662,31 +623,39 @@
       line-height:1.7;
     }
 
-    .info-list{
+    .page-grid{
       display:grid;
-      gap:10px;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:14px;
     }
-    .info-item{
+    .page-card{
       display:flex;
-      gap:12px;
+      flex-direction:column;
+      gap:10px;
       align-items:flex-start;
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px;
+      text-decoration:none;
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      transition:.25s ease;
+      min-height:140px;
     }
-    .info-item i{
-      color:var(--accent);
-      margin-top:3px;
-      flex:0 0 auto;
+    .page-card:hover{
+      transform:translateY(-3px);
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.16);
     }
-    .info-item b{
-      display:block;
-      margin-bottom:4px;
+    .page-card i{
+      font-size:18px;
+      color:#fff;
     }
-    .info-item span{
+    .page-card b{
+      font-size:16px;
+    }
+    .page-card span{
       color:var(--muted);
-      line-height:1.75;
+      line-height:1.8;
       font-size:14px;
     }
 
@@ -696,8 +665,8 @@
       gap:14px;
     }
     .contact-card{
-      background:var(--surface);
-      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:18px;
       padding:16px;
       display:flex;
@@ -705,27 +674,39 @@
       align-items:flex-start;
     }
     .contact-card i{
-      color:var(--accent);
+      color:#fff;
       margin-top:2px;
       flex:0 0 auto;
       font-size:18px;
     }
-    .contact-card b{
-      display:block;
-      margin-bottom:6px;
-    }
-    .contact-card a,
-    .contact-card span{
+    .contact-card b{display:block; margin-bottom:6px}
+    .contact-card a, .contact-card span{
       color:var(--muted);
       text-decoration:none;
       line-height:1.8;
       word-break:break-word;
     }
 
+    .ad-box{
+      background:rgba(255,255,255,.02);
+      border:1px dashed rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:14px;
+      text-align:center;
+      overflow:hidden;
+    }
+    .ad-label{
+      color:var(--muted);
+      font-size:12px;
+      margin-bottom:10px;
+      letter-spacing:.3px;
+    }
+
     .footer{
+      margin-top:18px;
       text-align:center;
       color:var(--muted);
-      padding:20px 0 8px;
+      padding:22px 0 8px;
       font-size:14px;
       line-height:1.8;
     }
@@ -738,11 +719,11 @@
     }
     .footer-links a{
       text-decoration:none;
-      color:var(--text);
+      color:#fff;
       padding:8px 12px;
       border-radius:999px;
-      background:var(--surface);
-      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
     }
 
     .back-to-top{
@@ -752,72 +733,57 @@
       width:50px;
       height:50px;
       border-radius:50%;
-      background:linear-gradient(135deg, #1a4d7a, #3f6b91);
+      background:#fff;
       display:flex;
       align-items:center;
       justify-content:center;
-      color:#fff;
+      color:#000;
       font-size:20px;
       cursor:pointer;
-      box-shadow:0 12px 30px rgba(14,22,37,.24);
+      box-shadow:0 10px 30px rgba(0,0,0,.45);
       opacity:0;
-      transition:.25s ease;
-      z-index:1800;
+      transition:.3s;
+      z-index:999;
       border:none;
     }
     .back-to-top.show{opacity:1}
 
-    .sr-only{
-      position:absolute;
-      width:1px;
-      height:1px;
-      padding:0;
-      margin:-1px;
-      overflow:hidden;
-      clip:rect(0,0,0,0);
-      white-space:nowrap;
-      border:0;
-    }
-
-    @media (max-width: 1100px){
-      .page{grid-template-columns:1fr}
-      .sidebar{
-        position:fixed;
-        top:78px;
-        inset-inline-end:-330px;
-        width:min(320px, 88vw);
-        z-index:1700;
-        transition:.25s ease;
-      }
-      .sidebar.active{inset-inline-end:0}
-      .content{padding:18px}
-      .hero{grid-template-columns:1fr}
+    @media (max-width: 1120px){
+      .page{width:min(100%, calc(100% - 24px))}
+      .page-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .contact-grid{grid-template-columns:1fr}
+      .distribution-grid{grid-template-columns:1fr}
+      .source-grid{grid-template-columns:1fr}
+      .charts{grid-template-columns:1fr}
+      .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
 
     @media (max-width: 920px){
-      .report-strip,
-      .figure-grid,
-      .distribution-grid,
-      .source-grid,
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
+      .topbar-meta .pill{display:none}
+      .stats{grid-template-columns:1fr}
+      .page-grid{grid-template-columns:1fr}
+      .hero{padding:24px}
       .hero h1{font-size:clamp(30px, 8vw, 46px)}
       .hero .subtitle{font-size:16px}
-      .topbar-meta{display:none}
+      .chart-box{min-height:320px}
+      .chart-frame{height:280px}
     }
 
     @media (max-width: 640px){
-      .content{padding:14px}
-      .hero,.section{padding:18px}
-      .brand{font-size:16px}
-      .brand .logo{width:38px;height:38px}
-      .menu-btn{width:42px;height:42px}
-      .lang-btn{height:42px; min-width:76px}
+      .page{width:min(100%, calc(100% - 16px))}
+      .topbar{padding:14px 12px}
+      .brand .logo{width:40px;height:40px}
+      .brand .text strong{font-size:15px}
+      .lang-btn{min-width:76px; height:42px}
+      .hero{padding:20px}
+      .card{padding:18px}
+      .kpis{grid-template-columns:1fr}
+      .page-card{min-height:auto}
+      .filter-row select{min-width:100%; width:100%}
       .hero-actions .btn{width:100%; justify-content:center}
       .back-to-top{left:14px; bottom:14px}
-      .hero-mini .v{font-size:24px}
-      .figure-card .value{font-size:38px}
+      .chart-frame{height:240px}
+      .chart-box{min-height:290px}
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -837,21 +803,7 @@
     "@type": "WebSite",
     "name": "Muslim & Christian Numbers",
     "url": "https://muslimchristiannumbers.github.io/",
-    "description": "صفحة تقريرية رسمية لعرض الأرقام المرجعية للمسلمين والمسيحيين حول العالم"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "Global Religion Statistics 2026",
-    "description": "Dataset and report page for global Muslim and Christian population statistics.",
-    "creator": {
-      "@type": "Organization",
-      "name": "Muslim & Christian Numbers"
-    },
-    "keywords": "Muslim, Christian, statistics, report, 2026"
+    "description": "Official Report — Muslim & Christian Numbers"
   }
   </script>
 
@@ -869,149 +821,62 @@
 <body>
   <a class="skip-link" href="#mainContent">تجاوز إلى المحتوى الرئيسي</a>
 
-  <header class="topbar">
-    <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="sidebar">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="ring"></div>
+    <div class="txt">Loading...</div>
+  </div>
 
+  <header class="topbar">
     <div class="brand" aria-label="Muslim & Christian Numbers">
       <div class="logo"><i class="fa-solid fa-chart-column"></i></div>
-      <span id="brandText">Muslim &amp; Christian Numbers</span>
+      <div class="text">
+        <strong id="brandText">Official Report</strong>
+        <span id="brandSub">Muslim &amp; Christian Numbers</span>
+      </div>
     </div>
 
     <div class="topbar-meta">
-      <span class="pill" id="topPill1"><i class="fa-regular fa-clock"></i> تقرير 2026</span>
-      <span class="pill" id="topPill2"><i class="fa-solid fa-shield-halved"></i> موثّق بالمصادر</span>
+      <span class="pill" id="topPill1"><i class="fa-regular fa-clock"></i> 2026</span>
+      <span class="pill" id="topPill2"><i class="fa-solid fa-shield-halved"></i> Official</span>
       <button class="lang-btn" id="langBtn" type="button" aria-label="تبديل اللغة">AR / EN</button>
     </div>
   </header>
 
-  <div class="overlay" id="overlay"></div>
-  <button class="back-to-top" id="topBtn" aria-label="العودة إلى الأعلى">↑</button>
-
-  <div class="page">
-    <aside class="sidebar" id="sidebar" aria-label="القائمة الجانبية">
-      <nav class="box" aria-label="التنقل">
-        <h3 id="navTitle">الأقسام</h3>
-        <a class="nav-link active" href="#home"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">الرئيسية</span></a>
-        <a class="nav-link" href="#figures"><i class="fa-solid fa-list-ol"></i> <span data-i18n="nav_figures">الأرقام</span></a>
-        <a class="nav-link" href="#report"><i class="fa-solid fa-file-lines"></i> <span data-i18n="nav_report">الملف الرسمي</span></a>
-        <a class="nav-link" href="#snapshot"><i class="fa-solid fa-globe"></i> <span data-i18n="nav_snapshot">الخلاصة القارية</span></a>
-        <a class="nav-link" href="#sources"><i class="fa-solid fa-book"></i> <span data-i18n="nav_sources">المصادر</span></a>
-        <a class="nav-link" href="#method"><i class="fa-solid fa-clipboard-check"></i> <span data-i18n="nav_method">المنهجية</span></a>
-        <a class="nav-link" href="#contact"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">التواصل</span></a>
-      </nav>
-
-      <div class="box">
-        <h3 id="quickTitle">ملخص سريع</h3>
-
-        <div class="stat-chip">
-          <div class="icon"><i class="fa-solid fa-mosque" style="color:var(--accent)"></i></div>
-          <div>
-            <span class="label" data-i18n="side_muslims">المسلمون</span>
-            <div class="value" id="sideMuslimValue">2.0–2.1B</div>
-          </div>
-        </div>
-
-        <div class="stat-chip">
-          <div class="icon"><i class="fa-solid fa-cross" style="color:var(--green)"></i></div>
-          <div>
-            <span class="label" data-i18n="side_christians">المسيحيون</span>
-            <div class="value" id="sideChristianValue">2.7B</div>
-          </div>
-        </div>
-
-        <div class="quick-note" id="sideNote">
-          صفحة تقريرية مختصرة، بمحتوى رسمي ومحدد، مع فصل واضح بين العرض، الإسناد، والتواصل.
-        </div>
-      </div>
-
-      <div class="box">
-        <h3 id="linksTitle">روابط سريعة</h3>
-        <div class="quick-note" id="linksNote">
-          <a href="#sources" style="text-decoration:none; display:block; margin-bottom:8px;"><i class="fa-solid fa-book"></i> <span data-i18n="nav_sources">المصادر</span></a>
-          <a href="#method" style="text-decoration:none; display:block; margin-bottom:8px;"><i class="fa-solid fa-clipboard-check"></i> <span data-i18n="nav_method">المنهجية</span></a>
-          <a href="#contact" style="text-decoration:none; display:block; margin-bottom:8px;"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">التواصل</span></a>
-          <a href="about.html" style="text-decoration:none; display:block; margin-bottom:8px;"><i class="fa-solid fa-circle-info"></i> <span data-i18n="nav_about">من نحن</span></a>
-          <a href="privacy.html" style="text-decoration:none; display:block;"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="nav_privacy">سياسة الخصوصية</span></a>
-        </div>
-      </div>
-    </aside>
-
-    <main class="content" id="mainContent">
-      <section class="hero" id="home">
-        <div class="hero-copy">
-          <div class="report-meta"><i class="fa-regular fa-file-lines"></i> <span data-i18n="report_meta">تقرير عام | 2026</span></div>
-          <h1 id="heroTitle">Muslim &amp; Christian Numbers</h1>
-          <p class="subtitle" id="heroSubtitle">عرض رسمي ومختصر لبيانات المسلمين والمسيحيين حول العالم</p>
+  <main class="page" id="mainContent">
+    <section class="hero" id="home">
+      <div class="hero-top">
+        <div>
+          <div class="section-label"><i class="fa-solid fa-file-signature"></i> <span data-i18n="hero_label">Official Report</span></div>
+          <h1 id="heroTitle">Official Report</h1>
+          <p class="subtitle" id="heroSubtitle">تقرير رسمي موجز ومباشر يعرض الأرقام الأساسية والمقارنة العامة بشكل نظيف وواضح.</p>
           <p class="desc" id="heroDesc">
-            صفحة تقريرية مستقلة، تعتمد عرضًا هادئًا ومباشرًا للأرقام المرجعية، مع إبقاء النص موجزًا،
-            والإسناد واضحًا، والتنقل بسيطًا على الهاتف والكمبيوتر.
+            واجهة عالمية حديثة تعتمد أسلوبًا رسميًا بسيطًا، مع مساحات واضحة، نص مختصر، وروابط منظمة إلى الصفحات الداخلية.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#figures" id="btnExplore"><i class="fa-solid fa-arrow-down"></i> عرض التقرير</a>
-            <a class="btn btn-secondary" href="#sources" id="btnSources"><i class="fa-solid fa-book-open"></i> المصادر</a>
+            <a class="btn btn-primary" href="#figures" id="btnExplore"><i class="fa-solid fa-arrow-down"></i> عرض الأرقام</a>
+            <a class="btn btn-secondary" href="#sources" id="btnSources"><i class="fa-solid fa-book-open"></i> المراجع</a>
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="ملخص الصفحة">
-          <div class="hero-mini">
-            <span class="k" data-i18n="hero_muslim">المسلمون</span>
-            <div class="v">2.0–2.1B</div>
-            <span class="s" data-i18n="hero_muslim_note">النطاق المرجعي المعروض في الصفحة</span>
-          </div>
-          <div class="hero-mini">
-            <span class="k" data-i18n="hero_christian">المسيحيون</span>
-            <div class="v">2.7B</div>
-            <span class="s" data-i18n="hero_christian_note">القيمة المرجعية المعروضة في الصفحة</span>
-          </div>
-          <div class="hero-mini">
-            <span class="k" data-i18n="hero_scope">النطاق</span>
-            <div class="v" style="font-size:22px">Global</div>
-            <span class="s" data-i18n="hero_scope_note">نسخة رسمية ثنائية اللغة</span>
-          </div>
-        </aside>
-      </section>
-
-      <section class="section" id="figures">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="figures_title">الأرقام الأساسية</h2>
-            <p data-i18n="figures_desc">المؤشرات التالية تمثل الملخص الرسمي المعروض في الصفحة.</p>
-          </div>
+        <div class="hero-badges">
+          <span class="badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="badge_formal">Formal</span></span>
+          <span class="badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="badge_minimal">Minimal</span></span>
+          <span class="badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="badge_bilingual">Arabic / English</span></span>
+          <span class="badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="badge_reports">Reports</span></span>
         </div>
+      </div>
+    </section>
 
-        <div class="figure-grid">
-          <div class="figure-card primary">
-            <div class="label"><i class="fa-solid fa-mosque" style="color:var(--accent)"></i> <span data-i18n="muslim_label">المسلمون</span></div>
-            <div class="value">2.0–2.1B</div>
-            <div class="note" data-i18n="muslim_note">النطاق المرجعي المعروض في الصفحة</div>
-          </div>
+    <section class="search-box" aria-label="البحث">
+      <input type="text" id="searchInput" placeholder="ابحث داخل التقرير أو العناوين...">
+      <div class="no-results" id="noResults">لا توجد نتائج مطابقة.</div>
+    </section>
 
-          <div class="figure-card secondary">
-            <div class="label"><i class="fa-solid fa-cross" style="color:var(--green)"></i> <span data-i18n="christian_label">المسيحيون</span></div>
-            <div class="value">2.7B</div>
-            <div class="note" data-i18n="christian_note">القيمة المرجعية المعروضة في الصفحة</div>
-          </div>
-
-          <div class="figure-card tertiary">
-            <div class="label"><i class="fa-solid fa-globe" style="color:var(--gold)"></i> <span data-i18n="coverage_label">التغطية</span></div>
-            <div class="value">Global</div>
-            <div class="note" data-i18n="coverage_note">صيغة عرض عالمية واضحة</div>
-          </div>
-
-          <div class="figure-card quaternary">
-            <div class="label"><i class="fa-solid fa-calendar-days" style="color:var(--red)"></i> <span data-i18n="release_label">الإصدار</span></div>
-            <div class="value">2026</div>
-            <div class="note" data-i18n="release_note">نسخة تقريرية حديثة</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
+    <section class="grid" aria-label="المحتوى الرئيسي">
+      <div class="card" style="opacity:1; transform:none;">
         <div class="ad-box">
-          <div class="ad-label">Advertisement</div>
+          <div class="ad-label">Ad Space</div>
           <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="ca-pub-7325491248571551"
@@ -1020,96 +885,141 @@
                data-full-width-responsive="true"></ins>
           <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
-      </section>
+      </div>
 
-      <section class="section" id="report">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="report_title">الملف الرسمي</h2>
-            <p data-i18n="report_desc">صياغة مختصرة، رسمية، ومباشرة، مع فصل واضح بين القيمة، الإسناد، والتاريخ.</p>
+      <article class="card" id="figures">
+        <h2 data-i18n="figures_title">Core Figures</h2>
+        <p class="sub" data-i18n="figures_desc">عرض مباشر للأرقام الأساسية المعتمدة في الصفحة الرئيسية.</p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="label"><i class="fa-solid fa-mosque"></i> <span data-i18n="muslims_label">المسلمون</span></div>
+            <div class="value" id="muslimCount">2.1B</div>
+            <div class="mini" data-i18n="muslims_note">2.1 billion</div>
+          </div>
+
+          <div class="stat">
+            <div class="label"><i class="fa-solid fa-cross"></i> <span data-i18n="christians_label">المسيحيون</span></div>
+            <div class="value" id="christianCount">2.7B</div>
+            <div class="mini" data-i18n="christians_note">2.7 billion</div>
           </div>
         </div>
+      </article>
 
-        <div class="report-strip">
-          <div class="report-card">
-            <div class="t" data-i18n="strip_1_t">المستوى</div>
-            <div class="n" data-i18n="strip_1_n">Official</div>
-            <div class="b" data-i18n="strip_1_b">عرض مخصص للواجهة العامة</div>
+      <article class="card" id="compare">
+        <h2 data-i18n="compare_title">Comparison</h2>
+        <p class="sub" data-i18n="compare_desc">ملخص رسمي للمقارنة العامة بين الرقمين.</p>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="t" data-i18n="gap_label">Approximate gap</div>
+            <div class="n">≈ 600M</div>
           </div>
-          <div class="report-card">
-            <div class="t" data-i18n="strip_2_t">اللغة</div>
-            <div class="n" data-i18n="strip_2_n">AR / EN</div>
-            <div class="b" data-i18n="strip_2_b">تبديل فوري بين اللغتين</div>
+          <div class="kpi">
+            <div class="t" data-i18n="share_label">World share</div>
+            <div class="n">25% / 33%</div>
           </div>
-          <div class="report-card">
-            <div class="t" data-i18n="strip_3_t">الإسناد</div>
-            <div class="n" data-i18n="strip_3_n">Sources</div>
-            <div class="b" data-i18n="strip_3_b">مراجع معروفة وموثقة</div>
+          <div class="kpi">
+            <div class="t" data-i18n="format_label">Format</div>
+            <div class="n" data-i18n="official">Official</div>
           </div>
-          <div class="report-card">
-            <div class="t" data-i18n="strip_4_t">التصميم</div>
-            <div class="n" data-i18n="strip_4_n">Responsive</div>
-            <div class="b" data-i18n="strip_4_b">مناسب للجوال والكمبيوتر</div>
+          <div class="kpi">
+            <div class="t" data-i18n="update_label">Update</div>
+            <div class="n">2026</div>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="section" id="snapshot">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="snapshot_title">الخلاصة القارية</h2>
-            <p data-i18n="snapshot_desc">ملخص مباشر وسريع عبر القارات الرئيسية، بصيغة عرض رسمية مختصرة.</p>
+      <article class="card" id="charts">
+        <h2 data-i18n="charts_title">Charts</h2>
+        <p class="sub" data-i18n="charts_desc">رسوم مختصرة وبألوان رمادية فقط لإبقاء الواجهة رسمية وهادئة.</p>
+
+        <div class="filter-row">
+          <label for="continentSelect" data-i18n="choose_continent">اختر النطاق:</label>
+          <select id="continentSelect" aria-label="اختر النطاق">
+            <option value="global" data-i18n="global">Global</option>
+            <option value="asia">Asia</option>
+            <option value="africa">Africa</option>
+            <option value="europe">Europe</option>
+            <option value="northAmerica">North America</option>
+            <option value="latinAmerica">Latin America</option>
+            <option value="oceania">Oceania</option>
+          </select>
+        </div>
+
+        <div class="charts">
+          <div class="chart-box">
+            <h3 id="chartTitle">Global Report</h3>
+            <div class="chart-frame">
+              <canvas id="barChart" aria-label="Bar chart" role="img"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-box">
+            <h3 data-i18n="trend_title">Trend 2020–2026</h3>
+            <div class="chart-frame">
+              <canvas id="lineChart" aria-label="Line chart" role="img"></canvas>
+            </div>
           </div>
         </div>
+      </article>
+
+      <article class="card" id="distribution">
+        <h2 data-i18n="distribution_title">Distribution</h2>
+        <p class="sub" data-i18n="distribution_desc">عرض قاري مختصر ومباشر بصيغة رسمية.</p>
 
         <div class="distribution-grid">
           <div class="region-card">
-            <div class="head"><b data-i18n="asia">آسيا</b><span class="percent">59%</span></div>
+            <div class="head"><b>Asia</b><span class="percent">59%</span></div>
             <div class="bar"><span style="width:59%"></span></div>
-            <small data-i18n="region_note">ملخص قاري</small>
+            <small>Largest concentration.</small>
           </div>
           <div class="region-card">
-            <div class="head"><b data-i18n="africa">أفريقيا</b><span class="percent">18%</span></div>
+            <div class="head"><b>Africa</b><span class="percent">18%</span></div>
             <div class="bar"><span style="width:18%"></span></div>
-            <small data-i18n="region_note">ملخص قاري</small>
+            <small>Stable and expanding.</small>
           </div>
           <div class="region-card">
-            <div class="head"><b data-i18n="europe">أوروبا</b><span class="percent">12%</span></div>
+            <div class="head"><b>Europe</b><span class="percent">12%</span></div>
             <div class="bar"><span style="width:12%"></span></div>
-            <small data-i18n="region_note">ملخص قاري</small>
+            <small>Historic base.</small>
           </div>
           <div class="region-card">
-            <div class="head"><b data-i18n="north_america">أمريكا الشمالية</b><span class="percent">6%</span></div>
+            <div class="head"><b>North America</b><span class="percent">6%</span></div>
             <div class="bar"><span style="width:6%"></span></div>
-            <small data-i18n="region_note">ملخص قاري</small>
+            <small>Urban clusters.</small>
           </div>
           <div class="region-card">
-            <div class="head"><b data-i18n="latin_america">أمريكا اللاتينية</b><span class="percent">4%</span></div>
+            <div class="head"><b>Latin America</b><span class="percent">4%</span></div>
             <div class="bar"><span style="width:4%"></span></div>
-            <small data-i18n="region_note">ملخص قاري</small>
+            <small>Broad Christian base.</small>
           </div>
           <div class="region-card">
-            <div class="head"><b data-i18n="oceania">أوقيانوسيا</b><span class="percent">1%</span></div>
+            <div class="head"><b>Oceania</b><span class="percent">1%</span></div>
             <div class="bar"><span style="width:1%"></span></div>
-            <small data-i18n="region_note">ملخص قاري</small>
+            <small>Small share.</small>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="section" id="sources">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="sources_title">المصادر المعتمدة</h2>
-            <p data-i18n="sources_desc">المراجع المدرجة أدناه موضوعة لإظهار الإسناد العام للمحتوى وتاريخه.</p>
-          </div>
-        </div>
+      <article class="card" id="sources">
+        <h2 data-i18n="sources_title">Sources</h2>
+        <p class="sub" data-i18n="sources_desc">روابط مرجعية رسمية ومباشرة.</p>
 
         <div class="source-grid">
           <a class="source" href="https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/" target="_blank" rel="noopener">
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
             <div>
               <b>Pew Research Center (2025)</b>
-              <small data-i18n="src1">How the Global Religious Landscape Changed From 2010 to 2020</small>
+              <small>Global religious landscape report</small>
+            </div>
+          </a>
+
+          <a class="source" href="https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/PR_2025.06.09_global-religious-change_report.pdf" target="_blank" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <div>
+              <b>Pew Research PDF (2025)</b>
+              <small>Full report and methodology</small>
             </div>
           </a>
 
@@ -1117,7 +1027,7 @@
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
             <div>
               <b>Pew Research Center (2015)</b>
-              <small data-i18n="src2">The Future of World Religions: Population Growth Projections, 2010-2050</small>
+              <small>Population projections</small>
             </div>
           </a>
 
@@ -1125,60 +1035,48 @@
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
             <div>
               <b>Gordon-Conwell (2025)</b>
-              <small data-i18n="src3">Status of Global Christianity 2025</small>
-            </div>
-          </a>
-
-          <a class="source" href="https://www.gordonconwell.edu/wp-content/uploads/sites/13/2023/01/Status-of-Global-Christianity-2023.pdf" target="_blank" rel="noopener">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            <div>
-              <b>Gordon-Conwell (2023)</b>
-              <small data-i18n="src4">Status of Global Christianity 2023</small>
+              <small>Status of Global Christianity</small>
             </div>
           </a>
         </div>
-      </section>
+      </article>
 
-      <section class="section" id="method">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="method_title">المنهجية</h2>
-            <p data-i18n="method_desc">البنية المختصرة تركز على العنوان، القيم، الإسناد، والتواصل، مع واجهة واضحة ومباشرة.</p>
-          </div>
-        </div>
+      <article class="card" id="pages">
+        <h2 data-i18n="pages_title">Pages</h2>
+        <p class="sub" data-i18n="pages_desc">الصفحات الداخلية المرتبطة ضمن الموقع.</p>
 
-        <div class="info-list">
-          <div class="info-item">
-            <i class="fa-solid fa-circle-check"></i>
-            <div>
-              <b data-i18n="method1_t">بنية رسمية</b>
-              <span data-i18n="method1_b">تسلسل الصفحة يقدّم العنوان أولًا، ثم الأرقام، ثم الإسناد، ثم التواصل.</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fa-solid fa-circle-check"></i>
-            <div>
-              <b data-i18n="method2_t">لغة مزدوجة</b>
-              <span data-i18n="method2_b">زر التحويل يبدّل اللغة والاتجاه دون إعادة تحميل الصفحة.</span>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fa-solid fa-circle-check"></i>
-            <div>
-              <b data-i18n="method3_t">جاهزية العرض</b>
-              <span data-i18n="method3_b">الواجهة متجاوبة ومصممة لقراءة مريحة على الهاتف والكمبيوتر.</span>
-            </div>
-          </div>
+        <div class="page-grid">
+          <a class="page-card" href="about.html">
+            <i class="fa-solid fa-circle-info"></i>
+            <b>About</b>
+            <span data-i18n="page_about_desc">تعريف رسمي بالموقع.</span>
+          </a>
+          <a class="page-card" href="articles.html">
+            <i class="fa-solid fa-pen-nib"></i>
+            <b>Articles</b>
+            <span data-i18n="page_articles_desc">مقالات وصفحات تحليل.</span>
+          </a>
+          <a class="page-card" href="contact.html">
+            <i class="fa-solid fa-envelope"></i>
+            <b>Contact</b>
+            <span data-i18n="page_contact_desc">معلومات التواصل.</span>
+          </a>
+          <a class="page-card" href="privacy.html">
+            <i class="fa-solid fa-shield-halved"></i>
+            <b>Privacy</b>
+            <span data-i18n="page_privacy_desc">سياسة الخصوصية.</span>
+          </a>
+          <a class="page-card" href="terms.html">
+            <i class="fa-solid fa-file-lines"></i>
+            <b>Terms</b>
+            <span data-i18n="page_terms_desc">شروط الاستخدام.</span>
+          </a>
         </div>
-      </section>
+      </article>
 
-      <section class="section" id="contact">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="contact_title">التواصل</h2>
-            <p data-i18n="contact_desc">للتصحيح، الإضافة، أو التنسيق التحريري.</p>
-          </div>
-        </div>
+      <article class="card" id="contact">
+        <h2 data-i18n="contact_title">Contact</h2>
+        <p class="sub" data-i18n="contact_desc">وسائل التواصل الرسمية.</p>
 
         <div class="contact-grid">
           <div class="contact-card">
@@ -1198,195 +1096,134 @@
           <div class="contact-card">
             <i class="fa-solid fa-file-lines"></i>
             <div>
-              <b data-i18n="pages_label">Pages</b>
-              <span>About / Terms / Privacy / Contact</span>
+              <b>Pages</b>
+              <span>About / Articles / Privacy / Terms / Contact</span>
             </div>
           </div>
         </div>
-      </section>
+      </article>
 
       <div class="footer">
-        © 2026 | Muslim &amp; Christian Numbers
+        © 2026 | Muslim &amp; Christian Numbers | Official Report
         <div class="footer-links">
           <a href="about.html">About</a>
-          <a href="terms.html">Terms</a>
+          <a href="articles.html">Articles</a>
           <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
-    </main>
-  </div>
+    </section>
+  </main>
+
+  <button class="back-to-top" id="topBtn" aria-label="العودة إلى الأعلى">↑</button>
 
   <script>
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const menuBtn = document.getElementById('menuBtn');
+    const loader = document.getElementById('loader');
     const topBtn = document.getElementById('topBtn');
+    const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
     const langBtn = document.getElementById('langBtn');
     const htmlEl = document.documentElement;
-    const body = document.body;
-
-    const sections = [...document.querySelectorAll('.section, .hero')];
-    const navLinks = [...document.querySelectorAll('.nav-link')];
+    const brandText = document.getElementById('brandText');
+    const brandSub = document.getElementById('brandSub');
+    const topPill1 = document.getElementById('topPill1');
+    const topPill2 = document.getElementById('topPill2');
+    const continentSelect = document.getElementById('continentSelect');
+    const chartTitle = document.getElementById('chartTitle');
 
     const translations = {
       ar: {
-        brand: 'Muslim & Christian Numbers',
-        report_meta: 'تقرير عام | 2026',
-        nav_home: 'الرئيسية',
-        nav_figures: 'الأرقام',
-        nav_report: 'الملف الرسمي',
-        nav_snapshot: 'الخلاصة القارية',
-        nav_sources: 'المصادر',
-        nav_method: 'المنهجية',
-        nav_contact: 'التواصل',
-        nav_about: 'من نحن',
-        nav_privacy: 'سياسة الخصوصية',
-        quickTitle: 'ملخص سريع',
-        side_muslims: 'المسلمون',
-        side_christians: 'المسيحيون',
-        sideNote: 'صفحة تقريرية مختصرة، بمحتوى رسمي ومحدد، مع فصل واضح بين العرض، الإسناد، والتواصل.',
-        linksTitle: 'روابط سريعة',
-        heroTitle: 'Muslim & Christian Numbers',
-        heroSubtitle: 'عرض رسمي ومختصر لبيانات المسلمين والمسيحيين حول العالم',
-        heroDesc: 'صفحة تقريرية مستقلة، تعتمد عرضًا هادئًا ومباشرًا للأرقام المرجعية، مع إبقاء النص موجزًا، والإسناد واضحًا، والتنقل بسيطًا على الهاتف والكمبيوتر.',
-        btnExplore: '<i class="fa-solid fa-arrow-down"></i> عرض التقرير',
-        btnSources: '<i class="fa-solid fa-book-open"></i> المصادر',
-        hero_muslim: 'المسلمون',
-        hero_muslim_note: 'النطاق المرجعي المعروض في الصفحة',
-        hero_christian: 'المسيحيون',
-        hero_christian_note: 'القيمة المرجعية المعروضة في الصفحة',
-        hero_scope: 'النطاق',
-        hero_scope_note: 'نسخة رسمية ثنائية اللغة',
+        brand: 'Official Report',
+        brandSub: 'Muslim & Christian Numbers',
+        hero_label: 'Official Report',
+        hero_title: 'Official Report',
+        hero_subtitle: 'تقرير رسمي موجز ومباشر يعرض الأرقام الأساسية والمقارنة العامة بشكل نظيف وواضح.',
+        hero_desc: 'واجهة عالمية حديثة تعتمد أسلوبًا رسميًا بسيطًا، مع مساحات واضحة، نص مختصر، وروابط منظمة إلى الصفحات الداخلية.',
+        btn_explore: 'عرض الأرقام',
+        btn_sources: 'المراجع',
+        badge_formal: 'رسمي',
+        badge_minimal: 'Minimal',
+        badge_bilingual: 'عربي / إنجليزي',
+        badge_reports: 'تقرير',
         figures_title: 'الأرقام الأساسية',
-        figures_desc: 'المؤشرات التالية تمثل الملخص الرسمي المعروض في الصفحة.',
-        muslim_label: 'المسلمون',
-        muslim_note: 'النطاق المرجعي المعروض في الصفحة',
-        christian_label: 'المسيحيون',
-        christian_note: 'القيمة المرجعية المعروضة في الصفحة',
-        coverage_label: 'التغطية',
-        coverage_note: 'صيغة عرض عالمية واضحة',
-        release_label: 'الإصدار',
-        release_note: 'نسخة تقريرية حديثة',
-        report_title: 'الملف الرسمي',
-        report_desc: 'صياغة مختصرة، رسمية، ومباشرة، مع فصل واضح بين القيمة، الإسناد، والتاريخ.',
-        strip_1_t: 'المستوى',
-        strip_1_n: 'Official',
-        strip_1_b: 'عرض مخصص للواجهة العامة',
-        strip_2_t: 'اللغة',
-        strip_2_n: 'AR / EN',
-        strip_2_b: 'تبديل فوري بين اللغتين',
-        strip_3_t: 'الإسناد',
-        strip_3_n: 'Sources',
-        strip_3_b: 'مراجع معروفة وموثقة',
-        strip_4_t: 'التصميم',
-        strip_4_n: 'Responsive',
-        strip_4_b: 'مناسب للجوال والكمبيوتر',
-        snapshot_title: 'الخلاصة القارية',
-        snapshot_desc: 'ملخص مباشر وسريع عبر القارات الرئيسية، بصيغة عرض رسمية مختصرة.',
-        asia: 'آسيا',
-        africa: 'أفريقيا',
-        europe: 'أوروبا',
-        north_america: 'أمريكا الشمالية',
-        latin_america: 'أمريكا اللاتينية',
-        oceania: 'أوقيانوسيا',
-        region_note: 'ملخص قاري',
-        sources_title: 'المصادر المعتمدة',
-        sources_desc: 'المراجع المدرجة أدناه موضوعة لإظهار الإسناد العام للمحتوى وتاريخه.',
-        src1: 'How the Global Religious Landscape Changed From 2010 to 2020',
-        src2: 'The Future of World Religions: Population Growth Projections, 2010-2050',
-        src3: 'Status of Global Christianity 2025',
-        src4: 'Status of Global Christianity 2023',
-        method_title: 'المنهجية',
-        method_desc: 'البنية المختصرة تركز على العنوان، القيم، الإسناد، والتواصل، مع واجهة واضحة ومباشرة.',
-        method1_t: 'بنية رسمية',
-        method1_b: 'تسلسل الصفحة يقدّم العنوان أولًا، ثم الأرقام، ثم الإسناد، ثم التواصل.',
-        method2_t: 'لغة مزدوجة',
-        method2_b: 'زر التحويل يبدّل اللغة والاتجاه دون إعادة تحميل الصفحة.',
-        method3_t: 'جاهزية العرض',
-        method3_b: 'الواجهة متجاوبة ومصممة لقراءة مريحة على الهاتف والكمبيوتر.',
+        figures_desc: 'عرض مباشر للأرقام الأساسية المعتمدة في الصفحة الرئيسية.',
+        muslims_label: 'المسلمون',
+        christians_label: 'المسيحيون',
+        muslims_note: '2.1 مليار',
+        christians_note: '2.7 مليار',
+        compare_title: 'المقارنة',
+        compare_desc: 'ملخص رسمي للمقارنة العامة بين الرقمين.',
+        gap_label: 'الفارق التقريبي',
+        share_label: 'النسبة العالمية',
+        format_label: 'الصيغة',
+        official: 'رسمي',
+        update_label: 'التحديث',
+        charts_title: 'الرسوم',
+        charts_desc: 'رسوم مختصرة وبألوان رمادية فقط لإبقاء الواجهة رسمية وهادئة.',
+        choose_continent: 'اختر النطاق:',
+        global: 'العالم',
+        trend_title: 'المنحنى 2020–2026',
+        distribution_title: 'التوزيع',
+        distribution_desc: 'عرض قاري مختصر ومباشر بصيغة رسمية.',
+        sources_title: 'المراجع',
+        sources_desc: 'روابط مرجعية رسمية ومباشرة.',
+        pages_title: 'الصفحات',
+        pages_desc: 'الصفحات الداخلية المرتبطة ضمن الموقع.',
+        page_about_desc: 'تعريف رسمي بالموقع.',
+        page_articles_desc: 'مقالات وصفحات تحليل.',
+        page_contact_desc: 'معلومات التواصل.',
+        page_privacy_desc: 'سياسة الخصوصية.',
+        page_terms_desc: 'شروط الاستخدام.',
         contact_title: 'التواصل',
-        contact_desc: 'للتصحيح، الإضافة، أو التنسيق التحريري.',
-        pages_label: 'Pages'
+        contact_desc: 'وسائل التواصل الرسمية.',
+        title_suffix: 'Official Report | Muslim & Christian Numbers 2026'
       },
       en: {
-        brand: 'Muslim & Christian Numbers',
-        report_meta: 'Public Report | 2026',
-        nav_home: 'Home',
-        nav_figures: 'Figures',
-        nav_report: 'Official profile',
-        nav_snapshot: 'Continental summary',
-        nav_sources: 'Sources',
-        nav_method: 'Methodology',
-        nav_contact: 'Contact',
-        nav_about: 'About',
-        nav_privacy: 'Privacy',
-        quickTitle: 'Quick summary',
-        side_muslims: 'Muslims',
-        side_christians: 'Christians',
-        sideNote: 'A concise report page with formal presentation and a clear separation between display, attribution, and contact.',
-        linksTitle: 'Quick links',
-        heroTitle: 'Muslim & Christian Numbers',
-        heroSubtitle: 'A formal and concise presentation of the worldwide Muslim and Christian figures',
-        heroDesc: 'A standalone report page with a calm presentation of reference values, a clear source trail, and simple navigation on phone and desktop.',
-        btnExplore: '<i class="fa-solid fa-arrow-down"></i> View report',
-        btnSources: '<i class="fa-solid fa-book-open"></i> Sources',
-        hero_muslim: 'Muslims',
-        hero_muslim_note: 'Reference range shown on this page',
-        hero_christian: 'Christians',
-        hero_christian_note: 'Reference value shown on this page',
-        hero_scope: 'Scope',
-        hero_scope_note: 'Official bilingual edition',
+        brand: 'Official Report',
+        brandSub: 'Muslim & Christian Numbers',
+        hero_label: 'Official Report',
+        hero_title: 'Official Report',
+        hero_subtitle: 'A concise, direct report presenting the key figures and the overall comparison in a clean, formal layout.',
+        hero_desc: 'A modern global interface with a formal minimal style, clear spacing, short text, and organized links to internal pages.',
+        btn_explore: 'View figures',
+        btn_sources: 'Sources',
+        badge_formal: 'Formal',
+        badge_minimal: 'Minimal',
+        badge_bilingual: 'Arabic / English',
+        badge_reports: 'Report',
         figures_title: 'Core figures',
-        figures_desc: 'The indicators below summarize the official content shown on the page.',
-        muslim_label: 'Muslims',
-        muslim_note: 'Reference range shown on this page',
-        christian_label: 'Christians',
-        christian_note: 'Reference value shown on this page',
-        coverage_label: 'Coverage',
-        coverage_note: 'Clear global presentation',
-        release_label: 'Edition',
-        release_note: 'Current report version',
-        report_title: 'Official profile',
-        report_desc: 'A concise, formal, and direct presentation with a clear separation between the value, attribution, and date.',
-        strip_1_t: 'Level',
-        strip_1_n: 'Official',
-        strip_1_b: 'Designed for the public interface',
-        strip_2_t: 'Language',
-        strip_2_n: 'AR / EN',
-        strip_2_b: 'Instant bilingual switching',
-        strip_3_t: 'Attribution',
-        strip_3_n: 'Sources',
-        strip_3_b: 'Recognized references',
-        strip_4_t: 'Design',
-        strip_4_n: 'Responsive',
-        strip_4_b: 'Ready for mobile and desktop',
-        snapshot_title: 'Continental summary',
-        snapshot_desc: 'A direct and compact summary across the major regions, in a formal presentation format.',
-        asia: 'Asia',
-        africa: 'Africa',
-        europe: 'Europe',
-        north_america: 'North America',
-        latin_america: 'Latin America',
-        oceania: 'Oceania',
-        region_note: 'Continental summary',
-        sources_title: 'Recognized sources',
-        sources_desc: 'The references below are included to show the content trail and date context.',
-        src1: 'How the Global Religious Landscape Changed From 2010 to 2020',
-        src2: 'The Future of World Religions: Population Growth Projections, 2010-2050',
-        src3: 'Status of Global Christianity 2025',
-        src4: 'Status of Global Christianity 2023',
-        method_title: 'Methodology',
-        method_desc: 'The compact structure focuses on the title, values, attribution, and contact, with a clear and direct interface.',
-        method1_t: 'Formal structure',
-        method1_b: 'The page sequence presents the title first, then the figures, then attribution, then contact.',
-        method2_t: 'Bilingual',
-        method2_b: 'The toggle switches language and direction without reloading the page.',
-        method3_t: 'Presentation-ready',
-        method3_b: 'The interface is responsive and built for comfortable reading on phone and desktop.',
+        figures_desc: 'Direct display of the figures used on the homepage.',
+        muslims_label: 'Muslims',
+        christians_label: 'Christians',
+        muslims_note: '2.1 billion',
+        christians_note: '2.7 billion',
+        compare_title: 'Comparison',
+        compare_desc: 'A formal summary of the overall comparison between the two figures.',
+        gap_label: 'Approximate gap',
+        share_label: 'World share',
+        format_label: 'Format',
+        official: 'Official',
+        update_label: 'Update',
+        charts_title: 'Charts',
+        charts_desc: 'Brief charts in grayscale only to keep the interface formal and calm.',
+        choose_continent: 'Choose range:',
+        global: 'Global',
+        trend_title: 'Trend 2020–2026',
+        distribution_title: 'Distribution',
+        distribution_desc: 'A concise continental view in a formal format.',
+        sources_title: 'Sources',
+        sources_desc: 'Official and direct reference links.',
+        pages_title: 'Pages',
+        pages_desc: 'Internal pages linked across the site.',
+        page_about_desc: 'Formal site profile.',
+        page_articles_desc: 'Articles and analysis pages.',
+        page_contact_desc: 'Contact information.',
+        page_privacy_desc: 'Privacy policy.',
+        page_terms_desc: 'Terms of use.',
         contact_title: 'Contact',
-        contact_desc: 'For corrections, additions, or editorial coordination.',
-        pages_label: 'Pages'
+        contact_desc: 'Official contact channels.',
+        title_suffix: 'Official Report | Muslim & Christian Numbers 2026'
       }
     };
 
@@ -1397,223 +1234,317 @@
       if(el) el.textContent = value;
     }
 
-    function setHTML(selector, value){
-      const el = document.querySelector(selector);
-      if(el) el.innerHTML = value;
-    }
-
     function applyLanguage(lang){
       currentLang = lang;
       htmlEl.lang = lang;
       htmlEl.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
       const t = translations[lang];
+      document.title = t.title_suffix;
 
-      document.title = lang === 'ar'
-        ? 'Muslim & Christian Numbers | تقرير 2026'
-        : 'Muslim & Christian Numbers | 2026 Report';
+      brandText.textContent = t.brand;
+      brandSub.textContent = t.brandSub;
+      topPill1.innerHTML = `<i class="fa-regular fa-clock"></i> ${lang === 'ar' ? '2026' : '2026'}`;
+      topPill2.innerHTML = `<i class="fa-solid fa-shield-halved"></i> ${lang === 'ar' ? 'رسمي' : 'Official'}`;
 
-      setText('#brandText', t.brand);
-      setHTML('#topPill1', `<i class="fa-regular fa-clock"></i> ${t.report_meta}`);
-      setHTML('#topPill2', `<i class="fa-solid fa-shield-halved"></i> ${lang === 'ar' ? 'موثّق بالمصادر' : 'Source-backed'}`);
-
-      setText('#navTitle', lang === 'ar' ? 'الأقسام' : 'Sections');
-      setText('#quickTitle', t.quickTitle);
-      setText('#linksTitle', t.linksTitle);
-      setText('#sideNote', t.sideNote);
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
         const key = el.getAttribute('data-i18n');
-        if (t[key] !== undefined) el.textContent = t[key];
+        if(t[key]) el.textContent = t[key];
       });
 
-      setText('#heroTitle', t.heroTitle);
-      setText('#heroSubtitle', t.heroSubtitle);
-      setText('#heroDesc', t.heroDesc);
-      setHTML('#btnExplore', t.btnExplore);
-      setHTML('#btnSources', t.btnSources);
+      setText('#heroLabel', t.hero_label);
+      setText('#heroTitle', t.hero_title);
+      setText('#heroSubtitle', t.hero_subtitle);
+      setText('#heroDesc', t.hero_desc);
 
-      setText('#sideMuslimValue', '2.0–2.1B');
-      setText('#sideChristianValue', '2.7B');
+      document.getElementById('btnExplore').innerHTML = `<i class="fa-solid fa-arrow-down"></i> ${t.btn_explore}`;
+      document.getElementById('btnSources').innerHTML = `<i class="fa-solid fa-book-open"></i> ${t.btn_sources}`;
 
-      setText('#topBtn', '↑');
-      setText('#menuBtn', '');
-      menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      searchInput.placeholder = lang === 'ar'
+        ? 'ابحث داخل التقرير أو العناوين...'
+        : 'Search within the report or headings...';
 
       langBtn.textContent = lang === 'ar' ? 'AR / EN' : 'EN / AR';
-      menuBtn.setAttribute('aria-label', lang === 'ar' ? 'فتح القائمة' : 'Open menu');
-      topBtn.setAttribute('aria-label', lang === 'ar' ? 'العودة إلى الأعلى' : 'Back to top');
 
-      navLinks.forEach(link => {
-        const key = link.querySelector('[data-i18n]')?.getAttribute('data-i18n');
-        if (key && t[key] !== undefined) {
-          link.querySelector('[data-i18n]').textContent = t[key];
-        }
-      });
-
-      document.querySelectorAll('.region-card .head b').forEach((el, idx) => {
-        const keys = ['asia', 'africa', 'europe', 'north_america', 'latin_america', 'oceania'];
-        const key = keys[idx];
-        if (key && t[key] !== undefined) el.textContent = t[key];
-      });
-
-      document.querySelectorAll('.region-card small').forEach(el => el.textContent = t.region_note);
-
-      document.querySelectorAll('.source').forEach((el, idx) => {
-        const small = el.querySelector('small');
-        if (small) {
-          const keys = ['src1', 'src2', 'src3', 'src4'];
-          small.textContent = t[keys[idx]];
-        }
-      });
-
-      document.querySelectorAll('.report-card').forEach((card, idx) => {
-        const tEl = card.querySelector('.t');
-        const nEl = card.querySelector('.n');
-        const bEl = card.querySelector('.b');
-        const mapping = [
-          ['strip_1_t', 'strip_1_n', 'strip_1_b'],
-          ['strip_2_t', 'strip_2_n', 'strip_2_b'],
-          ['strip_3_t', 'strip_3_n', 'strip_3_b'],
-          ['strip_4_t', 'strip_4_n', 'strip_4_b']
-        ];
-        const [k1, k2, k3] = mapping[idx];
-        if(tEl) tEl.textContent = t[k1];
-        if(nEl) nEl.textContent = t[k2];
-        if(bEl) bEl.textContent = t[k3];
-      });
-
-      const reportMeta = document.querySelector('.report-meta span');
-      if(reportMeta) reportMeta.textContent = t.report_meta;
-
-      const heroMini = document.querySelectorAll('.hero-mini');
-      if(heroMini[0]){
-        heroMini[0].querySelector('.k').textContent = t.hero_muslim;
-        heroMini[0].querySelector('.s').textContent = t.hero_muslim_note;
-      }
-      if(heroMini[1]){
-        heroMini[1].querySelector('.k').textContent = t.hero_christian;
-        heroMini[1].querySelector('.s').textContent = t.hero_christian_note;
-      }
-      if(heroMini[2]){
-        heroMini[2].querySelector('.k').textContent = t.hero_scope;
-        heroMini[2].querySelector('.s').textContent = t.hero_scope_note;
-      }
-
-      document.querySelectorAll('.figure-card').forEach((card, idx) => {
-        const labels = card.querySelector('.label');
-        const notes = card.querySelector('.note');
-        if(idx === 0){
-          labels.querySelector('[data-i18n]').textContent = t.muslim_label;
-          notes.textContent = t.muslim_note;
-        }else if(idx === 1){
-          labels.querySelector('[data-i18n]').textContent = t.christian_label;
-          notes.textContent = t.christian_note;
-        }else if(idx === 2){
-          labels.querySelector('[data-i18n]').textContent = t.coverage_label;
-          notes.textContent = t.coverage_note;
-        }else if(idx === 3){
-          labels.querySelector('[data-i18n]').textContent = t.release_label;
-          notes.textContent = t.release_note;
-        }
-      });
-
-      setText('#figures h2', t.figures_title);
-      setText('#figures p', t.figures_desc);
-      setText('#report h2', t.report_title);
-      setText('#report p', t.report_desc);
-      setText('#snapshot h2', t.snapshot_title);
-      setText('#snapshot p', t.snapshot_desc);
-      setText('#sources h2', t.sources_title);
-      setText('#sources p', t.sources_desc);
-      setText('#method h2', t.method_title);
-      setText('#method p', t.method_desc);
-      setText('#contact h2', t.contact_title);
-      setText('#contact p', t.contact_desc);
-
-      const methodPairs = [
-        ['method1_t', 'method1_b'],
-        ['method2_t', 'method2_b'],
-        ['method3_t', 'method3_b']
-      ];
-      document.querySelectorAll('#method .info-item').forEach((item, idx) => {
-        const b = item.querySelector('b');
-        const s = item.querySelector('span');
-        const [kt, kb] = methodPairs[idx];
-        if(b) b.textContent = t[kt];
-        if(s) s.textContent = t[kb];
-      });
-
-      document.querySelector('#contact .contact-grid .contact-card:nth-child(3) b').textContent = t.pages_label;
-      document.querySelector('#contact .contact-grid .contact-card:nth-child(3) span').textContent = 'About / Terms / Privacy / Contact';
-
-      navLinks.forEach(a => a.classList.remove('active'));
-      const active = navLinks.find(a => a.getAttribute('href') === '#home');
-      if(active) active.classList.add('active');
+      updateChartsLanguage(lang);
+      updateChartTitle();
     }
 
-    function openMenu(){
-      sidebar.classList.add('active');
-      overlay.classList.add('active');
-      menuBtn.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeMenu(){
-      sidebar.classList.remove('active');
-      overlay.classList.remove('active');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    }
-
-    menuBtn.addEventListener('click', () => {
-      sidebar.classList.contains('active') ? closeMenu() : openMenu();
-    });
-
-    overlay.addEventListener('click', closeMenu);
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 1100) closeMenu();
-      });
-    });
-
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 420) topBtn.classList.add('show');
-      else topBtn.classList.remove('show');
-    });
-
-    topBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.14 });
-
-    sections.forEach(sec => observer.observe(sec));
-
-    const navObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(a => a.classList.remove('active'));
-          const active = navLinks.find(a => a.getAttribute('href') === `#${entry.target.id}`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
-
-    sections.forEach(sec => navObserver.observe(sec));
-
-    langBtn.addEventListener('click', () => {
+    langBtn.addEventListener('click', ()=>{
       applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
     });
 
+    function updateChartTitle(){
+      const labels = {
+        global: currentLang === 'ar' ? 'تقرير عالمي' : 'Global Report',
+        asia: currentLang === 'ar' ? 'آسيا' : 'Asia',
+        africa: currentLang === 'ar' ? 'أفريقيا' : 'Africa',
+        europe: currentLang === 'ar' ? 'أوروبا' : 'Europe',
+        northAmerica: currentLang === 'ar' ? 'أمريكا الشمالية' : 'North America',
+        latinAmerica: currentLang === 'ar' ? 'أمريكا اللاتينية' : 'Latin America',
+        oceania: currentLang === 'ar' ? 'أوقيانوسيا' : 'Oceania'
+      };
+      chartTitle.textContent = labels[continentSelect.value] || labels.global;
+    }
+
+    const regionData = {
+      global: { muslims: 2.1, christians: 2.7 },
+      asia: { muslims: 1.25, christians: 0.42 },
+      africa: { muslims: 0.45, christians: 0.75 },
+      europe: { muslims: 0.06, christians: 0.55 },
+      northAmerica: { muslims: 0.008, christians: 0.28 },
+      latinAmerica: { muslims: 0.002, christians: 0.62 },
+      oceania: { muslims: 0.001, christians: 0.03 }
+    };
+
+    const chartLabels = {
+      ar: {
+        bar: ['المسلمون', 'المسيحيون'],
+        lineMuslims: 'المسلمون',
+        lineChristians: 'المسيحيون',
+        legend: 'المليار'
+      },
+      en: {
+        bar: ['Muslims', 'Christians'],
+        lineMuslims: 'Muslims',
+        lineChristians: 'Christians',
+        legend: 'billion'
+      }
+    };
+
+    let barChart = null;
+    let lineChart = null;
+    let chartsInitialized = false;
+
+    function baseOptions(isLine = false){
+      return {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 850 },
+        interaction: isLine ? { mode: 'index', intersect: false } : undefined,
+        plugins: {
+          legend: {
+            labels: {
+              color: '#f4f4f5',
+              font: { family: 'Tajawal' }
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(0,0,0,.96)',
+            titleColor: '#fff',
+            bodyColor: '#f4f4f5',
+            borderColor: 'rgba(255,255,255,.12)',
+            borderWidth: 1,
+            padding: 12
+          }
+        }
+      };
+    }
+
+    function buildBarChart(){
+      const ctx = document.getElementById('barChart');
+      const lbl = chartLabels[currentLang];
+
+      barChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: lbl.bar,
+          datasets: [{
+            label: currentLang === 'ar' ? 'المليار' : 'billion',
+            data: [2.1, 2.7],
+            backgroundColor: ['#f5f5f5', '#bdbdbd'],
+            borderWidth: 0,
+            borderRadius: 12,
+            maxBarThickness: 90
+          }]
+        },
+        options: {
+          ...baseOptions(false),
+          scales: {
+            x: {
+              ticks: { color: '#f4f4f5', font: { family: 'Tajawal' } },
+              grid: { display: false }
+            },
+            y: {
+              beginAtZero: true,
+              suggestedMax: 3.1,
+              ticks: { color: '#f4f4f5', font: { family: 'Tajawal' } },
+              grid: { color: 'rgba(255,255,255,.08)' }
+            }
+          },
+          plugins: {
+            ...baseOptions(false).plugins,
+            tooltip: {
+              callbacks: {
+                label: function(context){
+                  return `${context.label}: ${context.raw} ${currentLang === 'ar' ? 'مليار' : 'billion'}`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function buildLineChart(){
+      const ctx = document.getElementById('lineChart');
+      const lbl = chartLabels[currentLang];
+
+      lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['2020', '2022', '2024', '2026'],
+          datasets: [
+            {
+              label: lbl.lineMuslims,
+              data: [1.8, 1.9, 2.0, 2.1],
+              borderColor: '#ffffff',
+              backgroundColor: 'rgba(255,255,255,.08)',
+              tension: 0.35,
+              fill: true,
+              borderWidth: 3,
+              pointRadius: 4,
+              pointHoverRadius: 6
+            },
+            {
+              label: lbl.lineChristians,
+              data: [2.55, 2.62, 2.66, 2.70],
+              borderColor: '#bdbdbd',
+              backgroundColor: 'rgba(189,189,189,.08)',
+              tension: 0.35,
+              fill: true,
+              borderWidth: 3,
+              pointRadius: 4,
+              pointHoverRadius: 6
+            }
+          ]
+        },
+        options: {
+          ...baseOptions(true),
+          scales: {
+            x: {
+              ticks: { color: '#f4f4f5', font: { family: 'Tajawal' } },
+              grid: { display: false }
+            },
+            y: {
+              beginAtZero: false,
+              suggestedMin: 1.6,
+              suggestedMax: 2.9,
+              ticks: { color: '#f4f4f5', font: { family: 'Tajawal' } },
+              grid: { color: 'rgba(255,255,255,.08)' }
+            }
+          }
+        }
+      });
+    }
+
+    function updateChartsLanguage(lang){
+      if(barChart){
+        barChart.data.labels = chartLabels[lang].bar;
+        barChart.data.datasets[0].label = lang === 'ar' ? 'المليار' : 'billion';
+        barChart.update();
+      }
+      if(lineChart){
+        lineChart.data.datasets[0].label = chartLabels[lang].lineMuslims;
+        lineChart.data.datasets[1].label = chartLabels[lang].lineChristians;
+        lineChart.update();
+      }
+    }
+
+    function setRegion(key){
+      const d = regionData[key] || regionData.global;
+      if(barChart){
+        barChart.data.datasets[0].data = [d.muslims, d.christians];
+        barChart.update();
+      }
+      updateChartTitle();
+    }
+
+    continentSelect.addEventListener('change', e => setRegion(e.target.value));
+
+    const chartsObserver = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && !chartsInitialized){
+          chartsInitialized = true;
+          buildBarChart();
+          buildLineChart();
+          setRegion('global');
+        }
+      });
+    }, {threshold: 0.15});
+
+    chartsObserver.observe(document.getElementById('charts'));
+
+    function animateNumber(el, endValue, suffix='B', duration=1200){
+      const start = 0;
+      const startTime = performance.now();
+      function step(now){
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = start + (endValue - start) * progress;
+        el.textContent = value.toFixed(1) + suffix;
+        if(progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    animateNumber(document.getElementById('muslimCount'), 2.1);
+    animateNumber(document.getElementById('christianCount'), 2.7);
+
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, {threshold: 0.12});
+
+    document.querySelectorAll('.card').forEach(card=>{
+      if(card.style.opacity !== '1') observer.observe(card);
+      else card.classList.add('show');
+    });
+
+    window.addEventListener('load', ()=> setTimeout(()=>loader.classList.add('hidden'), 300));
+
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 380) topBtn.classList.add('show');
+      else topBtn.classList.remove('show');
+    });
+
+    topBtn.addEventListener('click', ()=>{
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+
+    searchInput.addEventListener('input', ()=>{
+      const query = searchInput.value.trim().toLowerCase();
+      const cards = [...document.querySelectorAll('.card')];
+      let matched = 0;
+
+      cards.forEach(card=>{
+        const text = card.textContent.toLowerCase();
+        const match = text.includes(query);
+        card.style.display = match ? '' : 'none';
+        if(match) matched++;
+      });
+
+      noResults.style.display = matched === 0 ? 'block' : 'none';
+
+      if(query === ''){
+        cards.forEach(card=>card.style.display = '');
+        noResults.style.display = 'none';
+      }
+    });
+
+    window.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+    });
+
+    window.addEventListener('resize', ()=>{
+      if(barChart) barChart.resize();
+      if(lineChart) lineChart.resize();
+    });
+
     applyLanguage('ar');
+    setRegion('global');
   </script>
 </body>
 </html>
